@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='SESAR Web Services Library',
+setup(name='SESAR-Web-Services-Library',
       version='0.1',
       description='SESAR web services library for IGSN management.',
       url='https://github.com/Adam-Brown/SESAR-Web-Services-Lib',
