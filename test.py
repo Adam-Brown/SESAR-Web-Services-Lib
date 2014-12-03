@@ -1,6 +1,7 @@
 # This is just to provide an example of how the library can be used.
 # Make sure you set password and username.
 from sesarwslib import sesarwsclient as ws
+from sesarwslib import categories as cat
 
 username = ''  # Set but don't check-in.
 password = ''  # Set but don't check-in.
@@ -8,11 +9,11 @@ user_code = ''  # Set but don't check-in.
 
 sample = ws.Sample(
     user_code,
-    'Individual Sample',
-    'Rock',
+    'Individual Sample',  # Sample type
+    cat.Materials.Rock,  # Material
     user_code + '1234',
     'TestSample123',
-    'Igneous>Plutonic>Felsic',
+    cat.Classification.Rock.Igneous_Plutonic_Felsic,  # Classification
     'arkose',
     '6.5',
     '13',
