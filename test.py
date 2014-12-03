@@ -10,7 +10,7 @@ user_code = ''  # Set but don't check-in.
 sample = ws.Sample(
     user_code,
     cat.Classification.SampleType.IndividualSample,  # Sample type
-    cat.Materials.Rock,  # Material
+    cat.Material.Rock,  # Material
     user_code + '1234',
     'TestSample123',
     cat.Classification.Rock.Igneous_Plutonic_Felsic,  # Classification

@@ -24,7 +24,7 @@ class SampleType:
     Trawl = 'Trawl'
 
 
-class Materials:
+class Material:
     def __init__(self):
         pass
 
