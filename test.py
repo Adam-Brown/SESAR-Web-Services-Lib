@@ -9,7 +9,7 @@ user_code = ''  # Set but don't check-in.
 
 sample = ws.Sample(
     user_code,
-    'Individual Sample',  # Sample type
+    cat.Classification.SampleType.IndividualSample,  # Sample type
     cat.Materials.Rock,  # Material
     user_code + '1234',
     'TestSample123',
