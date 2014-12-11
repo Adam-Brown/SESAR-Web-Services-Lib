@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="sample">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sample_type"/>
+        <xs:element ref="igsn"/>
+        <xs:element ref="user_code"/>
+        <xs:element ref="name"/>
+        <xs:element ref="sample_other_name"/>
+        <xs:element ref="parent_igsn"/>
+        <xs:element ref="parent_sample_type"/>
+        <xs:element ref="parent_name"/>
+        <xs:element ref="is_private"/>
+        <xs:element ref="publish_date"/>
+        <xs:element ref="material"/>
+        <xs:element ref="classification"/>
+        <xs:element ref="field_name"/>
+        <xs:element ref="description"/>
+        <xs:element ref="age_min"/>
+        <xs:element ref="age_max"/>
+        <xs:element ref="age_unit"/>
+        <xs:element ref="geological_age"/>
+        <xs:element ref="geological_unit"/>
+        <xs:element ref="collection_method"/>
+        <xs:element ref="collection_method_descr"/>
+        <xs:element ref="size"/>
+        <xs:element ref="size_unit"/>
+        <xs:element ref="sample_comment"/>
+        <xs:element ref="latitude"/>
+        <xs:element ref="longitude"/>
+        <xs:element ref="latitude_end"/>
+        <xs:element ref="longitude_end"/>
+        <xs:element ref="elevation"/>
+        <xs:element ref="elevation_end"/>
+        <xs:element ref="primary_location_type"/>
+        <xs:element ref="primary_location_name"/>
+        <xs:element ref="location_description"/>
+        <xs:element ref="locality"/>
+        <xs:element ref="locality_description"/>
+        <xs:element ref="country"/>
+        <xs:element ref="province"/>
+        <xs:element ref="county"/>
+        <xs:element ref="city"/>
+        <xs:element ref="cruise_field_prgrm"/>
+        <xs:element ref="platform_type"/>
+        <xs:element ref="platform_name"/>
+        <xs:element ref="platform_descr"/>
+        <xs:element ref="collector"/>
+        <xs:element ref="collector_detail"/>
+        <xs:element ref="collection_date_precision"/>
+        <xs:element ref="current_archive"/>
+        <xs:element ref="current_archive_contact"/>
+        <xs:element ref="original_archive"/>
+        <xs:element ref="original_archive_contact"/>
+        <xs:element ref="depth_min"/>
+        <xs:element ref="depth_max"/>
+        <xs:element ref="depth_scale"/>
+        <xs:element maxOccurs="unbounded" ref="other_names"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sample_type" use="required">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+      <xs:enumeration value="Bead"/>
+      <xs:enumeration value="Chemical Fraction"/>
+      <xs:enumeration value="Core"/>
+      <xs:enumeration value="Core Half Round"/>
+      <xs:enumeration value="Core Piece"/>
+      <xs:enumeration value="Core Quarter Round"/>
+      <xs:enumeration value="Core Section"/>
+      <xs:enumeration value="Core Section Half"/>
+      <xs:enumeration value="Core Sub-Piece"/>
+      <xs:enumeration value="Core Whole Round"/>
+      <xs:enumeration value="CTD"/>
+      <xs:enumeration value="Cube"/>
+      <xs:enumeration value="Culture"/>
+      <xs:enumeration value="Cuttings"/>
+      <xs:enumeration value="Cylinder"/>
+      <xs:enumeration value="Dredge"/>
+      <xs:enumeration value="Gas"/>
+      <xs:enumeration value="Grab"/>
+      <xs:enumeration value="Hole"/>
+      <xs:enumeration value="Individual Sample"/>
+      <xs:enumeration value="Liquid"/>
+      <xs:enumeration value="Mechanical Fraction"/>
+      <xs:enumeration value="Oriented Core"/>
+      <xs:enumeration value="Powder"/>
+      <xs:enumeration value="Rock Powder"/>
+      <xs:enumeration value="Slab"/>
+      <xs:enumeration value="Smear"/>
+      <xs:enumeration value="Specimen"/>
+      <xs:enumeration value="Squeeze Cake"/>
+      <xs:enumeration value="Terrestrial Section"/>
+      <xs:enumeration value="Thin Section"/>
+      <xs:enumeration value="Toothpick"/>
+      <xs:enumeration value="Trawl"/>
+      <xs:enumeration value="U-Channel"/>
+      <xs:enumeration value="Wedge"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="igsn">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="^[A-Z0-9]{9}"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="user_code" use="required">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+      <xs:pattern value="^[A-Z0-9]{3}"/>
+      <xs:pattern value="^[A-Z0-9]{5}"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="name" type="xs:string" use="required" />
+  <xs:element name="sample_other_name" type="xs:string" />
+  <xs:element name="parent_igsn">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="^[A-Z0-9]{9}"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="parent_sample_type">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Core"/>
+        <xs:enumeration value="Core Half Round"/>
+        <xs:enumeration value="Core Piece"/>
+        <xs:enumeration value="Core Quarter Round"/>
+        <xs:enumeration value="Core Section"/>
+        <xs:enumeration value="Core Section Half"/>
+        <xs:enumeration value="Core Sub-Piece"/>
+        <xs:enumeration value="Core Whole Round"/>
+        <xs:enumeration value="CTD"/>
+        <xs:enumeration value="Cuttings"/>
+        <xs:enumeration value="Dredge"/>
+        <xs:enumeration value="Grab"/>
+        <xs:enumeration value="Hole"/>
+        <xs:enumeration value="Individual Sample"/>
+        <xs:enumeration value="Oriented Core"/>
+        <xs:enumeration value="Rock Powder"/>
+        <xs:enumeration value="Terrestrial Section"/>
+        <xs:enumeration value="Trawl"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="parent_name" type="xs:string"/>
+  <xs:element name="is_private" type="xs:integer" default="0" />
+  <xs:element name="publish_date">
+    <xs:simpleType>
+       <xs:restriction base="xs:string">
+        <xs:pattern value="MM/DD/YYYY"/>
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="material" use="required">
+    <xs:simpleType>
+       <xs:restriction base="xs:string">
+         <xs:enumeration value="Biology"/>
+         <xs:enumeration value="Gas"/>
+         <xs:enumeration value="Liquid>aqueous"/>
+         <xs:enumeration value="Liquid>organic"/>
+         <xs:enumeration value="Mineral"/>
+         <xs:enumeration value="Not applicable"/>
+         <xs:enumeration value="Other"/>
+         <xs:enumeration value="Particulate"/>
+         <xs:enumeration value="Rock"/>
+         <xs:enumeration value="Sediment"/>
+         <xs:enumeration value="Soil"/>
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="classification" type="xs:string"/>
+  <xs:element name="field_name" type="xs:string"/>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="age_min" type="xs:decimal"/>
+  <xs:element name="age_max" type="xs:decimal"/>
+  <xs:element name="age_unit">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="geological_age" type="xs:decimal"/>
+  <xs:element name="geological_unit">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="collection_method">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="collection_method_descr">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="size" type="xs:decimal"/>
+  <xs:element name="size_unit">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="sample_comment">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="latitude" type="xs:decimal"/>
+  <xs:element name="longitude" type="xs:decimal"/>
+  <xs:element name="latitude_end" type="xs:decimal"/>
+  <xs:element name="longitude_end" type="xs:decimal"/>
+  <xs:element name="elevation" type="xs:decimal"/>
+  <xs:element name="elevation_end" type="xs:decimal"/>
+  <xs:element name="primary_location_type">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="primary_location_name">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="location_description">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="locality">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="locality_description">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="country" type="xs:string"/>
+  <xs:element name="province" type="xs:string"/>
+  <xs:element name="county" type="xs:string"/>
+  <xs:element name="city" type="xs:string"/>
+  <xs:element name="cruise_field_prgrm" type="xs:string"/>
+  <xs:element name="platform_type" type="xs:string"/>
+  <xs:element name="platform_name" type="xs:string"/>
+  <xs:element name="platform_descr" type="xs:string"/>
+  <xs:element name="collector" type="xs:string"/>
+  <xs:element name="collector_detail" type="xs:string"/>
+  <xs:element name="collection_date_precision">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="current_archive">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="current_archive_contact">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="original_archive">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="original_archive_contact">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="depth_min" type="xs:decimal"/>
+  <xs:element name="depth_max" type="xs:decimal"/>
+  <xs:element name="depth_scale">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="other_names" type="xs:string"/>
+</xs:schema>
