@@ -19,7 +19,7 @@
 
 import sys
 
-import ??? as supermod
+import sample as supermod
 
 etree_ = None
 Verbose_import_ = False
