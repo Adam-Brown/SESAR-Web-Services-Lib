@@ -1,38 +1,16 @@
 # This is just to provide an example of how the library can be used.
 # Make sure you set password and username.
-from sesarwslib import sesarwsclient as ws
 from sesarwslib import categories as cat
-from sesarwslib.sample import sample
+from sesarwslib.sample import Sample
 import StringIO
 
 username = ''  # Set but don't check-in.
 password = ''  # Set but don't check-in.
 user_code = ''  # Set but don't check-in.
 
-sample1 = ws.Sample(
-    user_code,
-    cat.SampleType.IndividualSample,  # Sample type
-    cat.Material.Rock,  # Material
-    user_code + '1234',
-    'TestSample123',
-    cat.Classification.Rock.Igneous_Plutonic_Felsic,  # Classification
-    'arkose',
-    '6.5',
-    '13',
-    'Grab',
-    '35.5134',
-    '-117.3463',
-    '781.4',
-    'Lava Mountains, Mojave Desert, California',
-    'United States',
-    'California',
-    'San Bernardino',
-    'J. E. Andrew',
-    'January 01, 2010',
-    'University of Kansas')
 
 # These are the minimum requirements, though the constructor does accept more:
-sample2 = sample.sample(
+sample2 = Sample.sample(
     sample_type=cat.SampleType.IndividualSample,
     user_code=user_code,
     name='TestSample123',
@@ -89,8 +67,6 @@ sample2 = sample.sample(
 #sample2.set_depth_scale(depth_scale)
 #sample2.set_other_names(other_names)
 #sample2.add_other_names(value)
-
-
 
 
 output = StringIO.StringIO()

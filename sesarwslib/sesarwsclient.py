@@ -7,61 +7,6 @@ CREDENTIAL_SERVICE_URL = 'http://app.geosamples.org/webservices/credentials_serv
 IGSN_LIST_SERVICE_URL = 'http://app.geosamples.org/samples/user_code/'
 
 
-class Sample():
-    def __init__(
-            self,
-            user_code,
-            sample_type,
-            material,
-            igsn,
-            name,
-            classification,
-            description,
-            age_min,
-            age_max,
-            collection_method,
-            latitude,
-            longitude,
-            elevation,
-            primary_location_name,
-            country,
-            province,
-            county,
-            collector,
-            collection_start_date,
-            original_archive):
-
-        """
-        TODO: See valid values here: http://app.geosamples.org/reference/classifications.php this list should be used to
-        validate inputs. For some reason the web service doesn't accept properly escaped (escape(...)) values, at least
-        for the classification element.
-
-        TODO: IGSN should be validated as alphanumeric and correct length
-        TODO: Numeric values should be validated
-        """
-        self.sample_elem = eTree.Element('sample')
-        eTree.SubElement(self.sample_elem, 'user_code').text = user_code
-        eTree.SubElement(self.sample_elem, 'sample_type').text = sample_type
-        eTree.SubElement(self.sample_elem, 'material').text = material
-        eTree.SubElement(self.sample_elem, 'igsn').text = igsn
-        eTree.SubElement(self.sample_elem, 'name').text = name
-        eTree.SubElement(self.sample_elem, 'classification').text = classification
-        eTree.SubElement(self.sample_elem, 'description').text = description
-        eTree.SubElement(self.sample_elem, 'age_min').text = age_min
-        eTree.SubElement(self.sample_elem, 'age_max').text = age_max
-        eTree.SubElement(self.sample_elem, 'collection_method').text = collection_method
-        eTree.SubElement(self.sample_elem, 'latitude').text = latitude
-        eTree.SubElement(self.sample_elem, 'longitude').text = longitude
-        eTree.SubElement(self.sample_elem, 'elevation').text = elevation
-        eTree.SubElement(self.sample_elem, 'primary_location_name').text = primary_location_name
-        eTree.SubElement(self.sample_elem, 'country').text = country
-        eTree.SubElement(self.sample_elem, 'province').text = province
-        eTree.SubElement(self.sample_elem, 'county').text = county
-        eTree.SubElement(self.sample_elem, 'collector').text = collector
-        eTree.SubElement(self.sample_elem, 'collection_start_date').text = collection_start_date
-        eTree.SubElement(self.sample_elem, 'original_archive').text = original_archive
-
-
 class Samples:
     def __init__(self, samples):
         self.samples_elem = eTree.Element('samples')
