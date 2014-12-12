@@ -6,7 +6,7 @@ SAMPLE_REGISTRATION_SERVICE_URL = 'http://app.geosamples.org/webservices/uploads
 CREDENTIAL_SERVICE_URL = 'http://app.geosamples.org/webservices/credentials_service.php'
 IGSN_LIST_SERVICE_URL = 'http://app.geosamples.org/samples/user_code/'
 
-
+# TODO: This is broken now that Sample has changed. The sample.sample_elem line won't work!
 class Samples:
     def __init__(self, samples):
         self.samples_elem = eTree.Element('samples')
