@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 
 #
-# Generated Thu Dec 11 16:21:16 2014 by generateDS.py version 2.14a.
+# Generated Fri Dec 26 11:55:35 2014 by generateDS.py version 2.14a.
 #
 # Command line options:
-#   ('-o', 'sesarwslib/sample/sample.py')
-#   ('-s', 'sesarwslib/sample/samplesubs.py')
+#   ('-o', 'sesarwslib/sample/Sample.py')
+#   ('-s', 'sesarwslib/sample/SampleSubs.py')
 #
 # Command line arguments:
 #   sesarwslib/sample/sample.xsd
 #
 # Command line:
-#   /usr/local/bin/generateDS.py -o "sesarwslib/sample/sample.py" -s "sesarwslib/sample/samplesubs.py" sesarwslib/sample/sample.xsd
+#   /usr/local/bin/generateDS.py -o "sesarwslib/sample/Sample.py" -s "sesarwslib/sample/SampleSubs.py" sesarwslib/sample/sample.xsd
 #
 # Current working directory (os.getcwd()):
 #   SESAR-Web-Services-Lib
@@ -19,7 +19,7 @@
 
 import sys
 
-import sample as supermod
+import ??? as supermod
 
 etree_ = None
 Verbose_import_ = False

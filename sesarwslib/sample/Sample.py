@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Thu Dec 11 16:21:12 2014 by generateDS.py version 2.14a.
+# Generated Fri Dec 26 11:55:34 2014 by generateDS.py version 2.14a.
 #
 # Command line options:
-#   ('-o', 'sesarwslib/sample/sample.py')
-#   ('-s', 'sesarwslib/sample/samplesubs.py')
+#   ('-o', 'sesarwslib/sample/Sample.py')
+#   ('-s', 'sesarwslib/sample/SampleSubs.py')
 #
 # Command line arguments:
 #   sesarwslib/sample/sample.xsd
 #
 # Command line:
-#   /usr/local/bin/generateDS.py -o "sesarwslib/sample/sample.py" -s "sesarwslib/sample/samplesubs.py" sesarwslib/sample/sample.xsd
+#   /usr/local/bin/generateDS.py -o "sesarwslib/sample/Sample.py" -s "sesarwslib/sample/SampleSubs.py" sesarwslib/sample/sample.xsd
 #
 # Current working directory (os.getcwd()):
 #   SESAR-Web-Services-Lib
@@ -3229,8 +3229,8 @@ def parseLiteral(inFileName, silence=False):
     # Enable Python to collect the space used by the DOM.
     doc = None
     if not silence:
-        sys.stdout.write('#from sample import *\n\n')
-        sys.stdout.write('import sample as model_\n\n')
+        sys.stdout.write('#from Sample import *\n\n')
+        sys.stdout.write('import Sample as model_\n\n')
         sys.stdout.write('rootObj = model_.rootClass(\n')
         rootObj.exportLiteral(sys.stdout, 0, name_=rootTag)
         sys.stdout.write(')\n')
