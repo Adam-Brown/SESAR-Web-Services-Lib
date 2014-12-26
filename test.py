@@ -2,12 +2,14 @@
 # Make sure you set password and username.
 from sesarwslib import categories as cat
 from sesarwslib.sample import Sample
+import os
 import StringIO
 
-username = ''  # Set but don't check-in.
-password = ''  # Set but don't check-in.
-user_code = ''  # Set but don't check-in.
-
+# Add these environment variables to your run configuration.
+# In PyCharm that's Run > Edit Configurations > Environment Variables.
+username = os.environ['SESAR_USERNAME']
+password = os.environ['SESAR_PASSWORD']
+user_code = os.environ['SESAR_USER_CODE']
 
 # These are the minimum requirements, though the constructor does accept more:
 sample = Sample.sample(
