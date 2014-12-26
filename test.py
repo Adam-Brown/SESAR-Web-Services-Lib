@@ -2,8 +2,9 @@
 # Make sure you set password and username.
 from sesarwslib import categories as cat
 from sesarwslib.sample import Sample
+import sesarwslib.sesarwsclient as ws
 import os
-import StringIO
+
 
 # Add these environment variables to your run configuration.
 # In PyCharm that's Run > Edit Configurations > Environment Variables.
@@ -70,17 +71,15 @@ sample = Sample.sample(
 #sample.set_other_names(other_names)
 #sample.add_other_names(value)
 
+client = ws.IgsnClient(username, password)
 
-output = StringIO.StringIO()
-sample.export(output, 1)
+# 1. Sample registration web service
+client.register_sample(sample)
 
-print output.getvalue()
+# 2. Credential web service
+print client.get_user_codes()
 
-
-
-
-#client = ws.IgsnClient(username, password)
-
-#print client.get_user_codes()
-#client.register_sample(sample)
-#print ws.IgsnClient.list_igsns(user_code, 10, 1)
+# 3. SESAR IGSN list web service for specific user code
+print ws.IgsnClient.list_igsns(user_code, 10, 1)
+print ws.IgsnClient.list_igsns(user_code, 10)
+print ws.IgsnClient.list_igsns(user_code)

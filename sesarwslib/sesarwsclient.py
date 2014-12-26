@@ -1,21 +1,12 @@
 import urllib
 import urllib2
 import xml.etree.ElementTree as eTree
+import StringIO
+
 
 SAMPLE_REGISTRATION_SERVICE_URL = 'http://app.geosamples.org/webservices/uploadservice.php'
 CREDENTIAL_SERVICE_URL = 'http://app.geosamples.org/webservices/credentials_service.php'
 IGSN_LIST_SERVICE_URL = 'http://app.geosamples.org/samples/user_code/'
-
-# TODO: This is broken now that Sample has changed. The sample.sample_elem line won't work!
-class Samples:
-    def __init__(self, samples):
-        self.samples_elem = eTree.Element('samples')
-
-        for sample in samples:
-            self.samples_elem.append(sample.sample_elem)
-
-    def to_xml(self):
-        return eTree.tostring(self.samples_elem, encoding='utf8')
 
 
 class IgsnClient:
@@ -24,15 +15,20 @@ class IgsnClient:
         self.password = password
 
     def register_sample(self, sample):
-        samples = Samples([sample])
-        self.register_samples(samples)
+        self.register_samples([sample])
 
     # 1. Sample registration web service
     def register_samples(self, samples):
+        output = StringIO.StringIO()
+        output.write('<samples>')
+        for sample in samples:
+            sample.export(output, 0)
+        output.write('</samples>')
+
         http_body = urllib.urlencode({
             'username': self.username,
             'password': self.password,
-            'content': samples.to_xml()
+            'content': output.getvalue()
         })
 
         http_headers = {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -76,10 +72,17 @@ class IgsnClient:
         return {'valid': valid, 'user_codes': user_codes}
 
     # 3. SESAR IGSN list web service for specific user code
-    # TODO: must accept no limit or page_no
     @staticmethod
-    def list_igsns(user_code, limit, page_no):
-        query = IGSN_LIST_SERVICE_URL + '{0}?limit={1}&page_no={2}'.format(user_code, limit, page_no)
+    def list_igsns(user_code, limit=None, page_no=None):
+        # Build the constraint if limit is set.
+        # Only add the page number if limit is set too.
+        constraint = ''
+        if limit is not None:
+            constraint = "?limit=" + str(limit)
+            if page_no is not None:
+                constraint += "&page_no=" + str(page_no)
+
+        query = IGSN_LIST_SERVICE_URL + user_code + constraint
 
         http_headers = {'Accept': 'application/xml'}
         req = urllib2.Request(query, None, http_headers)
