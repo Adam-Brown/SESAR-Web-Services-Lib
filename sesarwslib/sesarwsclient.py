@@ -35,9 +35,19 @@ class IgsnClient:
         req = urllib2.Request(SAMPLE_REGISTRATION_SERVICE_URL, http_body, http_headers)
         try:
             handler = urllib2.urlopen(req)
-            print handler.getcode()
-            print handler.headers.getheader('content-type')
-            print handler.read()
+            # handler.getcode()
+            # handler.headers.getheader('content-type')
+
+            # <results> <status>message</status><igsn>XXXX</igsn><status>message</status><igsn>XXXX</igsn> </results>
+            result = handler.read()
+            results_elem = eTree.fromstring(result)
+
+            igsns = []
+            for child in results_elem:
+                if child.tag == 'igsn':
+                    igsns.append(child.text)
+
+            return igsns
 
         except urllib2.HTTPError as httpError:
             # This might happen, for example, if the sample ID already exists.

@@ -74,7 +74,7 @@ sample = Sample.sample(
 client = ws.IgsnClient(username, password)
 
 # 1. Sample registration web service
-client.register_sample(sample)
+print client.register_sample(sample)
 
 # 2. Credential web service
 print client.get_user_codes()
