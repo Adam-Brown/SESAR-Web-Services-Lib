@@ -15,7 +15,7 @@ class IgsnClient:
         self.password = password
 
     def register_sample(self, sample):
-        self.register_samples([sample])
+        return self.register_samples([sample])
 
     # 1. Sample registration web service
     def register_samples(self, samples):
