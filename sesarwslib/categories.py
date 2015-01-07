@@ -1,27 +1,60 @@
 # These are generated from the list here: http://app.geosamples.org/reference/classifications.php
-class SampleType:
-    def __init__(self):
-        pass
 
-    Core = 'Core'
-    CoreHalfRound = 'Core Half Round'
-    CorePiece = 'Core Piece'
-    CoreQuarterRound = 'Core Quarter Round'
-    CoreSection = 'Core Section'
-    CoreSectionHalf = 'Core Section Half'
-    CoreSubPiece = 'Core Sub-Piece'
-    CoreWholeRound = 'Core Whole Round'
-    CTD = 'CTD'
-    Cuttings = 'Cuttings'
-    Dredge = 'Dredge'
-    Grab = 'Grab'
-    Hole = 'Hole'
-    IndividualSample = 'Individual Sample'
-    OrientedCore = 'Oriented Core'
-    Other = 'Other'
-    RockPowder = 'Rock Powder'
-    TerrestrialSection = 'Terrestrial Section'
-    Trawl = 'Trawl'
+
+def enum(*sequential, **named):
+    enums = dict(zip(sequential, range(len(sequential))), **named)
+    reverse = dict((value, key) for key, value in enums.iteritems())
+    enums['reverse_mapping'] = reverse
+    return type('Enum', (), enums)
+
+
+SampleType = enum(
+    Core='Core',
+    CoreHalfRound='Core Half Round',
+    CorePiece='Core Piece',
+    CoreQuarterRound='Core Quarter Round',
+    CoreSection='Core Section',
+    CoreSectionHalf='Core Section Half',
+    CoreSubPiece='Core Sub-Piece',
+    CoreWholeRound='Core Whole Round',
+    CTD='CTD',
+    Cuttings='Cuttings',
+    Dredge='Dredge',
+    Grab='Grab',
+    Hole='Hole',
+    IndividualSample='Individual Sample',
+    OrientedCore='Oriented Core',
+    Other='Other',
+    RockPowder='Rock Powder',
+    TerrestrialSection='Terrestrial Section',
+    Trawl='Trawl')
+
+
+# 
+# class SampleType:
+#     def __init__(self):
+#         pass
+# 
+#     Core = 'Core'
+#     CoreHalfRound = 'Core Half Round'
+#     CorePiece = 'Core Piece'
+#     CoreQuarterRound = 'Core Quarter Round'
+#     CoreSection = 'Core Section'
+#     CoreSectionHalf = 'Core Section Half'
+#     CoreSubPiece = 'Core Sub-Piece'
+#     CoreWholeRound = 'Core Whole Round'
+#     CTD = 'CTD'
+#     Cuttings = 'Cuttings'
+#     Dredge = 'Dredge'
+#     Grab = 'Grab'
+#     Hole = 'Hole'
+#     IndividualSample = 'Individual Sample'
+#     OrientedCore = 'Oriented Core'
+#     Other = 'Other'
+#     RockPowder = 'Rock Powder'
+#     TerrestrialSection = 'Terrestrial Section'
+#     Trawl = 'Trawl'
+    
 
 
 class Material:
