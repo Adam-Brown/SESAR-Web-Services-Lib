@@ -20,7 +20,11 @@ class IgsnClient:
     # 1. Sample registration web service
     def register_samples(self, samples):
         output = StringIO.StringIO()
-        output.write('<samples>')
+        output.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        output.write('<samples xmlns="http://app.geosamples.org"\n')
+        output.write('xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n')
+        output.write('xsi:schemaLocation="http://app.geosamples.org/samplev2.xsd">\n')
+        
         for sample in samples:
             sample.export(output, 0)
         
@@ -29,7 +33,7 @@ class IgsnClient:
         # This is really poor but for some reason the XSD describes the sample as "sampleType" but the API expects it to be called "sample"
         output_xml = output.getvalue().replace('<sampleType>', '<sample>').replace('</sampleType>', '</sample>')
         
-        print output.getvalue()
+        print output_xml
 
         http_body = urllib.urlencode({
             'username': self.username,

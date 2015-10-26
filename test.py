@@ -8,9 +8,9 @@ import os
 
 # Add these environment variables to your run configuration.
 # In PyCharm that's Run > Edit Configurations > Environment Variables.
-username = os.environ['SESAR_USERNAME']
-password = os.environ['SESAR_PASSWORD']
-user_code = os.environ['SESAR_USER_CODE']
+#username = os.environ['SESAR_USERNAME']
+#password = os.environ['SESAR_PASSWORD']
+#user_code = os.environ['SESAR_USER_CODE']
 
 # These are the minimum requirements, though the constructor does accept more:
 sample = Sample.sampleType(
@@ -20,31 +20,31 @@ sample = Sample.sampleType(
     material=cat.Material.Rock)
 
 #sample.set_igsn(igsn)
-#sample.set_parent_igsn(parent_igsn)
-#sample.set_is_private(is_private)
-#sample.set_publish_date(publish_date)
-#sample.set_classification(classification)
+sample.set_parent_igsn('IEEVB00KS')
+sample.set_is_private(0)
+sample.set_publish_date('01/11/2015') # Check this... the format in the schema, 2015-11-01, doesn't match what the API expects.
+#sample.set_classification(classification) # See http://app.geosamples.org/classifications.xsd
 #sample.set_classification_comment(classification_comment)
-#sample.set_field_name(field_name)
-#sample.set_description(description)
-#sample.set_age_min(age_min)
-#sample.set_age_max(age_max)
-#sample.set_age_unit(age_unit)
-#sample.set_geological_age(geological_age)
-#sample.set_geological_unit(geological_unit)
-#sample.set_collection_method(collection_method)
+#sample.set_field_name(field_name) # See http://app.geosamples.org/reference/field_names.php
+sample.set_description('Up to 2000 characters of description.')
+sample.set_age_min(10.22)
+sample.set_age_max(10.3)
+sample.set_age_unit('Ma') # Ma or years. Plain text.
+sample.set_geological_age('10') # Text 500
+sample.set_geological_unit('Million years') # Text 500
+#sample.set_collection_method(collection_method) # See http://app.geosamples.org/reference/advanced_list.php?srv=collection_method
 #sample.set_collection_method_descr(collection_method_descr)
-#sample.set_size(size)
-#sample.set_size_unit(size_unit)
-#sample.set_sample_comment(sample_comment)
-#sample.set_purpose(purpose)
-#sample.set_latitude(latitude)
-#sample.set_longitude(longitude)
-#sample.set_latitude_end(latitude_end)
-#sample.set_longitude_end(longitude_end)
-#sample.set_elevation(elevation)
-#sample.set_elevation_end(elevation_end)
-#sample.set_vertical_datum(vertical_datum)
+sample.set_size('25') # Text 255
+sample.set_size_unit('mm diameter round') # Text 255
+sample.set_sample_comment('A test sample comment.') # Text 2000
+sample.set_purpose('Just a test') # Text 100
+sample.set_latitude(33.1) # -90.0 to 90.0
+sample.set_longitude(-55.1) # -180 to 180
+sample.set_latitude_end(33.2)
+sample.set_longitude_end(-55.2)
+sample.set_elevation(400)
+sample.set_elevation_end(404)
+sample.set_vertical_datum('MSL') # NAVD88 or MSL
 #sample.set_northing(northing)
 #sample.set_easting(easting)
 #sample.set_zone(zone)
@@ -86,9 +86,9 @@ client = ws.IgsnClient(username, password)
 print client.register_sample(sample)
 
 # 2. Credential web service
-print client.get_user_codes()
+#print client.get_user_codes()
 
 # 3. SESAR IGSN list web service for specific user code
-print ws.IgsnClient.list_igsns(user_code, 10, 1)
-print ws.IgsnClient.list_igsns(user_code, 10)
-print ws.IgsnClient.list_igsns(user_code)
+#print ws.IgsnClient.list_igsns(user_code, 10, 1)
+#print ws.IgsnClient.list_igsns(user_code, 10)
+#print ws.IgsnClient.list_igsns(user_code)
