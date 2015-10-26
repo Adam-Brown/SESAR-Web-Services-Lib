@@ -8,4 +8,5 @@ setup(name='SESAR-Web-Services-Library',
       author_email='adam.brown@evbane.com',
       license='MIT',
       packages=['sesarwslib', 'sesarwslib.sample'],
+      install_requires=['generateds'],
       zip_safe=False)
