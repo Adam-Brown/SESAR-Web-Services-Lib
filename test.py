@@ -13,9 +13,9 @@ password = os.environ['SESAR_PASSWORD']
 user_code = os.environ['SESAR_USER_CODE']
 
 # These are the minimum requirements, though the constructor does accept more:
-sample = Sample.sample(
-    sample_type=cat.SampleType.IndividualSample,
+sample = Sample.sampleType(
     user_code=user_code,
+    sample_type=cat.SampleType.IndividualSample,
     name='TestSample123',
     material=cat.Material.Rock)
 

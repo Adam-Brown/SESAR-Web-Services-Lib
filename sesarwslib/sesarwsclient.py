@@ -23,12 +23,18 @@ class IgsnClient:
         output.write('<samples>')
         for sample in samples:
             sample.export(output, 0)
+        
         output.write('</samples>')
+        
+        # This is really poor but for some reason the XSD describes the sample as "sampleType" but the API expects it to be called "sample"
+        output_xml = output.getvalue().replace('<sampleType>', '<sample>').replace('</sampleType>', '</sample>')
+        
+        print output.getvalue()
 
         http_body = urllib.urlencode({
             'username': self.username,
             'password': self.password,
-            'content': output.getvalue()
+            'content': output_xml
         })
 
         http_headers = {'Content-Type': 'application/x-www-form-urlencoded'}
