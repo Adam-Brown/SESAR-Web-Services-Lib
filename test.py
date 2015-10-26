@@ -37,14 +37,14 @@ sample.set_geological_unit('Million years') # Text 500
 sample.set_size('25') # Text 255
 sample.set_size_unit('mm diameter round') # Text 255
 sample.set_sample_comment('A test sample comment.') # Text 2000
-sample.set_purpose('Just a test') # Text 100
+#sample.set_purpose('Just a test') # Text 100 V2 ONLY
 sample.set_latitude(33.1) # -90.0 to 90.0
 sample.set_longitude(-55.1) # -180 to 180
 sample.set_latitude_end(33.2)
 sample.set_longitude_end(-55.2)
 sample.set_elevation(400)
 sample.set_elevation_end(404)
-sample.set_vertical_datum('MSL') # NAVD88 or MSL
+#sample.set_vertical_datum('MSL') # NAVD88 or MSL V2 ONLY
 #sample.set_northing(northing)
 #sample.set_easting(easting)
 #sample.set_zone(zone)

@@ -3,11 +3,11 @@ import urllib2
 import xml.etree.ElementTree as eTree
 import StringIO
 
-
 SAMPLE_REGISTRATION_SERVICE_URL = 'http://app.geosamples.org/webservices/uploadservice.php'
 CREDENTIAL_SERVICE_URL = 'http://app.geosamples.org/webservices/credentials_service.php'
 IGSN_LIST_SERVICE_URL = 'http://app.geosamples.org/samples/user_code/'
 
+VERSION = 1
 
 class IgsnClient:
     def __init__(self, username, password):
@@ -20,17 +20,22 @@ class IgsnClient:
     # 1. Sample registration web service
     def register_samples(self, samples):
         output = StringIO.StringIO()
-        output.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-        output.write('<samples xmlns="http://app.geosamples.org"\n')
-        output.write('xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n')
-        output.write('xsi:schemaLocation="http://app.geosamples.org/samplev2.xsd">\n')
+        
+        if VERSION == 2:
+            output.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+            output.write('<samples xmlns="http://app.geosamples.org"\n')
+            output.write('xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n')
+            output.write('xsi:schemaLocation="http://app.geosamples.org/samplev2.xsd">\n')
+        else:
+            output.write('<samples>\n')
         
         for sample in samples:
             sample.export(output, 0)
         
         output.write('</samples>')
         
-        # This is really poor but for some reason the XSD describes the sample as "sampleType" but the API expects it to be called "sample"
+        # According to the v2 XSD the tag should be sampleType... I can't test it yet because I think SESAR need to update something.
+        # I'm temporarily forcing this to use version 1 for the moment by rewriting these tags.
         output_xml = output.getvalue().replace('<sampleType>', '<sample>').replace('</sampleType>', '</sample>')
         
         print output_xml
