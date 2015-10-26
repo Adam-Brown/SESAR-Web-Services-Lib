@@ -1,68 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-  <xs:element name="sample">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element ref="sample_type"/>
-        <xs:element ref="igsn"/>
-        <xs:element ref="user_code"/>
-        <xs:element ref="name"/>
-        <xs:element ref="sample_other_name"/>
-        <xs:element ref="parent_igsn"/>
-        <xs:element ref="parent_sample_type"/>
-        <xs:element ref="parent_name"/>
-        <xs:element ref="is_private"/>
-        <xs:element ref="publish_date"/>
-        <xs:element ref="material"/>
-        <xs:element ref="classification"/>
-        <xs:element ref="field_name"/>
-        <xs:element ref="description"/>
-        <xs:element ref="age_min"/>
-        <xs:element ref="age_max"/>
-        <xs:element ref="age_unit"/>
-        <xs:element ref="geological_age"/>
-        <xs:element ref="geological_unit"/>
-        <xs:element ref="collection_method"/>
-        <xs:element ref="collection_method_descr"/>
-        <xs:element ref="size"/>
-        <xs:element ref="size_unit"/>
-        <xs:element ref="sample_comment"/>
-        <xs:element ref="latitude"/>
-        <xs:element ref="longitude"/>
-        <xs:element ref="latitude_end"/>
-        <xs:element ref="longitude_end"/>
-        <xs:element ref="elevation"/>
-        <xs:element ref="elevation_end"/>
-        <xs:element ref="primary_location_type"/>
-        <xs:element ref="primary_location_name"/>
-        <xs:element ref="location_description"/>
-        <xs:element ref="locality"/>
-        <xs:element ref="locality_description"/>
-        <xs:element ref="country"/>
-        <xs:element ref="province"/>
-        <xs:element ref="county"/>
-        <xs:element ref="city"/>
-        <xs:element ref="cruise_field_prgrm"/>
-        <xs:element ref="platform_type"/>
-        <xs:element ref="platform_name"/>
-        <xs:element ref="platform_descr"/>
-        <xs:element ref="collector"/>
-        <xs:element ref="collector_detail"/>
-        <xs:element ref="collection_date_precision"/>
-        <xs:element ref="current_archive"/>
-        <xs:element ref="current_archive_contact"/>
-        <xs:element ref="original_archive"/>
-        <xs:element ref="original_archive_contact"/>
-        <xs:element ref="depth_min"/>
-        <xs:element ref="depth_max"/>
-        <xs:element ref="depth_scale"/>
-        <xs:element maxOccurs="unbounded" ref="other_names"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="sample_type" use="required">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://app.geosamples.org"
+           targetNamespace="http://app.geosamples.org"
+           elementFormDefault="qualified"
+           >         
+<xs:include schemaLocation="http://app.geosamples.org/classifications.xsd"/>
+
+<xs:element name="samples">
+  <xs:complexType>
+    <xs:sequence>  
+      <xs:element name="sample" minOccurs="1" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:all>
+            
+            <!--user_code, SESAR user code, five digits e.g. IESES. Three digits user code are legacy user codes. They are still supported. -->
+            <xs:element ref="user_code"/>
+
+            <!-- sample_type, also called object type, controlled list. e.g., Core -->
+            <xs:element ref="sample_type"/>
+            
+            <!--name, Name of the sample -->
+            <xs:element ref="name"/>
+            
+            <!--material, controlled list e.g. Rock, Mineral, Biology, Liquid>aqueous -->
+            <xs:element ref="material" /> 
+            
+            <!--igsn, If being user-assigned, the 9-digit IGSN of the sample, leave line out to get automatic assignment (preferred) 
+                See detail at http://www.geosamples.org/aboutigsn -->
+            <xs:element ref="igsn" minOccurs="0"/>
+            
+            <!--parent_igsn, IGSN of the parent of the current sample -->
+            <xs:element ref="parent_igsn" minOccurs="0"/>
+            
+            <!-- is_private=1 for private samples, is_private=0 or null for public -->
+            <xs:element ref="is_private" minOccurs="0"/>
+              
+            <!--publish_date, date on which sample set to public is available for global search and display, YYYY-MM-DD -->	
+            <xs:element ref="publish_date" minOccurs="0"/> 
+            
+            <!--classification, controlled list, classification specific to material e.g. Rock>Igneous -->
+            <xs:element ref="classification" minOccurs="0"  />
+            
+            <!--classification_comment, comment about classification -->
+            <xs:element ref="classification_comment" minOccurs="0"  /> 
+                       
+            <!--field_name, Taxonomy, Informal classification of sample -->
+            <xs:element ref="field_name" minOccurs="0"/> 
+            
+            <!--description, Free text to describe features of a sample such as its components, texture, color, shape, etc -->
+            <xs:element ref="description" minOccurs="0"/> 
+            
+            <!--age_min, Numerical value for the minimum age of a sample, must be a number -->
+            <xs:element ref="age_min" minOccurs="0"/> 
+            
+            <!--age_max, Numerical value for the maximum age of a sample, must be a number -->
+            <xs:element ref="age_max" minOccurs="0"/> 
+            
+            <!--age_unit, Unit for the age provided, e.g., Ma, years -->
+            <xs:element ref="age_unit" minOccurs="0"/> 
+            
+            <!--geological_age, Age of a sample as described by the stratigraphic era, period, state, etc., e.g., Cretaceous -->
+            <xs:element ref="geological_age" minOccurs="0"/> 
+            
+            <!--geological_unit, A body of rock established as a distinct entity in the classification of the Earth's rocks, e.g. Coconino Sandstone-->
+            <xs:element ref="geological_unit" minOccurs="0"/> 
+            
+            <!--collection_method, Method by which a sample was collected, e.g., Dredging, Manual -->
+            <xs:element ref="collection_method" minOccurs="0"/> 
+            
+            <!--collection_method_descr, Additional information about the collection method -->
+            <xs:element ref="collection_method_descr" minOccurs="0"/> 
+            
+            <!--size, Size of the registered object, such as the dimension of a specimen, the length of a core, or the weight of a dredge -->
+            <xs:element ref="size" minOccurs="0"/> 
+            
+            <!--size_unit, Unit for the numerical value provided for 'size'. --> 
+            <xs:element ref="size_unit" minOccurs="0"/> 
+            
+            <!--sample_comment, Any free text comment about the sample. -->
+            <xs:element ref="sample_comment" minOccurs="0"/> 
+           
+            <!--purpose, The purpose for collecting the sample. e.g. paleomagnetism. -->
+            <xs:element ref="purpose" minOccurs="0" maxOccurs="1"/>
+                        
+            <!--latitude, Latitude of the location where the sample was collected. ('Start latitude' for linear sampling features such as dredges.) 
+                    Needs to be entered in decimal degrees. Negative values for South latitudes. (Coordinate system: WGS84) -->
+            <xs:element ref="latitude" minOccurs="0"/>
+            
+            <!--longitude, Longitude of the location where the sample was collected. ('Start longitude' for linear sampling features such as dredges.) 
+                    Needs to be entered in decimal degrees. Negative values for 'West' longitudes. (Coordinate system: WGS84) -->
+            <xs:element ref="longitude" minOccurs="0"/>
+            
+            <!--latitude_end, End latitude of the location where the sample was collected. (Coordinate system: WGS84) -->
+            <xs:element ref="latitude_end" minOccurs="0"/>
+            
+            <!--longitude_end, End longitude of the location where the sample was collected. (Coordinate system: WGS84) -->
+            <xs:element ref="longitude_end" minOccurs="0"/>
+            
+            <!--elevation, Elevation at which a sample was collected (in meters). Use negative values for depth below sea level. 
+                           Minimum elevation if a range is provided for the elevation/depth below sea level. -->
+            <xs:element ref="elevation" minOccurs="0"/>
+            
+            <!--elevation_end, End elevation at which a sample was collected (in meters). Use negative values for depth below sea level. 
+                               Maximum elevation if a range is provided for the elevation/depth below sea level. -->
+            <xs:element ref="elevation_end" minOccurs="0"/>
+            
+            <!-- vertical_datum, surface of zero elevation to which heights of various points are referred in order that those heights be in a consistent system.
+                 e.g.,NAVD88 (North American Vertical Datum of 1988) and MSL (Mean Sea Level) -->
+            <xs:element ref="vertical_datum" minOccurs="0" />
+            
+            <!--northing, UTM northing (m): An number between 0 and 10,000,000 (Coordinate system: UTM NAD83)-->
+            <xs:element ref="northing" minOccurs="0" />
+            
+            <!--easting, UTM easting (m): An number between 0 and 834,000 (Coordinate system: UTM NAD83) -->
+            <xs:element ref="easting" minOccurs="0" />
+            
+            <!--zone, UTM zone, use A to Z to specify hemisphere zone. e.g., "11N" -->
+            <xs:element ref="zone" minOccurs="0" />           
+                        
+            <!--navigation_type, Navigation type, controlled list, e.g., GPS -->
+            <xs:element ref="navigation_type" minOccurs="0"/>
+                       
+            <!--primary_location_type, AKA Physiographic feature, Type of physical feature that your sample was collected from -->
+            <xs:element ref="primary_location_type" minOccurs="0"/>
+            
+            <!--primary_location_name, AKA Name of physiographic feature. Name of the primary_location_type that you entered -->
+            <xs:element ref="primary_location_name" minOccurs="0"/>
+            
+            <!--location_description, Free text description of the location -->
+            <xs:element ref="location_description" minOccurs="0"/>
+            
+            <!--locality, Name of the specific place where your sample was collected. This could be the  name of a mine, a volcanic field, a vent field, or similar -->
+            <xs:element ref="locality" minOccurs="0"/>
+            
+            <!--locality_description, Additional information about the specific place where your sample was collected -->
+            <xs:element ref="locality_description" minOccurs="0"/>
+            
+            <!--country, Country where the sample was collected, controlled list -->
+            <xs:element ref="country" minOccurs="0"/>
+            
+            <!--province, State or Province where the sample was collected -->
+            <xs:element ref="province" minOccurs="0"/>
+            
+            <!--county, County where the sample was collected -->
+            <xs:element ref="county" minOccurs="0"/>
+            
+            <!--city, City or Township where the sample was collected -->
+            <xs:element ref="city" minOccurs="0"/>
+            
+            <!--cruise_field_prgrm, Name or identifier of the field program (cruise or expedition), during which the sample was collected. 
+                    For ship cruises, we recommend using the R2R Cruise ID at http://www.rvdata.us/catalog -->
+            <xs:element ref="cruise_field_prgrm" minOccurs="0"/>
+            
+            <!--platform type, Type of platform for the cruise. Suggested list. -->
+            <xs:element ref="platform_type" minOccurs="0"/>
+            
+            <!--platform_name, Name of platform for the cruise. -->
+            <xs:element ref="platform_name" minOccurs="0"/>
+            
+            <!--platform_descr, Description of the platform for the cruise. -->
+            <xs:element ref="platform_descr" minOccurs="0"/>
+            
+            <!--launch_platform_name, name of the launch platform that collected the sample e.g., Alvin -->
+            <xs:element ref="launch_platform_name" minOccurs="0"/>
+
+            <!--launch_id, Further identifying information about the launch. e.g. for an Alvin Dive, the dive number "3969"' -->
+            <xs:element ref="launch_id" minOccurs="0"/>
+            
+            <!--launch_type_name, The type of launch used to collect the sample. e.g. "HOV" (Remotely-Operated Vehicle). -->
+            <xs:element ref="launch_type_name" minOccurs="0"/>
+                      
+            <!--collector, Name of the person who collected the sample. In case of larger field programs, 
+                              name of chief scientist responsible for sample collection. -->
+            <xs:element ref="collector" minOccurs="0"/>
+            
+            <!--collector_detail, Institution, address, & email of the collector or chief scientist.  -->
+            <xs:element ref="collector_detail" minOccurs="0"/>
+            
+            <!--collection_start_date, Date when the sample was collected. The format is YYYY-MM-DDTHH:MM:SSZ eg. 2002-05-30T09:30:10Z
+                 'Z' indicates UTC. If 'Z' is not specified, we will default to United States Eartern Time. -->
+            <xs:element ref="collection_start_date" minOccurs="0"/>
+            
+            <!--collection_end_date, Date when the sample collection was finished (if a date range is provided). The format is YYYY-MM-DDTHH:MM:SSZ eg. 2002-05-30T09:30:10Z 
+                 'Z' indicates UTC. If 'Z' is not specified, we will default to United States Eartern Time.-->
+            <xs:element ref="collection_end_date" minOccurs="0"/>
+            
+            <!--collection_date_precision, Precision to display the collection date and time.e.g., year; month; day; time -->
+            <xs:element ref="collection_date_precision" minOccurs="0"/>
+            
+            <!--current_archive, Name of institution, museum, or repository where the sample is currently stored. -->
+            <xs:element ref="current_archive" minOccurs="0"/>
+            
+            <!--current_archive_contact, Address and/or email of the person who should be contacted for information about or access to the sample. -->
+            <xs:element ref="current_archive_contact" minOccurs="0"/>
+            
+       	    <!--original_archive, Name of institution, museum, or repository where the sample was originally stored.  -->
+            <xs:element ref="original_archive" minOccurs="0"/>
+            
+            <!--original_archive_contact, Address and/or email of the person who should be contacted for information about the sample's original archive. -->
+            <xs:element ref="original_archive_contact" minOccurs="0"/>
+            
+            <!--depth_min, Minimum depth at which a sample was collected from its parent core -->
+            <xs:element ref="depth_min" minOccurs="0"/>
+            
+            <!--depth_max, Maximum depth at which a sample was collected from its parent core -->
+            <xs:element ref="depth_max" minOccurs="0"/>
+            
+            <!--depth_scale, Unit in which the depth is provided, e.g., MBSF -->
+            <xs:element ref="depth_scale" minOccurs="0"/>
+            
+            <!--sample_other_names, Other names for the sample. Can enter multiple other names. -->
+            <xs:element name="sample_other_names" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="sample_other_name" minOccurs="1" maxOccurs="unbounded"></xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+           
+
+            <!-- External public URLs related to the sample -->
+            <xs:element name="external_urls" minOccurs="0" maxOccurs="1">
+              <xs:complexType>
+              <xs:sequence>
+                <xs:element name="external_url" minOccurs="1" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <!--url, URL link related to the sample -->
+                      <xs:element ref="url" minOccurs="1" maxOccurs="1"/>
+                
+                      <!--url_description, Description of URL link related to the sample -->
+                      <xs:element ref="description" minOccurs="0" maxOccurs="1"/>
+                
+                      <!--url_type, URL types currently available are DOI or regular -->
+                      <xs:element ref="url_type" minOccurs="0" maxOccurs="1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              </xs:sequence>
+              </xs:complexType>
+            </xs:element>           
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<!--Definitions of all controlled vocabularies. See http://www.geosamples.org/help/vocabularies -->
+<xs:element name="sample_type">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+         <!--Definitions at http://app.geosamples.org/reference/sampletypes.php -->
       <xs:enumeration value="Bead"/>
       <xs:enumeration value="Chemical Fraction"/>
       <xs:enumeration value="Core"/>
@@ -88,6 +276,7 @@
       <xs:enumeration value="Oriented Core"/>
       <xs:enumeration value="Powder"/>
       <xs:enumeration value="Rock Powder"/>
+      <xs:enumeration value="Site"/>
       <xs:enumeration value="Slab"/>
       <xs:enumeration value="Smear"/>
       <xs:enumeration value="Specimen"/>
@@ -98,71 +287,32 @@
       <xs:enumeration value="Trawl"/>
       <xs:enumeration value="U-Channel"/>
       <xs:enumeration value="Wedge"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
-  <xs:element name="igsn">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-        <xs:pattern value="^[A-Z0-9]{9}"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
-  <xs:element name="user_code" use="required">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-      <xs:pattern value="^[A-Z0-9]{3}"/>
-      <xs:pattern value="^[A-Z0-9]{5}"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
-  <xs:element name="name" type="xs:string" use="required" />
-  <xs:element name="sample_other_name" type="xs:string" />
-  <xs:element name="parent_igsn">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-        <xs:pattern value="^[A-Z0-9]{9}"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
-  <xs:element name="parent_sample_type">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-        <xs:enumeration value="Core"/>
-        <xs:enumeration value="Core Half Round"/>
-        <xs:enumeration value="Core Piece"/>
-        <xs:enumeration value="Core Quarter Round"/>
-        <xs:enumeration value="Core Section"/>
-        <xs:enumeration value="Core Section Half"/>
-        <xs:enumeration value="Core Sub-Piece"/>
-        <xs:enumeration value="Core Whole Round"/>
-        <xs:enumeration value="CTD"/>
-        <xs:enumeration value="Cuttings"/>
-        <xs:enumeration value="Dredge"/>
-        <xs:enumeration value="Grab"/>
-        <xs:enumeration value="Hole"/>
-        <xs:enumeration value="Individual Sample"/>
-        <xs:enumeration value="Oriented Core"/>
-        <xs:enumeration value="Rock Powder"/>
-        <xs:enumeration value="Terrestrial Section"/>
-        <xs:enumeration value="Trawl"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
-  <xs:element name="parent_name" type="xs:string"/>
-  <xs:element name="is_private" type="xs:integer" default="0" />
-  <xs:element name="publish_date">
-    <xs:simpleType>
-       <xs:restriction base="xs:string">
-        <xs:pattern value="MM/DD/YYYY"/>
-       </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
-  <xs:element name="material" use="required">
-    <xs:simpleType>
-       <xs:restriction base="xs:string">
+      <xs:enumeration value="Other"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="user_code">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+    <xs:pattern value="([A-Z0-9]{3}|[A-Z0-9]{5})"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="name">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="material">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+             <!--Definitions at http://app.geosamples.org/reference/materials.php -->
          <xs:enumeration value="Biology"/>
          <xs:enumeration value="Gas"/>
+         <xs:enumeration value="Ice"/>
          <xs:enumeration value="Liquid>aqueous"/>
          <xs:enumeration value="Liquid>organic"/>
          <xs:enumeration value="Mineral"/>
@@ -172,84 +322,506 @@
          <xs:enumeration value="Rock"/>
          <xs:enumeration value="Sediment"/>
          <xs:enumeration value="Soil"/>
-       </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
-  <xs:element name="classification" type="xs:string"/>
-  <xs:element name="field_name" type="xs:string"/>
-  <xs:element name="description" type="xs:string"/>
-  <xs:element name="age_min" type="xs:decimal"/>
-  <xs:element name="age_max" type="xs:decimal"/>
-  <xs:element name="age_unit">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="geological_age" type="xs:decimal"/>
-  <xs:element name="geological_unit">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="collection_method">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="collection_method_descr">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="size" type="xs:decimal"/>
-  <xs:element name="size_unit">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="sample_comment">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="latitude" type="xs:decimal"/>
-  <xs:element name="longitude" type="xs:decimal"/>
-  <xs:element name="latitude_end" type="xs:decimal"/>
-  <xs:element name="longitude_end" type="xs:decimal"/>
-  <xs:element name="elevation" type="xs:decimal"/>
-  <xs:element name="elevation_end" type="xs:decimal"/>
-  <xs:element name="primary_location_type">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="primary_location_name">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="location_description">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="locality">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="locality_description">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="country" type="xs:string"/>
-  <xs:element name="province" type="xs:string"/>
-  <xs:element name="county" type="xs:string"/>
-  <xs:element name="city" type="xs:string"/>
-  <xs:element name="cruise_field_prgrm" type="xs:string"/>
-  <xs:element name="platform_type" type="xs:string"/>
-  <xs:element name="platform_name" type="xs:string"/>
-  <xs:element name="platform_descr" type="xs:string"/>
-  <xs:element name="collector" type="xs:string"/>
-  <xs:element name="collector_detail" type="xs:string"/>
-  <xs:element name="collection_date_precision">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="current_archive">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="current_archive_contact">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="original_archive">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="original_archive_contact">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="depth_min" type="xs:decimal"/>
-  <xs:element name="depth_max" type="xs:decimal"/>
-  <xs:element name="depth_scale">
-    <xs:complexType/>
-  </xs:element>
-  <xs:element name="other_names" type="xs:string"/>
+         <xs:enumeration value="Synthetic"/>
+    </xs:restriction>
+  </xs:simpleType>   
+</xs:element>
+<xs:element name="igsn">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[A-Z0-9]{9}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="parent_igsn">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[A-Z0-9]{9}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="is_private" default="0">
+  <xs:simpleType>
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="publish_date">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+    <!-- Format (YYYY-MM-DD) is prefered. Format MM/DD/YYYY is deprecated. -->  
+      <xs:pattern value="([0-9]{4}-[0-9]{2}-[0-9]{2})|([0-9]{2}/[0-9]{2}/[0-9]{4})"/>  
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
+<xs:element name="classification_comment">
+ <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
+<!--  Existing field name for reference only. http://app.geosamples.org/reference/field_names.php -->
+<xs:element name="field_name">
+ <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="description">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="2000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="age_min">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="age_max">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="age_unit">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="geological_age">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="500"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="geological_unit">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="500"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<!--Existing collection methods at http://app.geosamples.org/reference/advanced_list.php?srv=collection_method -->
+<xs:element name="collection_method">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="collection_method_descr">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="1000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="size">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="size_unit">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="sample_comment">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="2000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="latitude">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="-90"/>
+      <xs:maxInclusive value="90"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="longitude">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="-180"/>
+      <xs:maxInclusive value="180"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="latitude_end">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="-90"/>
+      <xs:maxInclusive value="90"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="longitude_end">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="-180"/>
+      <xs:maxInclusive value="180"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="elevation">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="-6000"/>
+      <xs:maxInclusive value="9000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="elevation_end">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="-6000"/>
+      <xs:maxInclusive value="9000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="primary_location_type">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="primary_location_name">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="location_description">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="2000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="locality">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="locality_description">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="2000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<!--Definitions at http://app.geosamples.org/reference/countries.php -->
+<xs:element name="country">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="province">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="county">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="city">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<!--Existing cruises/field programs at http://app.geosamples.org/reference/advanced_list.php?srv=cruise_field_prgrm -->
+<xs:element name="cruise_field_prgrm">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="platform_type">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="platform_name">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="2000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="platform_descr">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="2000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<!--Existing collectors at http://app.geosamples.org/reference/advanced_list.php?srv=collector -->
+<xs:element name="collector">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="collector_detail">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="2000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="collection_start_date" type="xs:dateTime"/>
+<xs:element name="collection_end_date" type="xs:dateTime"/>
+<xs:element name="collection_date_precision">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="year"/>
+      <xs:enumeration value="month"/>
+      <xs:enumeration value="day"/>
+      <xs:enumeration value="time"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<!--Existing archives at http://app.geosamples.org/reference/advanced_list.php?srv=archive -->
+<xs:element name="current_archive">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="300"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="current_archive_contact">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="1000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="original_archive">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="300"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="original_archive_contact">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="1000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="depth_min" type="xs:decimal"/>
+<xs:element name="depth_max" type="xs:decimal"/>
+<xs:element name="depth_scale">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<!--Definitions at http://app.geosamples.org/reference/navtypes.php -->
+<xs:element name="navigation_type">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ACOUSTIC_RANGING/GPS"/>
+      <xs:enumeration value="DGPS"/>
+      <xs:enumeration value="DVL"/>
+      <xs:enumeration value="DVL/LBL"/>
+      <xs:enumeration value="DVL/LBL/INS"/>
+      <xs:enumeration value="DVL/LBL:Renav"/>
+      <xs:enumeration value="DVL/LBL:Renav:Confirmed"/>
+      <xs:enumeration value="DVL/USBL"/>
+      <xs:enumeration value="DVL/USBL:Renav"/>
+      <xs:enumeration value="DVL:Renav"/>
+      <xs:enumeration value="DVL:Renav:Confirmed"/>
+      <xs:enumeration value="GLONASS"/>
+      <xs:enumeration value="GPS"/>
+      <xs:enumeration value="GPS/WireOut"/>
+      <xs:enumeration value="GPS:Assumed"/>
+      <xs:enumeration value="LAYBACK"/>
+      <xs:enumeration value="LAYBACK/LBL"/>
+      <xs:enumeration value="LBL"/>
+      <xs:enumeration value="LORAN"/>
+      <xs:enumeration value="Locale"/>
+      <xs:enumeration value="Not Applicable"/>
+      <xs:enumeration value="RTK GPS"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<!--Existing names at http://app.geosamples.org/reference/advanced_list.php?srv=platform_name -->
+<xs:element name="launch_platform_name">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="launch_id">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<!--Definitions at http://app.geosamples.org/reference/launchtypes.php -->
+<xs:element name="launch_type_name">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AUV"/>
+      <xs:enumeration value="HOV"/>
+      <xs:enumeration value="ROV"/>
+      <xs:enumeration value="Sled"/>
+      <xs:enumeration value="Not Applicable"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="sample_other_name">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="purpose">
+ <xs:simpleType>
+ <xs:restriction base="xs:token">
+ <xs:minLength value="0"/>
+ <xs:maxLength value="100"/>
+ </xs:restriction>
+ </xs:simpleType>
+</xs:element>
+<xs:element name="url">
+ <xs:simpleType>
+ <xs:restriction base="xs:anyURI">
+ <xs:minLength value="0"/>
+ <xs:maxLength value="255"/>
+ </xs:restriction>
+ </xs:simpleType>
+</xs:element>
+<xs:element name="url_description">
+ <xs:simpleType>
+ <xs:restriction base="xs:token">
+ <xs:minLength value="0"/>
+ <xs:maxLength value="500"/>
+ </xs:restriction>
+ </xs:simpleType>
+</xs:element>
+<xs:element name="url_type">
+ <xs:simpleType>
+ <xs:restriction base="xs:token">
+ <xs:minLength value="0"/>
+ <xs:maxLength value="25"/>
+ <xs:enumeration value="regular URL"/>
+ <xs:enumeration value="DOI"/>
+ </xs:restriction>
+ </xs:simpleType>
+</xs:element>
+
+<xs:element name="northing">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="10000000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
+<xs:element name="easting">
+  <xs:simpleType>
+    <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="834000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
+<xs:element name="zone">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:pattern value="([0-9]{1})([A-Z]{1})|([0-5]{1})([0-9]{1})([A-Z]{1})|(60)([A-Z]{1})"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
+<xs:element name="vertical_datum">
+  <xs:simpleType>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="NAVD88"/>
+      <xs:enumeration value="MSL"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+
 </xs:schema>
