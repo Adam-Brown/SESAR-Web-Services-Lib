@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Mon Oct 26 17:07:52 2015 by generateDS.py version 2.17a.
+# Generated Tue Oct 27 11:42:03 2015 by generateDS.py version 2.17a.
 #
 # Command line options:
 #   ('-o', 'sesarwslib/sample/Sample.py')
@@ -1005,59 +1005,6 @@ class parent_igsn(GeneratedsSuper):
 # end class parent_igsn
 
 
-class is_private(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if is_private.subclass:
-            return is_private.subclass(*args_, **kwargs_)
-        else:
-            return is_private(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='is_private', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='is_private')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='is_private', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='is_private'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='is_private', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class is_private
-
-
 class publish_date(GeneratedsSuper):
     subclass = None
     superclass = None
@@ -1111,16 +1058,16 @@ class publish_date(GeneratedsSuper):
 # end class publish_date
 
 
-class classification_comment(GeneratedsSuper):
+class classification(GeneratedsSuper):
     subclass = None
     superclass = None
     def __init__(self):
         self.original_tagname_ = None
     def factory(*args_, **kwargs_):
-        if classification_comment.subclass:
-            return classification_comment.subclass(*args_, **kwargs_)
+        if classification.subclass:
+            return classification.subclass(*args_, **kwargs_)
         else:
-            return classification_comment(*args_, **kwargs_)
+            return classification(*args_, **kwargs_)
     factory = staticmethod(factory)
     def hasContent_(self):
         if (
@@ -1129,7 +1076,7 @@ class classification_comment(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='', name_='classification_comment', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='', name_='classification', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -1139,16 +1086,16 @@ class classification_comment(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='classification_comment')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='classification')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='classification_comment', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='', name_='classification', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='classification_comment'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='classification'):
         pass
-    def exportChildren(self, outfile, level, namespace_='', name_='classification_comment', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='', name_='classification', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -1161,7 +1108,7 @@ class classification_comment(GeneratedsSuper):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
-# end class classification_comment
+# end class classification
 
 
 class field_name(GeneratedsSuper):
@@ -2116,6 +2063,59 @@ class elevation_end(GeneratedsSuper):
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
 # end class elevation_end
+
+
+class elevation_unit(GeneratedsSuper):
+    subclass = None
+    superclass = None
+    def __init__(self):
+        self.original_tagname_ = None
+    def factory(*args_, **kwargs_):
+        if elevation_unit.subclass:
+            return elevation_unit.subclass(*args_, **kwargs_)
+        else:
+            return elevation_unit(*args_, **kwargs_)
+    factory = staticmethod(factory)
+    def hasContent_(self):
+        if (
+
+        ):
+            return True
+        else:
+            return False
+    def export(self, outfile, level, namespace_='', name_='elevation_unit', namespacedef_='', pretty_print=True):
+        if pretty_print:
+            eol_ = '\n'
+        else:
+            eol_ = ''
+        if self.original_tagname_ is not None:
+            name_ = self.original_tagname_
+        showIndent(outfile, level, pretty_print)
+        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
+        already_processed = set()
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='elevation_unit')
+        if self.hasContent_():
+            outfile.write('>%s' % (eol_, ))
+            self.exportChildren(outfile, level + 1, namespace_='', name_='elevation_unit', pretty_print=pretty_print)
+            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
+        else:
+            outfile.write('/>%s' % (eol_, ))
+    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='elevation_unit'):
+        pass
+    def exportChildren(self, outfile, level, namespace_='', name_='elevation_unit', fromsubclass_=False, pretty_print=True):
+        pass
+    def build(self, node):
+        already_processed = set()
+        self.buildAttributes(node, node.attrib, already_processed)
+        for child in node:
+            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
+            self.buildChildren(child, node, nodeName_)
+        return self
+    def buildAttributes(self, node, attrs, already_processed):
+        pass
+    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
+        pass
+# end class elevation_unit
 
 
 class primary_location_type(GeneratedsSuper):
@@ -3337,16 +3337,16 @@ class launch_platform_name(GeneratedsSuper):
 # end class launch_platform_name
 
 
-class launch_id(GeneratedsSuper):
+class other_names(GeneratedsSuper):
     subclass = None
     superclass = None
     def __init__(self):
         self.original_tagname_ = None
     def factory(*args_, **kwargs_):
-        if launch_id.subclass:
-            return launch_id.subclass(*args_, **kwargs_)
+        if other_names.subclass:
+            return other_names.subclass(*args_, **kwargs_)
         else:
-            return launch_id(*args_, **kwargs_)
+            return other_names(*args_, **kwargs_)
     factory = staticmethod(factory)
     def hasContent_(self):
         if (
@@ -3355,7 +3355,7 @@ class launch_id(GeneratedsSuper):
             return True
         else:
             return False
-    def export(self, outfile, level, namespace_='', name_='launch_id', namespacedef_='', pretty_print=True):
+    def export(self, outfile, level, namespace_='', name_='other_names', namespacedef_='', pretty_print=True):
         if pretty_print:
             eol_ = '\n'
         else:
@@ -3365,16 +3365,16 @@ class launch_id(GeneratedsSuper):
         showIndent(outfile, level, pretty_print)
         outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
         already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='launch_id')
+        self.exportAttributes(outfile, level, already_processed, namespace_, name_='other_names')
         if self.hasContent_():
             outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='launch_id', pretty_print=pretty_print)
+            self.exportChildren(outfile, level + 1, namespace_='', name_='other_names', pretty_print=pretty_print)
             outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
         else:
             outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='launch_id'):
+    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='other_names'):
         pass
-    def exportChildren(self, outfile, level, namespace_='', name_='launch_id', fromsubclass_=False, pretty_print=True):
+    def exportChildren(self, outfile, level, namespace_='', name_='other_names', fromsubclass_=False, pretty_print=True):
         pass
     def build(self, node):
         already_processed = set()
@@ -3387,719 +3387,13 @@ class launch_id(GeneratedsSuper):
         pass
     def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
         pass
-# end class launch_id
-
-
-class launch_type_name(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if launch_type_name.subclass:
-            return launch_type_name.subclass(*args_, **kwargs_)
-        else:
-            return launch_type_name(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='launch_type_name', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='launch_type_name')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='launch_type_name', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='launch_type_name'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='launch_type_name', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class launch_type_name
-
-
-class sample_other_name(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if sample_other_name.subclass:
-            return sample_other_name.subclass(*args_, **kwargs_)
-        else:
-            return sample_other_name(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='sample_other_name', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sample_other_name')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='sample_other_name', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='sample_other_name'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='sample_other_name', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class sample_other_name
-
-
-class purpose(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if purpose.subclass:
-            return purpose.subclass(*args_, **kwargs_)
-        else:
-            return purpose(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='purpose', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='purpose')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='purpose', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='purpose'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='purpose', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class purpose
-
-
-class url(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if url.subclass:
-            return url.subclass(*args_, **kwargs_)
-        else:
-            return url(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='url', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='url')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='url', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='url'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='url', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class url
-
-
-class url_description(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if url_description.subclass:
-            return url_description.subclass(*args_, **kwargs_)
-        else:
-            return url_description(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='url_description', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='url_description')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='url_description', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='url_description'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='url_description', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class url_description
-
-
-class url_type(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if url_type.subclass:
-            return url_type.subclass(*args_, **kwargs_)
-        else:
-            return url_type(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='url_type', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='url_type')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='url_type', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='url_type'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='url_type', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class url_type
-
-
-class northing(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if northing.subclass:
-            return northing.subclass(*args_, **kwargs_)
-        else:
-            return northing(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='northing', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='northing')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='northing', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='northing'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='northing', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class northing
-
-
-class easting(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if easting.subclass:
-            return easting.subclass(*args_, **kwargs_)
-        else:
-            return easting(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='easting', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='easting')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='easting', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='easting'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='easting', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class easting
-
-
-class zone(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if zone.subclass:
-            return zone.subclass(*args_, **kwargs_)
-        else:
-            return zone(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='zone', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='zone')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='zone', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='zone'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='zone', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class zone
-
-
-class vertical_datum(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self):
-        self.original_tagname_ = None
-    def factory(*args_, **kwargs_):
-        if vertical_datum.subclass:
-            return vertical_datum.subclass(*args_, **kwargs_)
-        else:
-            return vertical_datum(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def hasContent_(self):
-        if (
-
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='vertical_datum', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='vertical_datum')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='vertical_datum', pretty_print=pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='vertical_datum'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='vertical_datum', fromsubclass_=False, pretty_print=True):
-        pass
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        pass
-# end class vertical_datum
-
-
-class classification(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, Biology=None, Rock=None, Mineral=None, Unknown=None):
-        self.original_tagname_ = None
-        self.Biology = Biology
-        self.Rock = Rock
-        self.Mineral = Mineral
-        self.Unknown = Unknown
-    def factory(*args_, **kwargs_):
-        if classification.subclass:
-            return classification.subclass(*args_, **kwargs_)
-        else:
-            return classification(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_Biology(self): return self.Biology
-    def set_Biology(self, Biology): self.Biology = Biology
-    def get_Rock(self): return self.Rock
-    def set_Rock(self, Rock): self.Rock = Rock
-    def get_Mineral(self): return self.Mineral
-    def set_Mineral(self, Mineral): self.Mineral = Mineral
-    def get_Unknown(self): return self.Unknown
-    def set_Unknown(self, Unknown): self.Unknown = Unknown
-    def hasContent_(self):
-        if (
-            self.Biology is not None or
-            self.Rock is not None or
-            self.Mineral is not None or
-            self.Unknown is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='classification', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='classification')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='classification', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='classification'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='classification', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.Biology is not None:
-            self.Biology.export(outfile, level, namespace_, name_='Biology', pretty_print=pretty_print)
-        if self.Rock is not None:
-            self.Rock.export(outfile, level, namespace_, name_='Rock', pretty_print=pretty_print)
-        if self.Mineral is not None:
-            self.Mineral.export(outfile, level, namespace_, name_='Mineral', pretty_print=pretty_print)
-        if self.Unknown is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sUnknown>%s</%sUnknown>%s' % (namespace_, self.gds_format_string(quote_xml(self.Unknown).encode(ExternalEncoding), input_name='Unknown'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'Biology':
-            obj_ = BiologyType.factory()
-            obj_.build(child_)
-            self.Biology = obj_
-            obj_.original_tagname_ = 'Biology'
-        elif nodeName_ == 'Rock':
-            obj_ = RockType.factory()
-            obj_.build(child_)
-            self.Rock = obj_
-            obj_.original_tagname_ = 'Rock'
-        elif nodeName_ == 'Mineral':
-            obj_ = MineralType.factory()
-            obj_.build(child_)
-            self.Mineral = obj_
-            obj_.original_tagname_ = 'Mineral'
-        elif nodeName_ == 'Unknown':
-            Unknown_ = child_.text
-            Unknown_ = self.gds_validate_string(Unknown_, node, 'Unknown')
-            self.Unknown = Unknown_
-# end class classification
-
-
-class IgneousType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, Plutonic=None, Volcanic=None):
-        self.original_tagname_ = None
-        self.Plutonic = Plutonic
-        self.Volcanic = Volcanic
-    def factory(*args_, **kwargs_):
-        if IgneousType.subclass:
-            return IgneousType.subclass(*args_, **kwargs_)
-        else:
-            return IgneousType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_Plutonic(self): return self.Plutonic
-    def set_Plutonic(self, Plutonic): self.Plutonic = Plutonic
-    def get_Volcanic(self): return self.Volcanic
-    def set_Volcanic(self, Volcanic): self.Volcanic = Volcanic
-    def hasContent_(self):
-        if (
-            self.Plutonic is not None or
-            self.Volcanic is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='IgneousType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='IgneousType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='IgneousType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='IgneousType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='IgneousType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.Plutonic is not None:
-            self.Plutonic.export(outfile, level, namespace_, name_='Plutonic', pretty_print=pretty_print)
-        if self.Volcanic is not None:
-            self.Volcanic.export(outfile, level, namespace_, name_='Volcanic', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'Plutonic':
-            obj_ = PlutonicType.factory()
-            obj_.build(child_)
-            self.Plutonic = obj_
-            obj_.original_tagname_ = 'Plutonic'
-        elif nodeName_ == 'Volcanic':
-            obj_ = VolcanicType.factory()
-            obj_.build(child_)
-            self.Volcanic = obj_
-            obj_.original_tagname_ = 'Volcanic'
-# end class IgneousType
+# end class other_names
 
 
 class sampleType(GeneratedsSuper):
     subclass = None
     superclass = None
-    def __init__(self, user_code=None, sample_type=None, name=None, material=None, igsn=None, parent_igsn=None, is_private=None, publish_date=None, classification=None, classification_comment=None, field_name=None, description=None, age_min=None, age_max=None, age_unit=None, geological_age=None, geological_unit=None, collection_method=None, collection_method_descr=None, size=None, size_unit=None, sample_comment=None, purpose=None, latitude=None, longitude=None, latitude_end=None, longitude_end=None, elevation=None, elevation_end=None, vertical_datum=None, northing=None, easting=None, zone=None, navigation_type=None, primary_location_type=None, primary_location_name=None, location_description=None, locality=None, locality_description=None, country=None, province=None, county=None, city=None, cruise_field_prgrm=None, platform_type=None, platform_name=None, platform_descr=None, launch_platform_name=None, launch_id=None, launch_type_name=None, collector=None, collector_detail=None, collection_start_date=None, collection_end_date=None, collection_date_precision=None, current_archive=None, current_archive_contact=None, original_archive=None, original_archive_contact=None, depth_min=None, depth_max=None, depth_scale=None, sample_other_names=None, external_urls=None):
+    def __init__(self, user_code=None, sample_type=None, name=None, material=None, igsn=None, parent_igsn=None, is_private=None, publish_date=None, classification=None, field_name=None, description=None, age_min=None, age_max=None, age_unit=None, geological_age=None, geological_unit=None, collection_method=None, collection_method_descr=None, size=None, size_unit=None, sample_comment=None, latitude=None, longitude=None, latitude_end=None, longitude_end=None, elevation=None, elevation_end=None, elevation_unit=None, primary_location_type=None, primary_location_name=None, location_description=None, locality=None, locality_description=None, country=None, province=None, county=None, city=None, cruise_field_prgrm=None, platform_type=None, platform_name=None, platform_descr=None, collector=None, collector_detail=None, collection_start_date=None, collection_end_date=None, collection_date_precision=None, current_archive=None, current_archive_contact=None, original_archive=None, original_archive_contact=None, depth_min=None, depth_max=None, depth_scale=None, other_names=None, navigation_type=None, launch_platform_name=None):
         self.original_tagname_ = None
         self.user_code = user_code
         self.validate_user_code(self.user_code)
@@ -4114,12 +3408,10 @@ class sampleType(GeneratedsSuper):
         self.parent_igsn = parent_igsn
         self.validate_parent_igsn(self.parent_igsn)
         self.is_private = is_private
-        self.validate_is_private(self.is_private)
         self.publish_date = publish_date
         self.validate_publish_date(self.publish_date)
         self.classification = classification
-        self.classification_comment = classification_comment
-        self.validate_classification_comment(self.classification_comment)
+        self.validate_classification(self.classification)
         self.field_name = field_name
         self.validate_field_name(self.field_name)
         self.description = description
@@ -4144,8 +3436,6 @@ class sampleType(GeneratedsSuper):
         self.validate_size_unit(self.size_unit)
         self.sample_comment = sample_comment
         self.validate_sample_comment(self.sample_comment)
-        self.purpose = purpose
-        self.validate_purpose(self.purpose)
         self.latitude = latitude
         self.validate_latitude(self.latitude)
         self.longitude = longitude
@@ -4158,16 +3448,8 @@ class sampleType(GeneratedsSuper):
         self.validate_elevation(self.elevation)
         self.elevation_end = elevation_end
         self.validate_elevation_end(self.elevation_end)
-        self.vertical_datum = vertical_datum
-        self.validate_vertical_datum(self.vertical_datum)
-        self.northing = northing
-        self.validate_northing(self.northing)
-        self.easting = easting
-        self.validate_easting(self.easting)
-        self.zone = zone
-        self.validate_zone(self.zone)
-        self.navigation_type = navigation_type
-        self.validate_navigation_type(self.navigation_type)
+        self.elevation_unit = elevation_unit
+        self.validate_elevation_unit(self.elevation_unit)
         self.primary_location_type = primary_location_type
         self.validate_primary_location_type(self.primary_location_type)
         self.primary_location_name = primary_location_name
@@ -4194,12 +3476,6 @@ class sampleType(GeneratedsSuper):
         self.validate_platform_name(self.platform_name)
         self.platform_descr = platform_descr
         self.validate_platform_descr(self.platform_descr)
-        self.launch_platform_name = launch_platform_name
-        self.validate_launch_platform_name(self.launch_platform_name)
-        self.launch_id = launch_id
-        self.validate_launch_id(self.launch_id)
-        self.launch_type_name = launch_type_name
-        self.validate_launch_type_name(self.launch_type_name)
         self.collector = collector
         self.validate_collector(self.collector)
         self.collector_detail = collector_detail
@@ -4228,8 +3504,14 @@ class sampleType(GeneratedsSuper):
         self.depth_max = depth_max
         self.depth_scale = depth_scale
         self.validate_depth_scale(self.depth_scale)
-        self.sample_other_names = sample_other_names
-        self.external_urls = external_urls
+        if other_names is None:
+            self.other_names = []
+        else:
+            self.other_names = other_names
+        self.navigation_type = navigation_type
+        self.validate_navigation_type(self.navigation_type)
+        self.launch_platform_name = launch_platform_name
+        self.validate_launch_platform_name(self.launch_platform_name)
     def factory(*args_, **kwargs_):
         if sampleType.subclass:
             return sampleType.subclass(*args_, **kwargs_)
@@ -4254,8 +3536,6 @@ class sampleType(GeneratedsSuper):
     def set_publish_date(self, publish_date): self.publish_date = publish_date
     def get_classification(self): return self.classification
     def set_classification(self, classification): self.classification = classification
-    def get_classification_comment(self): return self.classification_comment
-    def set_classification_comment(self, classification_comment): self.classification_comment = classification_comment
     def get_field_name(self): return self.field_name
     def set_field_name(self, field_name): self.field_name = field_name
     def get_description(self): return self.description
@@ -4280,8 +3560,6 @@ class sampleType(GeneratedsSuper):
     def set_size_unit(self, size_unit): self.size_unit = size_unit
     def get_sample_comment(self): return self.sample_comment
     def set_sample_comment(self, sample_comment): self.sample_comment = sample_comment
-    def get_purpose(self): return self.purpose
-    def set_purpose(self, purpose): self.purpose = purpose
     def get_latitude(self): return self.latitude
     def set_latitude(self, latitude): self.latitude = latitude
     def get_longitude(self): return self.longitude
@@ -4294,16 +3572,8 @@ class sampleType(GeneratedsSuper):
     def set_elevation(self, elevation): self.elevation = elevation
     def get_elevation_end(self): return self.elevation_end
     def set_elevation_end(self, elevation_end): self.elevation_end = elevation_end
-    def get_vertical_datum(self): return self.vertical_datum
-    def set_vertical_datum(self, vertical_datum): self.vertical_datum = vertical_datum
-    def get_northing(self): return self.northing
-    def set_northing(self, northing): self.northing = northing
-    def get_easting(self): return self.easting
-    def set_easting(self, easting): self.easting = easting
-    def get_zone(self): return self.zone
-    def set_zone(self, zone): self.zone = zone
-    def get_navigation_type(self): return self.navigation_type
-    def set_navigation_type(self, navigation_type): self.navigation_type = navigation_type
+    def get_elevation_unit(self): return self.elevation_unit
+    def set_elevation_unit(self, elevation_unit): self.elevation_unit = elevation_unit
     def get_primary_location_type(self): return self.primary_location_type
     def set_primary_location_type(self, primary_location_type): self.primary_location_type = primary_location_type
     def get_primary_location_name(self): return self.primary_location_name
@@ -4330,12 +3600,6 @@ class sampleType(GeneratedsSuper):
     def set_platform_name(self, platform_name): self.platform_name = platform_name
     def get_platform_descr(self): return self.platform_descr
     def set_platform_descr(self, platform_descr): self.platform_descr = platform_descr
-    def get_launch_platform_name(self): return self.launch_platform_name
-    def set_launch_platform_name(self, launch_platform_name): self.launch_platform_name = launch_platform_name
-    def get_launch_id(self): return self.launch_id
-    def set_launch_id(self, launch_id): self.launch_id = launch_id
-    def get_launch_type_name(self): return self.launch_type_name
-    def set_launch_type_name(self, launch_type_name): self.launch_type_name = launch_type_name
     def get_collector(self): return self.collector
     def set_collector(self, collector): self.collector = collector
     def get_collector_detail(self): return self.collector_detail
@@ -4360,10 +3624,15 @@ class sampleType(GeneratedsSuper):
     def set_depth_max(self, depth_max): self.depth_max = depth_max
     def get_depth_scale(self): return self.depth_scale
     def set_depth_scale(self, depth_scale): self.depth_scale = depth_scale
-    def get_sample_other_names(self): return self.sample_other_names
-    def set_sample_other_names(self, sample_other_names): self.sample_other_names = sample_other_names
-    def get_external_urls(self): return self.external_urls
-    def set_external_urls(self, external_urls): self.external_urls = external_urls
+    def get_other_names(self): return self.other_names
+    def set_other_names(self, other_names): self.other_names = other_names
+    def add_other_names(self, value): self.other_names.append(value)
+    def insert_other_names_at(self, index, value): self.other_names.insert(index, value)
+    def replace_other_names_at(self, index, value): self.other_names[index] = value
+    def get_navigation_type(self): return self.navigation_type
+    def set_navigation_type(self, navigation_type): self.navigation_type = navigation_type
+    def get_launch_platform_name(self): return self.launch_platform_name
+    def set_launch_platform_name(self, launch_platform_name): self.launch_platform_name = launch_platform_name
     def validate_user_code(self, value):
         # Validate type user_code, a restriction on xs:token.
         pass
@@ -4382,14 +3651,11 @@ class sampleType(GeneratedsSuper):
     def validate_parent_igsn(self, value):
         # Validate type parent_igsn, a restriction on xs:token.
         pass
-    def validate_is_private(self, value):
-        # Validate type is_private, a restriction on xs:integer.
-        pass
     def validate_publish_date(self, value):
         # Validate type publish_date, a restriction on xs:token.
         pass
-    def validate_classification_comment(self, value):
-        # Validate type classification_comment, a restriction on xs:token.
+    def validate_classification(self, value):
+        # Validate type classification, a restriction on xs:token.
         pass
     def validate_field_name(self, value):
         # Validate type field_name, a restriction on xs:token.
@@ -4427,9 +3693,6 @@ class sampleType(GeneratedsSuper):
     def validate_sample_comment(self, value):
         # Validate type sample_comment, a restriction on xs:token.
         pass
-    def validate_purpose(self, value):
-        # Validate type purpose, a restriction on xs:token.
-        pass
     def validate_latitude(self, value):
         # Validate type latitude, a restriction on xs:decimal.
         pass
@@ -4448,20 +3711,8 @@ class sampleType(GeneratedsSuper):
     def validate_elevation_end(self, value):
         # Validate type elevation_end, a restriction on xs:decimal.
         pass
-    def validate_vertical_datum(self, value):
-        # Validate type vertical_datum, a restriction on xs:token.
-        pass
-    def validate_northing(self, value):
-        # Validate type northing, a restriction on xs:decimal.
-        pass
-    def validate_easting(self, value):
-        # Validate type easting, a restriction on xs:decimal.
-        pass
-    def validate_zone(self, value):
-        # Validate type zone, a restriction on xs:token.
-        pass
-    def validate_navigation_type(self, value):
-        # Validate type navigation_type, a restriction on xs:token.
+    def validate_elevation_unit(self, value):
+        # Validate type elevation_unit, a restriction on xs:token.
         pass
     def validate_primary_location_type(self, value):
         # Validate type primary_location_type, a restriction on xs:token.
@@ -4502,15 +3753,6 @@ class sampleType(GeneratedsSuper):
     def validate_platform_descr(self, value):
         # Validate type platform_descr, a restriction on xs:token.
         pass
-    def validate_launch_platform_name(self, value):
-        # Validate type launch_platform_name, a restriction on xs:token.
-        pass
-    def validate_launch_id(self, value):
-        # Validate type launch_id, a restriction on xs:token.
-        pass
-    def validate_launch_type_name(self, value):
-        # Validate type launch_type_name, a restriction on xs:token.
-        pass
     def validate_collector(self, value):
         # Validate type collector, a restriction on xs:token.
         pass
@@ -4535,6 +3777,15 @@ class sampleType(GeneratedsSuper):
     def validate_depth_scale(self, value):
         # Validate type depth_scale, a restriction on xs:token.
         pass
+    def validate_other_names(self, value):
+        # Validate type other_names, a restriction on xs:token.
+        pass
+    def validate_navigation_type(self, value):
+        # Validate type navigation_type, a restriction on xs:token.
+        pass
+    def validate_launch_platform_name(self, value):
+        # Validate type launch_platform_name, a restriction on xs:token.
+        pass
     def hasContent_(self):
         if (
             self.user_code is not None or
@@ -4546,7 +3797,6 @@ class sampleType(GeneratedsSuper):
             self.is_private is not None or
             self.publish_date is not None or
             self.classification is not None or
-            self.classification_comment is not None or
             self.field_name is not None or
             self.description is not None or
             self.age_min is not None or
@@ -4559,18 +3809,13 @@ class sampleType(GeneratedsSuper):
             self.size is not None or
             self.size_unit is not None or
             self.sample_comment is not None or
-            self.purpose is not None or
             self.latitude is not None or
             self.longitude is not None or
             self.latitude_end is not None or
             self.longitude_end is not None or
             self.elevation is not None or
             self.elevation_end is not None or
-            self.vertical_datum is not None or
-            self.northing is not None or
-            self.easting is not None or
-            self.zone is not None or
-            self.navigation_type is not None or
+            self.elevation_unit is not None or
             self.primary_location_type is not None or
             self.primary_location_name is not None or
             self.location_description is not None or
@@ -4584,9 +3829,6 @@ class sampleType(GeneratedsSuper):
             self.platform_type is not None or
             self.platform_name is not None or
             self.platform_descr is not None or
-            self.launch_platform_name is not None or
-            self.launch_id is not None or
-            self.launch_type_name is not None or
             self.collector is not None or
             self.collector_detail is not None or
             self.collection_start_date is not None or
@@ -4599,8 +3841,9 @@ class sampleType(GeneratedsSuper):
             self.depth_min is not None or
             self.depth_max is not None or
             self.depth_scale is not None or
-            self.sample_other_names is not None or
-            self.external_urls is not None
+            self.other_names or
+            self.navigation_type is not None or
+            self.launch_platform_name is not None
         ):
             return True
         else:
@@ -4655,10 +3898,8 @@ class sampleType(GeneratedsSuper):
             showIndent(outfile, level, pretty_print)
             outfile.write('<%spublish_date>%s</%spublish_date>%s' % (namespace_, self.gds_format_string(quote_xml(self.publish_date).encode(ExternalEncoding), input_name='publish_date'), namespace_, eol_))
         if self.classification is not None:
-            self.classification.export(outfile, level, namespace_, name_='classification', pretty_print=pretty_print)
-        if self.classification_comment is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%sclassification_comment>%s</%sclassification_comment>%s' % (namespace_, self.gds_format_string(quote_xml(self.classification_comment).encode(ExternalEncoding), input_name='classification_comment'), namespace_, eol_))
+            outfile.write('<%sclassification>%s</%sclassification>%s' % (namespace_, self.gds_format_string(quote_xml(self.classification).encode(ExternalEncoding), input_name='classification'), namespace_, eol_))
         if self.field_name is not None:
             showIndent(outfile, level, pretty_print)
             outfile.write('<%sfield_name>%s</%sfield_name>%s' % (namespace_, self.gds_format_string(quote_xml(self.field_name).encode(ExternalEncoding), input_name='field_name'), namespace_, eol_))
@@ -4695,9 +3936,6 @@ class sampleType(GeneratedsSuper):
         if self.sample_comment is not None:
             showIndent(outfile, level, pretty_print)
             outfile.write('<%ssample_comment>%s</%ssample_comment>%s' % (namespace_, self.gds_format_string(quote_xml(self.sample_comment).encode(ExternalEncoding), input_name='sample_comment'), namespace_, eol_))
-        if self.purpose is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%spurpose>%s</%spurpose>%s' % (namespace_, self.gds_format_string(quote_xml(self.purpose).encode(ExternalEncoding), input_name='purpose'), namespace_, eol_))
         if self.latitude is not None:
             showIndent(outfile, level, pretty_print)
             outfile.write('<%slatitude>%s</%slatitude>%s' % (namespace_, self.gds_format_float(self.latitude, input_name='latitude'), namespace_, eol_))
@@ -4716,21 +3954,9 @@ class sampleType(GeneratedsSuper):
         if self.elevation_end is not None:
             showIndent(outfile, level, pretty_print)
             outfile.write('<%selevation_end>%s</%selevation_end>%s' % (namespace_, self.gds_format_float(self.elevation_end, input_name='elevation_end'), namespace_, eol_))
-        if self.vertical_datum is not None:
+        if self.elevation_unit is not None:
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%svertical_datum>%s</%svertical_datum>%s' % (namespace_, self.gds_format_string(quote_xml(self.vertical_datum).encode(ExternalEncoding), input_name='vertical_datum'), namespace_, eol_))
-        if self.northing is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%snorthing>%s</%snorthing>%s' % (namespace_, self.gds_format_float(self.northing, input_name='northing'), namespace_, eol_))
-        if self.easting is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%seasting>%s</%seasting>%s' % (namespace_, self.gds_format_float(self.easting, input_name='easting'), namespace_, eol_))
-        if self.zone is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%szone>%s</%szone>%s' % (namespace_, self.gds_format_string(quote_xml(self.zone).encode(ExternalEncoding), input_name='zone'), namespace_, eol_))
-        if self.navigation_type is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%snavigation_type>%s</%snavigation_type>%s' % (namespace_, self.gds_format_string(quote_xml(self.navigation_type).encode(ExternalEncoding), input_name='navigation_type'), namespace_, eol_))
+            outfile.write('<%selevation_unit>%s</%selevation_unit>%s' % (namespace_, self.gds_format_string(quote_xml(self.elevation_unit).encode(ExternalEncoding), input_name='elevation_unit'), namespace_, eol_))
         if self.primary_location_type is not None:
             showIndent(outfile, level, pretty_print)
             outfile.write('<%sprimary_location_type>%s</%sprimary_location_type>%s' % (namespace_, self.gds_format_string(quote_xml(self.primary_location_type).encode(ExternalEncoding), input_name='primary_location_type'), namespace_, eol_))
@@ -4770,15 +3996,6 @@ class sampleType(GeneratedsSuper):
         if self.platform_descr is not None:
             showIndent(outfile, level, pretty_print)
             outfile.write('<%splatform_descr>%s</%splatform_descr>%s' % (namespace_, self.gds_format_string(quote_xml(self.platform_descr).encode(ExternalEncoding), input_name='platform_descr'), namespace_, eol_))
-        if self.launch_platform_name is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%slaunch_platform_name>%s</%slaunch_platform_name>%s' % (namespace_, self.gds_format_string(quote_xml(self.launch_platform_name).encode(ExternalEncoding), input_name='launch_platform_name'), namespace_, eol_))
-        if self.launch_id is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%slaunch_id>%s</%slaunch_id>%s' % (namespace_, self.gds_format_string(quote_xml(self.launch_id).encode(ExternalEncoding), input_name='launch_id'), namespace_, eol_))
-        if self.launch_type_name is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%slaunch_type_name>%s</%slaunch_type_name>%s' % (namespace_, self.gds_format_string(quote_xml(self.launch_type_name).encode(ExternalEncoding), input_name='launch_type_name'), namespace_, eol_))
         if self.collector is not None:
             showIndent(outfile, level, pretty_print)
             outfile.write('<%scollector>%s</%scollector>%s' % (namespace_, self.gds_format_string(quote_xml(self.collector).encode(ExternalEncoding), input_name='collector'), namespace_, eol_))
@@ -4815,10 +4032,15 @@ class sampleType(GeneratedsSuper):
         if self.depth_scale is not None:
             showIndent(outfile, level, pretty_print)
             outfile.write('<%sdepth_scale>%s</%sdepth_scale>%s' % (namespace_, self.gds_format_string(quote_xml(self.depth_scale).encode(ExternalEncoding), input_name='depth_scale'), namespace_, eol_))
-        if self.sample_other_names is not None:
-            self.sample_other_names.export(outfile, level, namespace_, name_='sample_other_names', pretty_print=pretty_print)
-        if self.external_urls is not None:
-            self.external_urls.export(outfile, level, namespace_, name_='external_urls', pretty_print=pretty_print)
+        for other_names_ in self.other_names:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%sother_names>%s</%sother_names>%s' % (namespace_, self.gds_format_string(quote_xml(other_names_).encode(ExternalEncoding), input_name='other_names'), namespace_, eol_))
+        if self.navigation_type is not None:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%snavigation_type>%s</%snavigation_type>%s' % (namespace_, self.gds_format_string(quote_xml(self.navigation_type).encode(ExternalEncoding), input_name='navigation_type'), namespace_, eol_))
+        if self.launch_platform_name is not None:
+            showIndent(outfile, level, pretty_print)
+            outfile.write('<%slaunch_platform_name>%s</%slaunch_platform_name>%s' % (namespace_, self.gds_format_string(quote_xml(self.launch_platform_name).encode(ExternalEncoding), input_name='launch_platform_name'), namespace_, eol_))
     def build(self, node):
         already_processed = set()
         self.buildAttributes(node, node.attrib, already_processed)
@@ -4879,8 +4101,6 @@ class sampleType(GeneratedsSuper):
                 raise_parse_error(child_, 'requires integer: %s' % exp)
             ival_ = self.gds_validate_integer(ival_, node, 'is_private')
             self.is_private = ival_
-            # validate type is_private
-            self.validate_is_private(self.is_private)
         elif nodeName_ == 'publish_date':
             publish_date_ = child_.text
             publish_date_ = re_.sub(String_cleanup_pat_, " ", publish_date_).strip()
@@ -4889,17 +4109,12 @@ class sampleType(GeneratedsSuper):
             # validate type publish_date
             self.validate_publish_date(self.publish_date)
         elif nodeName_ == 'classification':
-            obj_ = classification.factory()
-            obj_.build(child_)
-            self.classification = obj_
-            obj_.original_tagname_ = 'classification'
-        elif nodeName_ == 'classification_comment':
-            classification_comment_ = child_.text
-            classification_comment_ = re_.sub(String_cleanup_pat_, " ", classification_comment_).strip()
-            classification_comment_ = self.gds_validate_string(classification_comment_, node, 'classification_comment')
-            self.classification_comment = classification_comment_
-            # validate type classification_comment
-            self.validate_classification_comment(self.classification_comment)
+            classification_ = child_.text
+            classification_ = re_.sub(String_cleanup_pat_, " ", classification_).strip()
+            classification_ = self.gds_validate_string(classification_, node, 'classification')
+            self.classification = classification_
+            # validate type classification
+            self.validate_classification(self.classification)
         elif nodeName_ == 'field_name':
             field_name_ = child_.text
             field_name_ = re_.sub(String_cleanup_pat_, " ", field_name_).strip()
@@ -4990,13 +4205,6 @@ class sampleType(GeneratedsSuper):
             self.sample_comment = sample_comment_
             # validate type sample_comment
             self.validate_sample_comment(self.sample_comment)
-        elif nodeName_ == 'purpose':
-            purpose_ = child_.text
-            purpose_ = re_.sub(String_cleanup_pat_, " ", purpose_).strip()
-            purpose_ = self.gds_validate_string(purpose_, node, 'purpose')
-            self.purpose = purpose_
-            # validate type purpose
-            self.validate_purpose(self.purpose)
         elif nodeName_ == 'latitude':
             sval_ = child_.text
             try:
@@ -5057,47 +4265,13 @@ class sampleType(GeneratedsSuper):
             self.elevation_end = fval_
             # validate type elevation_end
             self.validate_elevation_end(self.elevation_end)
-        elif nodeName_ == 'vertical_datum':
-            vertical_datum_ = child_.text
-            vertical_datum_ = re_.sub(String_cleanup_pat_, " ", vertical_datum_).strip()
-            vertical_datum_ = self.gds_validate_string(vertical_datum_, node, 'vertical_datum')
-            self.vertical_datum = vertical_datum_
-            # validate type vertical_datum
-            self.validate_vertical_datum(self.vertical_datum)
-        elif nodeName_ == 'northing':
-            sval_ = child_.text
-            try:
-                fval_ = float(sval_)
-            except (TypeError, ValueError) as exp:
-                raise_parse_error(child_, 'requires float or double: %s' % exp)
-            fval_ = self.gds_validate_float(fval_, node, 'northing')
-            self.northing = fval_
-            # validate type northing
-            self.validate_northing(self.northing)
-        elif nodeName_ == 'easting':
-            sval_ = child_.text
-            try:
-                fval_ = float(sval_)
-            except (TypeError, ValueError) as exp:
-                raise_parse_error(child_, 'requires float or double: %s' % exp)
-            fval_ = self.gds_validate_float(fval_, node, 'easting')
-            self.easting = fval_
-            # validate type easting
-            self.validate_easting(self.easting)
-        elif nodeName_ == 'zone':
-            zone_ = child_.text
-            zone_ = re_.sub(String_cleanup_pat_, " ", zone_).strip()
-            zone_ = self.gds_validate_string(zone_, node, 'zone')
-            self.zone = zone_
-            # validate type zone
-            self.validate_zone(self.zone)
-        elif nodeName_ == 'navigation_type':
-            navigation_type_ = child_.text
-            navigation_type_ = re_.sub(String_cleanup_pat_, " ", navigation_type_).strip()
-            navigation_type_ = self.gds_validate_string(navigation_type_, node, 'navigation_type')
-            self.navigation_type = navigation_type_
-            # validate type navigation_type
-            self.validate_navigation_type(self.navigation_type)
+        elif nodeName_ == 'elevation_unit':
+            elevation_unit_ = child_.text
+            elevation_unit_ = re_.sub(String_cleanup_pat_, " ", elevation_unit_).strip()
+            elevation_unit_ = self.gds_validate_string(elevation_unit_, node, 'elevation_unit')
+            self.elevation_unit = elevation_unit_
+            # validate type elevation_unit
+            self.validate_elevation_unit(self.elevation_unit)
         elif nodeName_ == 'primary_location_type':
             primary_location_type_ = child_.text
             primary_location_type_ = re_.sub(String_cleanup_pat_, " ", primary_location_type_).strip()
@@ -5189,27 +4363,6 @@ class sampleType(GeneratedsSuper):
             self.platform_descr = platform_descr_
             # validate type platform_descr
             self.validate_platform_descr(self.platform_descr)
-        elif nodeName_ == 'launch_platform_name':
-            launch_platform_name_ = child_.text
-            launch_platform_name_ = re_.sub(String_cleanup_pat_, " ", launch_platform_name_).strip()
-            launch_platform_name_ = self.gds_validate_string(launch_platform_name_, node, 'launch_platform_name')
-            self.launch_platform_name = launch_platform_name_
-            # validate type launch_platform_name
-            self.validate_launch_platform_name(self.launch_platform_name)
-        elif nodeName_ == 'launch_id':
-            launch_id_ = child_.text
-            launch_id_ = re_.sub(String_cleanup_pat_, " ", launch_id_).strip()
-            launch_id_ = self.gds_validate_string(launch_id_, node, 'launch_id')
-            self.launch_id = launch_id_
-            # validate type launch_id
-            self.validate_launch_id(self.launch_id)
-        elif nodeName_ == 'launch_type_name':
-            launch_type_name_ = child_.text
-            launch_type_name_ = re_.sub(String_cleanup_pat_, " ", launch_type_name_).strip()
-            launch_type_name_ = self.gds_validate_string(launch_type_name_, node, 'launch_type_name')
-            self.launch_type_name = launch_type_name_
-            # validate type launch_type_name
-            self.validate_launch_type_name(self.launch_type_name)
         elif nodeName_ == 'collector':
             collector_ = child_.text
             collector_ = re_.sub(String_cleanup_pat_, " ", collector_).strip()
@@ -5290,1205 +4443,32 @@ class sampleType(GeneratedsSuper):
             self.depth_scale = depth_scale_
             # validate type depth_scale
             self.validate_depth_scale(self.depth_scale)
-        elif nodeName_ == 'sample_other_names':
-            obj_ = sample_other_namesType.factory()
-            obj_.build(child_)
-            self.sample_other_names = obj_
-            obj_.original_tagname_ = 'sample_other_names'
-        elif nodeName_ == 'external_urls':
-            obj_ = external_urlsType.factory()
-            obj_.build(child_)
-            self.external_urls = obj_
-            obj_.original_tagname_ = 'external_urls'
+        elif nodeName_ == 'other_names':
+            other_names_ = child_.text
+            other_names_ = re_.sub(String_cleanup_pat_, " ", other_names_).strip()
+            other_names_ = self.gds_validate_string(other_names_, node, 'other_names')
+            self.other_names.append(other_names_)
+            # validate type other_names
+            self.validate_other_names(self.other_names[-1])
+        elif nodeName_ == 'navigation_type':
+            navigation_type_ = child_.text
+            navigation_type_ = re_.sub(String_cleanup_pat_, " ", navigation_type_).strip()
+            navigation_type_ = self.gds_validate_string(navigation_type_, node, 'navigation_type')
+            self.navigation_type = navigation_type_
+            # validate type navigation_type
+            self.validate_navigation_type(self.navigation_type)
+        elif nodeName_ == 'launch_platform_name':
+            launch_platform_name_ = child_.text
+            launch_platform_name_ = re_.sub(String_cleanup_pat_, " ", launch_platform_name_).strip()
+            launch_platform_name_ = self.gds_validate_string(launch_platform_name_, node, 'launch_platform_name')
+            self.launch_platform_name = launch_platform_name_
+            # validate type launch_platform_name
+            self.validate_launch_platform_name(self.launch_platform_name)
 # end class sampleType
 
 
-class sample_other_namesType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, sample_other_name=None):
-        self.original_tagname_ = None
-        if sample_other_name is None:
-            self.sample_other_name = []
-        else:
-            self.sample_other_name = sample_other_name
-    def factory(*args_, **kwargs_):
-        if sample_other_namesType.subclass:
-            return sample_other_namesType.subclass(*args_, **kwargs_)
-        else:
-            return sample_other_namesType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_sample_other_name(self): return self.sample_other_name
-    def set_sample_other_name(self, sample_other_name): self.sample_other_name = sample_other_name
-    def add_sample_other_name(self, value): self.sample_other_name.append(value)
-    def insert_sample_other_name_at(self, index, value): self.sample_other_name.insert(index, value)
-    def replace_sample_other_name_at(self, index, value): self.sample_other_name[index] = value
-    def validate_sample_other_name(self, value):
-        # Validate type sample_other_name, a restriction on xs:token.
-        pass
-    def hasContent_(self):
-        if (
-            self.sample_other_name
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='sample_other_namesType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='sample_other_namesType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='sample_other_namesType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='sample_other_namesType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='sample_other_namesType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        for sample_other_name_ in self.sample_other_name:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%ssample_other_name>%s</%ssample_other_name>%s' % (namespace_, self.gds_format_string(quote_xml(sample_other_name_).encode(ExternalEncoding), input_name='sample_other_name'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'sample_other_name':
-            sample_other_name_ = child_.text
-            sample_other_name_ = re_.sub(String_cleanup_pat_, " ", sample_other_name_).strip()
-            sample_other_name_ = self.gds_validate_string(sample_other_name_, node, 'sample_other_name')
-            self.sample_other_name.append(sample_other_name_)
-            # validate type sample_other_name
-            self.validate_sample_other_name(self.sample_other_name[-1])
-# end class sample_other_namesType
-
-
-class external_urlsType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, external_url=None):
-        self.original_tagname_ = None
-        if external_url is None:
-            self.external_url = []
-        else:
-            self.external_url = external_url
-    def factory(*args_, **kwargs_):
-        if external_urlsType.subclass:
-            return external_urlsType.subclass(*args_, **kwargs_)
-        else:
-            return external_urlsType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_external_url(self): return self.external_url
-    def set_external_url(self, external_url): self.external_url = external_url
-    def add_external_url(self, value): self.external_url.append(value)
-    def insert_external_url_at(self, index, value): self.external_url.insert(index, value)
-    def replace_external_url_at(self, index, value): self.external_url[index] = value
-    def hasContent_(self):
-        if (
-            self.external_url
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='external_urlsType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='external_urlsType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='external_urlsType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='external_urlsType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='external_urlsType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        for external_url_ in self.external_url:
-            external_url_.export(outfile, level, namespace_, name_='external_url', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'external_url':
-            obj_ = external_urlType.factory()
-            obj_.build(child_)
-            self.external_url.append(obj_)
-            obj_.original_tagname_ = 'external_url'
-# end class external_urlsType
-
-
-class external_urlType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, url=None, description=None, url_type=None):
-        self.original_tagname_ = None
-        self.url = url
-        self.validate_url(self.url)
-        self.description = description
-        self.validate_description(self.description)
-        self.url_type = url_type
-        self.validate_url_type(self.url_type)
-    def factory(*args_, **kwargs_):
-        if external_urlType.subclass:
-            return external_urlType.subclass(*args_, **kwargs_)
-        else:
-            return external_urlType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_url(self): return self.url
-    def set_url(self, url): self.url = url
-    def get_description(self): return self.description
-    def set_description(self, description): self.description = description
-    def get_url_type(self): return self.url_type
-    def set_url_type(self, url_type): self.url_type = url_type
-    def validate_url(self, value):
-        # Validate type url, a restriction on xs:anyURI.
-        pass
-    def validate_description(self, value):
-        # Validate type description, a restriction on xs:token.
-        pass
-    def validate_url_type(self, value):
-        # Validate type url_type, a restriction on xs:token.
-        pass
-    def hasContent_(self):
-        if (
-            self.url is not None or
-            self.description is not None or
-            self.url_type is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='external_urlType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='external_urlType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='external_urlType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='external_urlType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='external_urlType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.url is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%surl>%s</%surl>%s' % (namespace_, self.gds_format_string(quote_xml(self.url).encode(ExternalEncoding), input_name='url'), namespace_, eol_))
-        if self.description is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sdescription>%s</%sdescription>%s' % (namespace_, self.gds_format_string(quote_xml(self.description).encode(ExternalEncoding), input_name='description'), namespace_, eol_))
-        if self.url_type is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%surl_type>%s</%surl_type>%s' % (namespace_, self.gds_format_string(quote_xml(self.url_type).encode(ExternalEncoding), input_name='url_type'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'url':
-            url_ = child_.text
-            url_ = self.gds_validate_string(url_, node, 'url')
-            self.url = url_
-            # validate type url
-            self.validate_url(self.url)
-        elif nodeName_ == 'description':
-            description_ = child_.text
-            description_ = re_.sub(String_cleanup_pat_, " ", description_).strip()
-            description_ = self.gds_validate_string(description_, node, 'description')
-            self.description = description_
-            # validate type description
-            self.validate_description(self.description)
-        elif nodeName_ == 'url_type':
-            url_type_ = child_.text
-            url_type_ = re_.sub(String_cleanup_pat_, " ", url_type_).strip()
-            url_type_ = self.gds_validate_string(url_type_, node, 'url_type')
-            self.url_type = url_type_
-            # validate type url_type
-            self.validate_url_type(self.url_type)
-# end class external_urlType
-
-
-class BiologyType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, Macrobiology=None, Microbiology=None):
-        self.original_tagname_ = None
-        self.Macrobiology = Macrobiology
-        self.Microbiology = Microbiology
-    def factory(*args_, **kwargs_):
-        if BiologyType.subclass:
-            return BiologyType.subclass(*args_, **kwargs_)
-        else:
-            return BiologyType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_Macrobiology(self): return self.Macrobiology
-    def set_Macrobiology(self, Macrobiology): self.Macrobiology = Macrobiology
-    def get_Microbiology(self): return self.Microbiology
-    def set_Microbiology(self, Microbiology): self.Microbiology = Microbiology
-    def hasContent_(self):
-        if (
-            self.Macrobiology is not None or
-            self.Microbiology is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='BiologyType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='BiologyType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='BiologyType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='BiologyType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='BiologyType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.Macrobiology is not None:
-            self.Macrobiology.export(outfile, level, namespace_, name_='Macrobiology', pretty_print=pretty_print)
-        if self.Microbiology is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sMicrobiology>%s</%sMicrobiology>%s' % (namespace_, self.gds_format_string(quote_xml(self.Microbiology).encode(ExternalEncoding), input_name='Microbiology'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'Macrobiology':
-            obj_ = MacrobiologyType.factory()
-            obj_.build(child_)
-            self.Macrobiology = obj_
-            obj_.original_tagname_ = 'Macrobiology'
-        elif nodeName_ == 'Microbiology':
-            Microbiology_ = child_.text
-            Microbiology_ = self.gds_validate_string(Microbiology_, node, 'Microbiology')
-            self.Microbiology = Microbiology_
-# end class BiologyType
-
-
-class MacrobiologyType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, MacrobiologyType_member=None):
-        self.original_tagname_ = None
-        self.MacrobiologyType = MacrobiologyType_member
-        self.validate_MacrobiologyDetails(self.MacrobiologyType)
-    def factory(*args_, **kwargs_):
-        if MacrobiologyType.subclass:
-            return MacrobiologyType.subclass(*args_, **kwargs_)
-        else:
-            return MacrobiologyType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_MacrobiologyType(self): return self.MacrobiologyType
-    def set_MacrobiologyType(self, MacrobiologyType): self.MacrobiologyType = MacrobiologyType
-    def validate_MacrobiologyDetails(self, value):
-        # Validate type MacrobiologyDetails, a restriction on xs:string.
-        if value is not None and Validate_simpletypes_:
-            value = str(value)
-            enumerations = ['Coral']
-            enumeration_respectee = False
-            for enum in enumerations:
-                if value == enum:
-                    enumeration_respectee = True
-                    break
-            if not enumeration_respectee:
-                warnings_.warn('Value "%(value)s" does not match xsd enumeration restriction on MacrobiologyDetails' % {"value" : value.encode("utf-8")} )
-    def hasContent_(self):
-        if (
-            self.MacrobiologyType is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='MacrobiologyType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='MacrobiologyType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='MacrobiologyType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='MacrobiologyType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='MacrobiologyType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.MacrobiologyType is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sMacrobiologyType>%s</%sMacrobiologyType>%s' % (namespace_, self.gds_format_string(quote_xml(self.MacrobiologyType).encode(ExternalEncoding), input_name='MacrobiologyType'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'MacrobiologyType':
-            MacrobiologyType_ = child_.text
-            MacrobiologyType_ = self.gds_validate_string(MacrobiologyType_, node, 'MacrobiologyType')
-            self.MacrobiologyType = MacrobiologyType_
-            # validate type MacrobiologyDetails
-            self.validate_MacrobiologyDetails(self.MacrobiologyType)
-# end class MacrobiologyType
-
-
-class RockType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, Igneous=None, Metamorphic=None, Ore=None, Sedimentary=None, Xenolithic=None):
-        self.original_tagname_ = None
-        self.Igneous = Igneous
-        self.Metamorphic = Metamorphic
-        self.Ore = Ore
-        self.Sedimentary = Sedimentary
-        self.Xenolithic = Xenolithic
-    def factory(*args_, **kwargs_):
-        if RockType.subclass:
-            return RockType.subclass(*args_, **kwargs_)
-        else:
-            return RockType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_Igneous(self): return self.Igneous
-    def set_Igneous(self, Igneous): self.Igneous = Igneous
-    def get_Metamorphic(self): return self.Metamorphic
-    def set_Metamorphic(self, Metamorphic): self.Metamorphic = Metamorphic
-    def get_Ore(self): return self.Ore
-    def set_Ore(self, Ore): self.Ore = Ore
-    def get_Sedimentary(self): return self.Sedimentary
-    def set_Sedimentary(self, Sedimentary): self.Sedimentary = Sedimentary
-    def get_Xenolithic(self): return self.Xenolithic
-    def set_Xenolithic(self, Xenolithic): self.Xenolithic = Xenolithic
-    def hasContent_(self):
-        if (
-            self.Igneous is not None or
-            self.Metamorphic is not None or
-            self.Ore is not None or
-            self.Sedimentary is not None or
-            self.Xenolithic is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='RockType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='RockType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='RockType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='RockType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='RockType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.Igneous is not None:
-            self.Igneous.export(outfile, level, namespace_, name_='Igneous', pretty_print=pretty_print)
-        if self.Metamorphic is not None:
-            self.Metamorphic.export(outfile, level, namespace_, name_='Metamorphic', pretty_print=pretty_print)
-        if self.Ore is not None:
-            self.Ore.export(outfile, level, namespace_, name_='Ore', pretty_print=pretty_print)
-        if self.Sedimentary is not None:
-            self.Sedimentary.export(outfile, level, namespace_, name_='Sedimentary', pretty_print=pretty_print)
-        if self.Xenolithic is not None:
-            self.Xenolithic.export(outfile, level, namespace_, name_='Xenolithic', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'Igneous':
-            obj_ = IgneousType.factory()
-            obj_.build(child_)
-            self.Igneous = obj_
-            obj_.original_tagname_ = 'Igneous'
-        elif nodeName_ == 'Metamorphic':
-            obj_ = MetamorphicType.factory()
-            obj_.build(child_)
-            self.Metamorphic = obj_
-            obj_.original_tagname_ = 'Metamorphic'
-        elif nodeName_ == 'Ore':
-            obj_ = OreType.factory()
-            obj_.build(child_)
-            self.Ore = obj_
-            obj_.original_tagname_ = 'Ore'
-        elif nodeName_ == 'Sedimentary':
-            obj_ = SedimentaryType.factory()
-            obj_.build(child_)
-            self.Sedimentary = obj_
-            obj_.original_tagname_ = 'Sedimentary'
-        elif nodeName_ == 'Xenolithic':
-            obj_ = XenolithicType.factory()
-            obj_.build(child_)
-            self.Xenolithic = obj_
-            obj_.original_tagname_ = 'Xenolithic'
-# end class RockType
-
-
-class MetamorphicType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, MetamorphicType_member=None):
-        self.original_tagname_ = None
-        self.MetamorphicType = MetamorphicType_member
-        self.validate_MetamorphicDetails(self.MetamorphicType)
-    def factory(*args_, **kwargs_):
-        if MetamorphicType.subclass:
-            return MetamorphicType.subclass(*args_, **kwargs_)
-        else:
-            return MetamorphicType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_MetamorphicType(self): return self.MetamorphicType
-    def set_MetamorphicType(self, MetamorphicType): self.MetamorphicType = MetamorphicType
-    def validate_MetamorphicDetails(self, value):
-        # Validate type MetamorphicDetails, a restriction on xs:string.
-        if value is not None and Validate_simpletypes_:
-            value = str(value)
-            enumerations = ['Calc-Silicate', 'Eclogite', 'Gneiss', 'Granofels', 'Granulite', 'MechanicallyBroken', 'Meta-Carbonate', 'Meta-Ultramafic', 'Metasedimentary', 'Metasomatic', 'Schist', 'Slate']
-            enumeration_respectee = False
-            for enum in enumerations:
-                if value == enum:
-                    enumeration_respectee = True
-                    break
-            if not enumeration_respectee:
-                warnings_.warn('Value "%(value)s" does not match xsd enumeration restriction on MetamorphicDetails' % {"value" : value.encode("utf-8")} )
-    def hasContent_(self):
-        if (
-            self.MetamorphicType is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='MetamorphicType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='MetamorphicType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='MetamorphicType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='MetamorphicType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='MetamorphicType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.MetamorphicType is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sMetamorphicType>%s</%sMetamorphicType>%s' % (namespace_, self.gds_format_string(quote_xml(self.MetamorphicType).encode(ExternalEncoding), input_name='MetamorphicType'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'MetamorphicType':
-            MetamorphicType_ = child_.text
-            MetamorphicType_ = self.gds_validate_string(MetamorphicType_, node, 'MetamorphicType')
-            self.MetamorphicType = MetamorphicType_
-            # validate type MetamorphicDetails
-            self.validate_MetamorphicDetails(self.MetamorphicType)
-# end class MetamorphicType
-
-
-class OreType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, OreType_member=None):
-        self.original_tagname_ = None
-        self.OreType = OreType_member
-        self.validate_OreDetails(self.OreType)
-    def factory(*args_, **kwargs_):
-        if OreType.subclass:
-            return OreType.subclass(*args_, **kwargs_)
-        else:
-            return OreType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_OreType(self): return self.OreType
-    def set_OreType(self, OreType): self.OreType = OreType
-    def validate_OreDetails(self, value):
-        # Validate type OreDetails, a restriction on xs:string.
-        if value is not None and Validate_simpletypes_:
-            value = str(value)
-            enumerations = ['Other', 'Oxide', 'Sulfide']
-            enumeration_respectee = False
-            for enum in enumerations:
-                if value == enum:
-                    enumeration_respectee = True
-                    break
-            if not enumeration_respectee:
-                warnings_.warn('Value "%(value)s" does not match xsd enumeration restriction on OreDetails' % {"value" : value.encode("utf-8")} )
-    def hasContent_(self):
-        if (
-            self.OreType is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='OreType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='OreType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='OreType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='OreType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='OreType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.OreType is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sOreType>%s</%sOreType>%s' % (namespace_, self.gds_format_string(quote_xml(self.OreType).encode(ExternalEncoding), input_name='OreType'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'OreType':
-            OreType_ = child_.text
-            OreType_ = self.gds_validate_string(OreType_, node, 'OreType')
-            self.OreType = OreType_
-            # validate type OreDetails
-            self.validate_OreDetails(self.OreType)
-# end class OreType
-
-
-class SedimentaryType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, SedimentaryType_member=None):
-        self.original_tagname_ = None
-        self.SedimentaryType = SedimentaryType_member
-        self.validate_SedimentaryDetails(self.SedimentaryType)
-    def factory(*args_, **kwargs_):
-        if SedimentaryType.subclass:
-            return SedimentaryType.subclass(*args_, **kwargs_)
-        else:
-            return SedimentaryType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_SedimentaryType(self): return self.SedimentaryType
-    def set_SedimentaryType(self, SedimentaryType): self.SedimentaryType = SedimentaryType
-    def validate_SedimentaryDetails(self, value):
-        # Validate type SedimentaryDetails, a restriction on xs:string.
-        if value is not None and Validate_simpletypes_:
-            value = str(value)
-            enumerations = ['Carbonate', 'ConglomerateAndOrBreccia', 'Evaporite', 'GlacialAndOrPaleosol', 'Hybrid', 'Ironstone', 'MixedCarbAndOrSiliciclastic', 'MnNoduleAndOrCrust', 'SiliceousBiogenic', 'Siliciclastic', 'Volcaniclastic']
-            enumeration_respectee = False
-            for enum in enumerations:
-                if value == enum:
-                    enumeration_respectee = True
-                    break
-            if not enumeration_respectee:
-                warnings_.warn('Value "%(value)s" does not match xsd enumeration restriction on SedimentaryDetails' % {"value" : value.encode("utf-8")} )
-    def hasContent_(self):
-        if (
-            self.SedimentaryType is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='SedimentaryType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='SedimentaryType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='SedimentaryType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='SedimentaryType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='SedimentaryType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.SedimentaryType is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sSedimentaryType>%s</%sSedimentaryType>%s' % (namespace_, self.gds_format_string(quote_xml(self.SedimentaryType).encode(ExternalEncoding), input_name='SedimentaryType'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'SedimentaryType':
-            SedimentaryType_ = child_.text
-            SedimentaryType_ = self.gds_validate_string(SedimentaryType_, node, 'SedimentaryType')
-            self.SedimentaryType = SedimentaryType_
-            # validate type SedimentaryDetails
-            self.validate_SedimentaryDetails(self.SedimentaryType)
-# end class SedimentaryType
-
-
-class XenolithicType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, Igneous=None, Metamorphic=None):
-        self.original_tagname_ = None
-        self.Igneous = Igneous
-        self.Metamorphic = Metamorphic
-    def factory(*args_, **kwargs_):
-        if XenolithicType.subclass:
-            return XenolithicType.subclass(*args_, **kwargs_)
-        else:
-            return XenolithicType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_Igneous(self): return self.Igneous
-    def set_Igneous(self, Igneous): self.Igneous = Igneous
-    def get_Metamorphic(self): return self.Metamorphic
-    def set_Metamorphic(self, Metamorphic): self.Metamorphic = Metamorphic
-    def hasContent_(self):
-        if (
-            self.Igneous is not None or
-            self.Metamorphic is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='XenolithicType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='XenolithicType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='XenolithicType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='XenolithicType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='XenolithicType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.Igneous is not None:
-            self.Igneous.export(outfile, level, namespace_, name_='Igneous', pretty_print=pretty_print)
-        if self.Metamorphic is not None:
-            self.Metamorphic.export(outfile, level, namespace_, name_='Metamorphic', pretty_print=pretty_print)
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'Igneous':
-            obj_ = IgneousType.factory()
-            obj_.build(child_)
-            self.Igneous = obj_
-            obj_.original_tagname_ = 'Igneous'
-        elif nodeName_ == 'Metamorphic':
-            obj_ = MetamorphicType1.factory()
-            obj_.build(child_)
-            self.Metamorphic = obj_
-            obj_.original_tagname_ = 'Metamorphic'
-# end class XenolithicType
-
-
-class MetamorphicType1(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, MetamorphicType=None):
-        self.original_tagname_ = None
-        self.MetamorphicType = MetamorphicType
-        self.validate_MetamorphicDetails(self.MetamorphicType)
-    def factory(*args_, **kwargs_):
-        if MetamorphicType1.subclass:
-            return MetamorphicType1.subclass(*args_, **kwargs_)
-        else:
-            return MetamorphicType1(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_MetamorphicType(self): return self.MetamorphicType
-    def set_MetamorphicType(self, MetamorphicType): self.MetamorphicType = MetamorphicType
-    def validate_MetamorphicDetails(self, value):
-        # Validate type MetamorphicDetails, a restriction on xs:string.
-        if value is not None and Validate_simpletypes_:
-            value = str(value)
-            enumerations = ['Calc-Silicate', 'Eclogite', 'Gneiss', 'Granofels', 'Granulite', 'MechanicallyBroken', 'Meta-Carbonate', 'Meta-Ultramafic', 'Metasedimentary', 'Metasomatic', 'Schist', 'Slate']
-            enumeration_respectee = False
-            for enum in enumerations:
-                if value == enum:
-                    enumeration_respectee = True
-                    break
-            if not enumeration_respectee:
-                warnings_.warn('Value "%(value)s" does not match xsd enumeration restriction on MetamorphicDetails' % {"value" : value.encode("utf-8")} )
-    def hasContent_(self):
-        if (
-            self.MetamorphicType is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='MetamorphicType1', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='MetamorphicType1')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='MetamorphicType1', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='MetamorphicType1'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='MetamorphicType1', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.MetamorphicType is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sMetamorphicType>%s</%sMetamorphicType>%s' % (namespace_, self.gds_format_string(quote_xml(self.MetamorphicType).encode(ExternalEncoding), input_name='MetamorphicType'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'MetamorphicType':
-            MetamorphicType_ = child_.text
-            MetamorphicType_ = self.gds_validate_string(MetamorphicType_, node, 'MetamorphicType')
-            self.MetamorphicType = MetamorphicType_
-            # validate type MetamorphicDetails
-            self.validate_MetamorphicDetails(self.MetamorphicType)
-# end class MetamorphicType1
-
-
-class MineralType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, MineralType_member=None):
-        self.original_tagname_ = None
-        self.MineralType = MineralType_member
-        self.validate_MineralDetails(self.MineralType)
-    def factory(*args_, **kwargs_):
-        if MineralType.subclass:
-            return MineralType.subclass(*args_, **kwargs_)
-        else:
-            return MineralType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_MineralType(self): return self.MineralType
-    def set_MineralType(self, MineralType): self.MineralType = MineralType
-    def validate_MineralDetails(self, value):
-        # Validate type MineralDetails, a restriction on xs:string.
-        if value is not None and Validate_simpletypes_:
-            value = str(value)
-            enumerations = ['Abelsonite', 'Abenakiite-(Ce)', 'Abernathyite', 'Abhurite', 'Abswurmbachite', 'Acanthite', 'Acetamide', 'Actinolite', 'Acuminite', 'Adamite', 'Adamsite-(Y)', 'Adelite', 'Admontite', 'Aegirine', 'Aenigmatite', 'Aerinite', 'Aerugite', 'Aeschynite', 'Aeschynite-(Ce)', 'Aeschynite-(Nd)', 'Aeschynite-(Y)', 'Afghanite', 'Afwillite', 'Agardite', 'Agardite-(La)', 'Agardite-(Y)', 'Agrellite', 'Agrinierite', 'Aguilarite', 'Aheylite', 'Ahlfeldite', 'Aikinite', 'Ajoite', 'Akaganeite', 'Akatoreite', 'Akdalaite', 'Akermanite', 'Akhtenskite', 'Akimotoite', 'Akrochordite', 'Aksaite', 'Aktashite', 'Alabandite', 'Alacranite', 'Alamosite', 'Alarsite', 'Albite', 'Albrechtschraufite', 'Aldermanite', 'Aldzhanite', 'Aleksite', 'Alforsite', 'Algodonite', 'Aliettite', 'AllMinerals', 'Allactite', 'Allanite', 'Allanite-(Ce)', 'Allanite-(La)', 'Allanite-(Y)', 'Allargentum', 'Alleghanyite', 'Alloclasite', 'Allophane', 'Alluaivite', 'Alluaudite', 'Almandine', 'Alstonite', 'Altaite', 'Althausite', 'Althupite', 'Altisite', 'Alum(GeneralTerm)', 'Aluminite', 'Aluminium', 'Aluminoceladonite', 'Aluminocopiapite', 'Aluminokatophorite', 'Aluminotschermakite', 'Aluminum', 'Alumohydrocalcite', 'Alumoklyuchevskite', 'Alumopharmacosiderite', 'Alumotantite', 'Alumotungstite', 'Alunite', 'Alunogen', 'Alvanite', 'Amakinite', 'Amalgam', 'Amarantite', 'Amarillite', 'Amber', 'Amblygonite', 'Ameghinite', 'Amesite', 'Amicite', 'Aminoffite', 'Ammonioalunite', 'Ammonioborite', 'Ammoniojarosite', 'Ammonioleucite', 'AmphiboleGroup', 'Amstallite', 'Analcime', 'Anandite', 'Anapaite', 'Anatase', 'Ancylite-(Ce)', 'Ancylite-(La)', 'Andalusite', 'Andersonite', 'Andesine', 'Andorite', 'Andradite', 'Andremeyerite', 'Androsite-(La)', 'Anduoite', 'Angelellite', 'Anglesite', 'Anhydrite', 'Anilite', 'Ankangite', 'Ankerite', 'Annabergite', 'Annite', 'Anorthite', 'Anorthoclase', 'Antarcticite', 'Anthoinite', 'Anthonyite', 'Anthophyllite', 'Antigorite', 'Antimonpearceite', 'Antimonselite', 'Antimony', 'Antlerite', 'Anyuiite', 'Apachite', 'ApatiteGroup', 'Aphthitalite', 'Apjohnite', 'Aplowite', 'Apophyllite', 'Apuanite', 'Aragonite', 'Arakiite', 'Aramayoite', 'Aravaipaite', 'Arcanite', 'Archerite', 'Arctite', 'Arcubisite', 'Ardaite', 'Ardealite', 'Ardennite', 'Arfvedsonite', 'Argentojarosite', 'Argentopentlandite', 'Argentopyrite', 'Argentotennantite', 'Argutite', 'Argyrodite', 'Arhbarite', 'Aristarainite', 'Armalcolite', 'Armangite', 'Armenite', 'Armstrongite', 'Arnhemite', 'Arrojadite', 'Arsenbrackebuschite', 'Arsendescloizite', 'Arsenic', 'Arseniopleite', 'Arseniosiderite', 'Arsenobismite', 'Arsenoclasite', 'Arsenocrandallite', 'Arsenoflorencite-(Ce)', 'Arsenogorceixite', 'Arsenogoyazite', 'Arsenohauchecornite', 'Arsenolamprite', 'Arsenolite', 'Arsenopalladinite', 'Arsenopyrite', 'Arsenosulvanite', 'Arsenpolybasite', 'Arsentsumebite', 'Arsenuranospathite', 'Arsenuranylite', 'Arthurite', 'Artinite', 'Artroeite', 'Arupite', 'Arzakite', 'Asbecasite', 'Asbestos', 'Asbolane', 'Aschamalmite', 'Ashanite', 'Ashburtonite', 'Ashcroftine-(Y)', 'Ashoverite', 'Asisite', 'Aspidolite', 'Asselbornite', 'Astrocyanite-(Ce)', 'Astrophyllite', 'Atacamite', 'Atelestite', 'Athabascaite', 'Atheneite', 'Atlasovite', 'Atokite', 'Attakolite', 'Aubertite', 'Augelite', 'Augite', 'Aurantimonate', 'Aurichalcite', 'Auricupride', 'Aurorite', 'Aurostibite', 'Austinite', 'Autunite', 'Averievite', 'Avicennite', 'Avogadrite', 'Awaruite', 'Azoproite', 'Azurite', 'Babefphite', 'Babingtonite', 'Babkinite', 'Baddeleyite', 'Bafertisite', 'Baghdadite', 'Bahianite', 'Baileychlore', 'Baiyuneboite', 'Baiyuneboite-(Ce)', 'Bakerite', 'Bakhchisaraitsevite', 'Baksanite', 'Balangeroite', 'Balavinskite', 'Balipholite', 'Balkanite', 'Balyakinite', 'Bambollaite', 'Bamfordite', 'Banalsite', 'Bandylite', 'Bannermanite', 'Bannisterite', 'Baotite', 'Bararite', 'Baratovite', 'Barberiite', 'Barbertonite', 'Barbosalite', 'Barentsite', 'Bariandite', 'Baricite', 'Bario-orthojoaquinite', 'Bariomicrolite', 'Bariopyrochlore', 'Bariosincosite', 'Barite', 'Barium-pharmacosiderite', 'Barnesite', 'Barquillite', 'Barrerite', 'Barringerite', 'Barringtonite', 'Barroisite', 'Barstowite', 'Bartelkeite', 'Bartonite', 'Barylite', 'Barysilite', 'Barytocalcite', 'Barytolamprophyllite', 'Basaluminite', 'Bassanite', 'Bassetite', 'Bastnasite', 'Bastnasite-(Ce)', 'Bastnasite-(La)', 'Bastnasite-(Y)', 'Batiferrite', 'Batisite', 'Baumhauerite', 'Baumhauerite-2a', 'Baumite', 'Baumstarkite', 'Bauranoite', 'Bauxite(GeneralTerm)', 'Bavenite', 'Bayankhanite', 'Bayerite', 'Bayldonite', 'Bayleyite', 'Baylissite', 'Bazhenovite', 'Bazirite', 'Bazzite', 'Bearsite', 'Bearthite', 'Beaverite', 'Bechererite', 'Becquerelite', 'Bederite', 'Behierite', 'Behoite', 'Beidellite', 'Belendorffite', 'Belkovite', 'Bellbergite', 'Bellidoite', 'Bellingerite', 'Belloite', 'Belovite-(Ce)', 'Belovite-(La)', 'Belyankinite', 'Bementite', 'Benauite', 'Benavidesite', 'Benitoite', 'Benjaminite', 'Benleonardite', 'Benstonite', 'Bentorite', 'Benyacarite', 'Beraunite', 'Berborite', 'Berborite-1t', 'Berdesinskiite', 'Berezanskite', 'Bergenite', 'Bergslagite', 'Berlinite', 'Bermanite', 'Bernalite', 'Bernardite', 'Berndtite', 'Berndtite-2t', 'Berndtite-4h', 'Berryite', 'Berthierine', 'Berthierite', 'Bertossaite', 'Bertrandite', 'Beryl', 'Beryllite', 'Beryllonite', 'Berzelianite', 'Berzeliite', 'Bessmertnovite', 'Beta-fergusonite-(Ce)', 'Beta-fergusonite-(Nd)', 'Beta-fergusonite-(Y)', 'Betafite', 'Betekhtinite', 'Betpakdalite', 'Beudantite', 'Beusite', 'Beyerite', 'Bezsmertnovite', 'Bianchite', 'Bicchulite', 'Bideauxite', 'Bieberite', 'Biehlite', 'Bigcreekite', 'Bijvoetite-(Y)', 'Bikitaite', 'Bilibinskite', 'Bilinite', 'Billietite', 'Billingsleyite', 'Bindheimite', 'Biotite', 'Biphosphammite', 'Biringuccite', 'Birnessite', 'Bischofite', 'Bismite', 'Bismoclite', 'Bismuth', 'Bismuthinite', 'Bismutite', 'Bismutocolumbite', 'Bismutoferrite', 'Bismutohauchecornite', 'Bismutomicrolite', 'Bismutopyrochlore', 'Bismutostibiconite', 'Bismutotantalite', 'Bityite', 'Bixbyite', 'Bjarebyite', 'Blakeite', 'Blatonite', 'Blatterite', 'Bleasdaleite', 'Blixite', 'Blodite', 'Blossite', 'Bobfergusonite', 'Bobierrite', 'Bogdanovite', 'Boggildite', 'Boggsite', 'Bogvadite', 'Bohdanowiczite', 'Bohmite', 'Bokite', 'Boleite', 'Bolivarite', 'Boltwoodite', 'Bonaccordite', 'Bonattite', 'Bonshtedtite', 'Boothite', 'Boracite', 'Boralsilite', 'Borax', 'Borcarite', 'Borishanskiite', 'Bornemanite', 'Bornhardtite', 'Bornite', 'Borodaevite', 'Boromuscovite', 'Borovskite', 'Bostwickite', 'Botallackite', 'Botryogen', 'Bottinoite', 'Boulangerite', 'Bournonite', 'Boussingaultite', 'Boussingualtite', 'Bowieite', 'Boyleite', 'Brabantite', 'Bracewellite', 'Brackebuschite', 'Bradleyite', 'Braggite', 'Braitschite-(Ce)', 'Brammallite', 'Brandholzite', 'Brandtite', 'Brannerite', 'Brannockite', 'Brassite', 'Braunite', 'Bravoite', 'Brazilianite', 'Bredigite', 'Breithauptite', 'Brenkite', 'Brewsterite', 'Brewsterite-Ba', 'Brewsterite-Sr', 'Brezinaite', 'Brianite', 'Brianroulstonite', 'Brianyoungite', 'Briartite', 'Brindleyite', 'Britholite', 'Britholite-(Ce)', 'Britholite-(Y)', 'Brizziite', 'Brochantite', 'Brockite', 'Brokenhillite', 'Bromargyrite', 'Bromellite', 'Brookite', 'Brownmillerite', 'Brucite', 'Bruggenite', 'Brugnatellite', 'Brunogeierite', 'Brushite', 'Buchwaldite', 'Buckhornite', 'Buddingtonite', 'Buergerite', 'Buetschliite', 'Bukovite', 'Bukovskyite', 'Bulachite', 'Bultfonteinite', 'Bunsenite', 'Burangaite', 'Burbankite', 'Burckhardtite', 'Burkeite', 'Burpalite', 'Bursaite', 'Burtite', 'Bustamite', 'Butlerite', 'Butschliite', 'Buttgenbachite', 'Byelorussite-(Ce)', 'Byelorussite-[ce]', 'Bystrite', 'Bystromite', 'Bytownite', 'Cabalzarite', 'Cabriite', 'Cacoxenite', 'Cadmium', 'Cadmoselite', 'Cadwaladerite', 'Cafarsite', 'Cafetite', 'Cahnite', 'Calaverite', 'Calciborite', 'Calcio-ancylite', 'Calcio-ancylite-(Ce)', 'Calcio-ancylite-(Nd)', 'Calcioaravaipaite', 'Calciobetafite', 'Calcioburbankite', 'Calciocopiapite', 'Calcioferrite', 'Calciohilairite', 'Calciosamarskite', 'Calciotantite', 'Calciouranoite', 'Calciovolborthite', 'Calcite', 'CalciumCatapleiite', 'Calcjarlite', 'Calclacite', 'Calcurmolite', 'Calderite', 'Caledonite', 'Calkinsite-(Ce)', 'Callaghanite', 'Calomel', 'Calumetite', 'Calzirtite', 'Camerolaite', 'Cameronite', 'Camgasite', 'Caminite', 'Campigliaite', 'Canaphite', 'Canasite', 'Canavesite', 'Cancrinite', 'Cancrisilite', 'Canfieldite', 'Canizzarite', 'Cannizzarite', 'Cannonite', 'Caoxite', 'Capgaronnite', 'Capgarronite', 'Cappelenite-(Y)', 'Caracolite', 'Carboborite', 'Carbocernaite', 'Carboirite', 'Carbonate-cyanotrichite', 'Carbonate-fluorapatite', 'Carbonate-hydroxylapatite', 'Caresite-3t', 'Carletonite', 'Carlfriesite', 'Carlhintzeite', 'Carlinite', 'Carlosruizite', 'Carlosturanite', 'Carlsbergite', 'Carmichaelite', 'Carminite', 'Carnallite', 'Carnotite', 'Carobbiite', 'Carpholite', 'Carraraite', 'Carrboydite', 'Carrollite', 'Caryinite', 'Caryopilite', 'Cascandite', 'Cassedanneite', 'Cassidyite', 'Cassiterite', 'Caswellsilverite', 'Catapleiite', 'Cattierite', 'Cavansite', 'Caysichite-(Y)', 'Cebaite-(Ce)', 'Cebaite-(Nd)', 'Cebollite', 'Cechite', 'Cejkaite', 'Celadonite', 'Celestite', 'Celsian', 'Cerianite-(Ce)', 'Ceriopyrochlore-(Ce)', 'Cerite-(Ce)', 'Cernyite', 'Cerotungstite-(Ce)', 'Ceruleite', 'Cerussite', 'Cervandonite-(Ce)', 'Cervantite', 'Cervelleite', 'Cesanite', 'Cesarolite', 'Cesbronite', 'CesiumKupletskite', 'Cesium-kupletskite', 'Cesplumtantite', 'Cesstibtantite', 'Cetineite', 'Chabazite', 'Chabazite-Ca', 'Chabazite-K', 'Chabazite-Na', 'Chabazite-Sr', 'Chabourneite', 'Chaidamuite', 'Chalcanthite', 'Chalcoalumite', 'Chalcocite', 'Chalcocyanite', 'Chalcomenite', 'Chalconatronite', 'Chalcophanite', 'Chalcophyllite', 'Chalcopyrite', 'Chalcosiderite', 'Chalcostibite', 'Chalcothallite', 'Chambersite', 'Chameanite', 'Chamosite', 'Changbaiite', 'Changchengite', 'Changoite', 'Chantalite', 'Chaoite', 'Chapmanite', 'Charlesite', 'Charmarite-2h', 'Charmarite-3t', 'Charoite', 'Chatkalite', 'Chayesite', 'Chekhovichite', 'Chelkarite', 'Chenevixite', 'Chengdeite', 'Chenite', 'Cheralite', 'Cheralite-(Ce)', 'Cheremnykhite', 'Cherepanovite', 'Chernikovite', 'Chernovite-(Y)', 'Chernykhite', 'Chervetite', 'Chessexite', 'Chesterite', 'Chestermanite', 'Chevkinite', 'Chevkinite-(Ce)', 'Chiavennite', 'Childrenite', 'Chiluite', 'Chilunite', 'Chiolite', 'Chkalovite', 'Chladniite', 'Chloraluminite', 'Chlorapatite', 'Chlorargyrite', 'Chlorartinite', 'Chlorellestadite', 'ChloriteGroup', 'Chloritoid', 'Chlormagaluminite', 'Chlormanganokalite', 'Chlorocalcite', 'Chloromenite', 'Chlorophoenicite', 'Chlorothionite', 'Chloroxiphite', 'Choloalite', 'Chondrodite', 'Chrisstanleyite', 'Christelite', 'Christite', 'Chromatite', 'Chrombismite', 'Chromceladonite', 'Chromdravite', 'Chromferide', 'Chromite', 'Chromium', 'Chromphyllite', 'Chrysoberyl', 'Chrysocolla', 'Chrysotile', 'Chudobaite', 'Chukhrovite', 'Chukhrovite-(Ce)', 'Chukhrovite-(Y)', 'Churchite-(Y)', 'Chursinite', 'Chvaleticeite', 'Chvilevaite', 'Cianciulliite', 'Ciguenza', 'Cinnabar', 'Clairite', 'Claraite', 'Claringbullite', 'Clarkeite', 'Claudetite', 'Clausthalite', 'Clearcreekite', 'Clerite', 'Cliffordite', 'Cliftonite', 'Clinoatacamite', 'Clinobehoite', 'Clinobisvanite', 'Clinocervantite', 'Clinochalcomenite', 'Clinochlore', 'Clinochrysotile', 'Clinoclase', 'Clinoenstatite', 'Clinoferroholmquistite', 'Clinoferrosilite', 'Clinohedrite', 'Clinoholmquistite', 'Clinohumite', 'Clinojimthompsonite', 'Clinokurchatovite', 'Clinomimetite', 'Clinophosinaite', 'Clinoptilolite', 'Clinoptilolite-Ca', 'Clinoptilolite-K', 'Clinoptilolite-Na', 'Clinosafflorite', 'Clinotobermorite', 'Clinotyrolite', 'Clinoungemachite', 'Clinozoisite', 'Clintonite', 'Coalingite', 'CobaltPentlandite', 'Cobalt-zippeite', 'Cobaltaustinite', 'Cobaltite', 'Cobaltkoritnigite', 'Cobaltolotharmeyerite', 'Cobaltomenite', 'Cochromite', 'Coconinoite', 'Coeruleolactite', 'Coesite', 'Coffinite', 'Cohenite', 'Colemanite', 'Collinsite', 'Coloradoite', 'Colquiriite', 'Columbite', 'Colusite', 'Comancheite', 'Combeite', 'Comblainite', 'Compreignacite', 'Congolite', 'Conichalcite', 'Connellite', 'Consumed', 'Cookeite', 'Coombsite', 'Cooperite', 'Coparsite', 'Copiapite', 'Copper', 'Coquandite', 'Coquimbite', 'Coral', 'Corderoite', 'Cordierite', 'Cordylite-(Ce)', 'Corkite', 'Cornetite', 'Cornubite', 'Cornwallite', 'Coronadite', 'Corrensite', 'Corundum', 'Corvusite', 'Cosalite', 'Coskrenite-(Ce)', 'Costibite', 'Cotunnite', 'Coulsonite', 'Cousinite', 'Covellite', 'Cowlesite', 'Coyoteite', 'Crandallite', 'Crawfordite', 'Creaseyite', 'Crednerite', 'Creedite', 'Crerarite', 'Crichtonite', 'Criddleite', 'Cristobalite', 'Crocoite', 'Cronstedtite', 'Cronstedtite-1m', 'Crookesite', 'Crossite', 'Cryolite', 'Cryolithionite', 'Cryptohalite', 'Cryptomelane', 'Csikolavaite', 'Cualstibite', 'Cubanite', 'Cumengite', 'Cummingtonite', 'Cupalite', 'Cuprite', 'Cuprobismutite', 'Cuprocopiapite', 'Cuproiridsite', 'Cupropavonite', 'Cuprorhodsite', 'Cuprorivaite', 'Cuprosklodowskite', 'Cuprospinel', 'Cuprostibite', 'Cuprotungstite', 'Curetonite', 'Curienite', 'Curite', 'Cuspidine', 'Cuzticite', 'Cyanochroite', 'Cyanophillite', 'Cyanophyllite', 'Cyanotrichite', 'Cylindrite', 'Cymrite', 'Cyrilovite', "D'ansite", 'Dachiardite', 'Dachiardite-Ca', 'Dachiardite-Na', 'Dadsonite', 'Dalyite', 'Damaraite', 'Damiaoite', 'Danalite', 'Danbaite', 'Danburite', 'Danielsite', 'Dannemorite', 'Daomanite', 'Daqingshanite-(Ce)', 'Darapiosite', 'Darapskite', 'Dashkovaite', 'Datolite', 'Daubreeite', 'Daubreelite', 'Davanite', 'Davidite', 'Davidite-(Ce)', 'Davidite-(La)', 'Davreuxite', 'Davyne', 'Dawsonite', 'Deaccessioned', 'Deanesmithite', 'Decrespignyite-(Y)', 'Deerite', 'Defernite', 'Delafossite', 'Delhayelite', 'Deliensite', 'Delindeite', 'Dellaite', 'Deloneite-(Ce)', 'Deloryite', 'Delrioite', 'Delvauxite', 'Demesmaekerite', 'Denisovite', 'Denningite', 'Derbylite', 'Derriksite', 'Dervillite', 'Desautelsite', 'Descloizite', 'Despujolsite', 'Dessauite', 'Devilline', 'Dewindtite', 'Diaboleite', 'Diadochite', 'Diamond', 'Diaoyudaoite', 'Diaphorite', 'Diaspore', 'Dickinsonite', 'Dickite', 'Dickthomssenite', 'Dienerite', 'Dietrichite', 'Dietzeite', 'Digenite', 'Dimorphite', 'Diomignite', 'Diopside', 'Dioptase', 'Dissakisite-(Ce)', 'Dittmarite', 'Dixenite', 'Djerfisherite', 'Djurleite', 'Dmisteinbergite', 'Dolerophanite', 'Dollaseite-(Ce)', 'Dolomite', 'Doloresite', 'Domeykite', 'Donbassite', 'Donharrisite', 'Donnayite-(Y)', 'Donpeacorite', 'Dorallcharite', 'Dorfmanite', 'Dorrite', 'Douglasite', 'Downeyite', 'Doyleite', 'Dozyite', 'Dravite', 'Dresserite', 'Dreyerite', 'Drugmanite', 'Drysdallite', 'Dufrenite', 'Dufrenoysite', 'Duftite', 'Dugganite', 'Duhamelite', 'Dukeite', 'Dumontite', 'Dumortierite', 'Dundasite', 'Durangite', 'Duranusite', 'Dusmatovite', 'Dussertite', 'Duttonite', 'Dwornikite', 'Dypingite', 'Dyscrasite', 'Dzhalindite', 'Dzharkenite', 'Eakerite', 'Earlandite', 'Earlshannonite', 'Eastonite', 'Ecandrewsite', 'Ecdemite', 'Eckermannite', 'Eclarite', 'Edenharterite', 'Edenite', 'Edgarbaileyite', 'Edgarite', 'Edingtonite', 'Edoylerite', 'Effenbergerite', 'Efremovite', 'Eggletonite', 'Eglestonite', 'Ehrleite', 'Eifelite', 'Eitelite', 'Ekanite', 'Ekaterinite', 'Ekatite', 'Elbaite', 'Electrum', 'Ellenbergerite', 'EllestaditeSeries', 'Ellisite', 'Elpasolite', 'Elpidite', 'Elyite', 'Embreyite', 'Emeleusite', 'Emmonsite', 'Emplectite', 'Empressite', 'Enargite', 'Endellite', 'Englishite', 'Enstatite', 'Eosphorite', 'Ephesite', 'Epididymite', 'Epidote', 'Epistilbite', 'Epistolite', 'Epsomite', 'Ercitite', 'Erdite', 'Ericaite', 'Ericssonite', 'Eriochalcite', 'Erionite', 'Erionite-Ca', 'Erionite-K', 'Erionite-Na', 'Erlianite', 'Erlichmanite', 'Ernienickelite', 'Erniggliite', 'Ernigglite', 'Ernstite', 'Ershovite', 'Ertixiite', 'Erythrite', 'Erythrosiderite', 'Eskebornite', 'Eskimoite', 'Eskolaite', 'Esperanzaite', 'Esperite', 'Esseneite', 'Ettringite', 'Eucairite', 'Euchlorine', 'Euchroite', 'Euclase', 'Eucryptite', 'Eudialyte', 'Eudidymite', 'Eugenite', 'Eugsterite', 'Eulytite', 'Euxenite-(Y)', 'Evansite', 'Eveite', 'Evenkite', 'Ewaldite', 'Eylettersite', 'Ezcurrite', 'Eztlite', 'F-K-magnesio-arfvedsonite', 'Fabianite', 'Faheyite', 'Fahleite', 'Fairbankite', 'Fairchildite', 'Fairfieldite', 'Falcondoite', 'Falkmanite', 'Famatinite', 'Fangite', 'Farringtonite', 'Faujasite', 'Faujasite-Ca', 'Faujasite-Mg', 'Faujasite-Na', 'Faustite', 'Fayalite', 'Fedorite', 'Fedorovskite', 'Fedotovite', 'Feinglosite', 'Feitknechtite', 'FeldsparGroup', 'Felsobanyaite', 'Fenaksite', 'Ferberite', 'Ferchromide', 'Ferdisilicite', 'Fergusonite', 'Fergusonite-(Ce)', 'Fergusonite-(Nd)', 'Fergusonite-(Y)', 'Fergusonite-beta', 'Fergusonite-beta-(Ce)', 'Fergusonite-beta-(Nd)', 'Fergusonite-beta-(Y)', 'Fermorite', 'Fernandinite', 'Feroxyhyte', 'Ferrarisite', 'Ferri-annite', 'Ferri-barroisite', 'Ferri-clinoholmquistite', 'Ferricopiapite', 'Ferrierite', 'Ferrierite-K', 'Ferrierite-Mg', 'Ferrierite-Na', 'Ferrihydrite', 'Ferrikatophorite', 'Ferrilotharmeyerite', 'Ferrimolybdite', 'Ferrinatrite', 'Ferripedrdizite', 'Ferripyrophyllite', 'Ferrisicklerite', 'Ferristrunzite', 'Ferrisurite', 'Ferrisymplesite', 'Ferritungstite', 'Ferro-actinolite', 'Ferro-alluaudite', 'Ferro-aluminoceladonite', 'Ferro-anthophyllite', 'Ferro-axinite', 'Ferro-eckermannite', 'Ferro-edenite', 'Ferroaluminoceladonite', 'Ferrobarroisite', 'Ferrobustamite', 'Ferrocarpholite', 'Ferroceladonite', 'Ferrocolumbite', 'Ferrogedrite', 'Ferroglaucophane', 'Ferrohexahydrite', 'Ferroholmquistite', 'Ferrohornblende', 'Ferrokaersutite', 'Ferrokesterite', 'Ferrokinoshitalite', 'Ferronickelplatinum', 'Ferronordite-(Ce)', 'Ferropargasite', 'Ferropyrosmalite', 'Ferrorhodsite', 'Ferrorichterite', 'Ferroselite', 'Ferrosilite', 'Ferrostrunzite', 'Ferrotantalite', 'Ferrotapiolite', 'Ferrotitanowodginite', 'Ferrotschermakite', 'Ferrotychite', 'Ferrowinchite', 'Ferrowodginite', 'Ferrowyllieite', 'Ferruccite', 'Fersilicite', 'Fersmanite', 'Fersmite', 'Feruvite', 'Fervanite', 'Fetiasite', 'Fettelite', 'Fianelite', 'Fibroferrite', 'Fichtelite', 'Fiedlerite', 'Fiedlerite-2m', 'Filipstadite', 'Fillowite', 'Fingerite', 'Finnemanite', 'Fischesserite', 'Fizelyite', 'Flagstaffite', 'Fleischerite', 'Fletcherite', 'Flinkite', 'Florencite', 'Florencite-(Ce)', 'Florencite-(La)', 'Florencite-(Nd)', 'Florenskyite', 'Florensovite', 'Fluckite', 'Fluellite', 'Fluoborite', 'Fluocerite', 'Fluocerite-(Ce)', 'Fluocerite-(La)', 'Fluor-cannilloite', 'Fluor-ferro-leakeite', 'Fluorannite', 'Fluorapatite', 'Fluorapophyllite', 'Fluorbritholite-(Ce)', 'Fluorcaphite', 'Fluorellestadite', 'Fluorite', 'Fluoro-edenite', 'Fluoro-ferroleakeite', 'Fluoro-magnesio-arfvedsonite', 'Fluorocannilloite', 'Fluororichterite', 'Fluorrichterite', 'Fluorthalenite-(Y)', 'Foggite', 'Foitite', 'Fontanite', 'Foordite', 'Formanite-(Y)', 'Formicaite', 'Fornacite', 'Forsterite', 'Foshagite', 'Foshallasite', 'Fourmarierite', 'Fraipontite', 'Francevillite', 'Franciscanite', 'Francisite', 'Franckeite', 'Francoanellite', 'Francoisite-(Nd)', 'Franconite', 'Frankamenite', 'Frankdicksonite', 'Frankhawthorneite', 'Franklinfurnaceite', 'Franklinite', 'Franklinphilite', 'Fransoletite', 'Franzinite', 'Freboldite', 'Fredrikssonite', 'Freedite', 'Freibergite', 'Freieslebenite', 'Fresnoite', 'Freudenbergite', 'Freyalite', 'Friedelite', 'Friedrichite', 'Fritzscheite', 'Frohbergite', 'Frolovite', 'Frondelite', 'Froodite', 'Fuenzalidaite', 'Fukalite', 'Fukuchilite', 'Fuloppite', 'Furongite', 'Furutobeite', 'Gabrielsonite', 'Gadolinite', 'Gadolinite-(Ce)', 'Gadolinite-(Y)', 'Gagarinite-(Y)', 'Gageite', 'Gageite-1tc', 'Gageite-2m', 'Gahnite', 'Gaidonnayite', 'Gainesite', 'Gaitite', 'Galaxite', 'Galeite', 'Galena', 'Galenobismutite', 'Galileiite', 'Galkhaite', 'Gallite', 'Gallobeudantite', 'Gamagarite', 'Gananite', 'Ganomalite', 'Ganophyllite', 'Gaotaiite', 'Garavellite', 'GarnetGroup', 'Garnierite(GeneralTerm)', 'Garrelsite', 'Garronite', 'Gartrellite', 'Garyansellite', 'Gasparite-(Ce)', 'Gaspeite', 'Gatehouseite', 'Gatumbaite', 'Gaudefroyite', 'Gaultite', 'Gaylussite', 'Gearksutite', 'Gebhardite', 'Gedrite', 'Geerite', 'Geffroyite', 'Gehlenite', 'Geigerite', 'Geikielite', 'Geminite', 'Genkinite', 'Genthelvite', 'Geocronite', 'Georgebokiite', 'Georgechaoite', 'Georgeericksenite', 'Georgeite', 'Georgiadesite', 'Gerasimovskite', 'Gerdtremmelite', 'Gerenite-(Y)', 'Gerhardtite', 'Germanite', 'Germanocolusite', 'Gersdorffite', 'Gerstleyite', 'Gerstmannite', 'Getchellite', 'Geversite', 'Gianellaite', 'Gibbsite', 'Giessenite', 'Gilalite', 'Gillespite', 'Gillulyite', 'Gilmarite', 'Giniite', 'Ginorite', 'Giorgiosite', 'Giraudite', 'Girdite', 'Girvasite', 'Gismondine', 'Gittinsite', 'Giuseppettite', 'Gladite', 'Gladiusite', 'Glass', 'Glauberite', 'Glaucocerinite', 'Glaucochroite', 'Glaucodot', 'Glauconite', 'Glaucophane', 'Glaukosphaerite', 'Glucine', 'Glushinskite', 'Gmelinite', 'Gmelinite-Ca', 'Gmelinite-K', 'Gmelinite-Na', 'Gobbinsite', 'Godlevskite', 'Godovikovite', 'Goedkenite', 'Goethite', 'Gold', 'Goldore', 'Goldamalgam', 'Goldamalgam-Gamma', 'Goldfieldite', 'Goldichite', 'Goldmanite', 'Gonnardite', 'Gonyerite', 'Goosecreekite', 'Gorceixite', 'Gordaite', 'Gordonite', 'Gorgeyite', 'Gormanite', 'Gortdrumite', 'Goslarite', 'Gottardiite', 'Gottlobite', 'Gotzenite', 'Goudeyite', 'Gowerite', 'Goyazite', 'Graemite', 'Graeserite', 'Graftonite', 'Grandidierite', 'Grandreefite', 'Grantsite', 'Graphite', 'Gratonite', 'Grattarolaite', 'Gravegliaite', 'Grayite', 'Grechishchevite', 'Greenalite', 'Greenockite', 'Gregoryite', 'Greifensteinite', 'Greigite', 'Griceite', 'Grimaldiite', 'Grimselite', 'Griphite', 'Grischunite', 'Grossite', 'Grossular', 'Groutite', 'Grumantite', 'Grumiplucite', 'Grunerite', 'Gruzdevite', 'Guanajuatite', 'Guanine', 'Guarinoite', 'Gudmundite', 'Guerinite', 'Guettardite', 'Gugiaite', 'Guildite', 'Guilleminite', 'Gummite(GeneralTerm)', 'Gunningite', 'Gupeiite', 'Gustavite', 'Gutsevichite', 'Guyanaite', 'Gwihabaite', 'Gypsum', 'Gyrolite', 'Gysinite-(Nd)', 'Haapalaite', 'Hafnon', 'Hagendorfite', 'Haggertyite', 'Haggite', 'Haidingerite', 'Haigerachite', 'Hainite', 'Haiweeite', 'Hakite', 'Halite', 'Hallimondite', 'Halloysite', 'Halotrichite', 'Halurgite', 'Hambergite', 'Hammarite', 'Hanawaltite', 'Hancockite', 'Hanksite', 'Hannayite', 'Hannebachite', 'Haradaite', 'Hardystonite', 'Harkerite', 'Harmotome', 'Harrisonite', 'Harstigite', 'Hashemite', 'Hastingsite', 'Hastite', 'Hatchite', 'Hatrurite', 'Hauchecornite', 'Hauckite', 'Hauerite', 'Hausmannite', 'Hauyne', 'Hawleyite', 'Hawthorneite', 'Haxonite', 'Haycockite', 'Haynesite', 'Heazlewoodite', 'Hechtsbergite', 'Hectorfloresite', 'Hectorite', 'Hedenbergite', 'Hedleyite', 'Hedyphane', 'Heideite', 'Heidornite', 'Heinrichite', 'Hejtmanite', 'Heliophyllite', 'Hellandite', 'Hellyerite', 'Helmutwinklerite', 'Helvite', 'Hematite', 'Hematolite', 'Hematophanite', 'Hemihedrite', 'Hemimorphite', 'Hemloite', 'Hemusite', 'Hendersonite', 'Hendricksite', 'Heneuite', 'Henmilite', 'Hennomartinite', 'Henritermierite', 'Henryite', 'Hentschelite', 'Hercynite', 'Herderite', 'Herschelite', 'Herzenbergite', 'Hessite', 'Hetaerolite', 'Heterogenite', 'Heterogenite-2h', 'Heteromorphite', 'Heterosite', 'Heulandite', 'Heulandite-K', 'Heulandite-Na', 'Heulandite-Sr', 'Heulandite-Ca', 'Hewettite', 'Hexaferrum', 'Hexahydrite', 'Hexahydroborite', 'Hexatestibiopanickelite', 'Heyite', 'Heyrovskyite', 'Hibbingite', 'Hibonite', 'Hibschite', 'Hidalgoite', 'Hieratite', 'Hilairite', 'Hilgardite', 'Hilgardite-1tc', 'Hilgardite-3tc', 'Hilgardite-4m', 'Hillebrandite', 'Hingganite', 'Hingganite-(Ce)', 'Hingganite-(Y)', 'Hingganite-(Yb)', 'Hinsdalite', 'Hiortdahlite', 'Hisingerite', 'Hoakansboda', 'Hocartite', 'Hochelagaite', 'Hodgkinsonite', 'Hodrushite', 'Hoelite', 'Hogbomite', 'Hogtuvaite', 'Hohmannite', 'Holdawayite', 'Holdenite', 'Hollandite', 'Hollingworthite', 'Holmquistite', 'Holtedahlite', 'Holtite', 'Homilite', 'Honessite', 'Hongquiite', 'Hongshiite', 'Hopeite', 'HornblendeSeries', 'Hornesite', 'Horsfordite', 'Horvathite-(Y)', 'Hotsonite', 'Howardevansite', 'Howieite', 'Howlite', 'Hsianghualite', 'Huanghoite-(Ce)', 'Huangite', 'Hubeite', 'Hubnerite', 'Huemulite', 'Hugelite', 'Hulsite', 'Humberstonite', 'Humboldtine', 'Humite', 'Hummerite', 'Hunchunite', 'Hungchaoite', 'Huntite', 'Hureaulite', 'Hurlbutite', 'Hutchinsonite', 'Huttonite', 'Hyalophane', 'Hyalotekite', 'Hydroastrophyllite', 'Hydrobasaluminite', 'Hydrobiotite', 'Hydroboracite', 'Hydrocalumite', 'Hydrocerussite', 'Hydrochlorborite', 'Hydrodelhayelite', 'Hydrodresserite', 'Hydroglauberite', 'HydrogrossularSeries', 'Hydrohalite', 'Hydrohetaerolite', 'Hydrohonessite', 'Hydromagnesite', 'Hydrombobomkulite', 'Hydromolysite', 'HydroniumJarosite', 'Hydrophilite', 'Hydrophosphate', 'Hydroromarchite', 'Hydroscarbroite', 'Hydrotalcite', 'Hydrotungstite', 'Hydrougrandite', 'Hydrowoodwardite', 'Hydroxyapophyllite', 'Hydroxycancrinite', 'Hydroxylapatite', 'Hydroxylbastnaesite', 'Hydroxylbastnaesite-(Ce)', 'Hydroxylbastnaesite-(La)', 'Hydroxylbastnaesite-(Nd)', 'Hydroxylclinohumite', 'Hydroxylellestadite', 'Hydroxylherderite', 'Hydrozincite', 'Hypercinnabar', 'Hypersthene', 'Hyttsjoite', 'Ianthinite', 'Ice', 'Idaite', 'Idrialite', 'Iimoriite-(Y)', 'Ikaite', 'Ikunolite', 'Ilesite', 'Ilimaussite-(Ce)', 'Ilinskite', 'Illite', 'Ilmajokite', 'Ilmenite', 'Ilmenorutile', 'Ilsemannite', 'Iltisite', 'Ilvaite', 'Imandrite', 'Imgreite', 'Imhofite', 'Imiterite', 'Imogolite', 'Inaglyite', 'Incaite', 'Inderborite', 'Inderite', 'Indialite', 'Indigirite', 'Indite', 'Indium', 'Inesite', 'Ingersonite', 'Ingodite', 'Innelite', 'Insizwaite', 'Intersilite', 'Inyoite', 'Iodargyrite', 'Iowaite', 'Iquiqueite', 'Iranite', 'Iraqite-(La)', 'Irarsite', 'Irhtemite', 'Iridarsenite', 'Iridium', 'Iridosmine', 'Iriginite', 'Iron', 'Irtyshite', 'Ishikawaite', 'Isoclasite', 'Isocubanite', 'Isoferroplatinum', 'Isokite', 'Isolueshite', 'Isomertieite', 'Isovite', 'Itoigawaite', 'Itoite', 'Iwakiite', 'Ixiolite', 'Izoklakeite', 'Jachymovite', 'Jacobsite', 'Jadeite', 'Jaffeite', 'Jagoite', 'Jagowerite', 'Jahnsite', 'Jahnsite-(CaMnFe)', 'Jahnsite-(CaMnMg)', 'Jahnsite-(CaMnMn)', 'Jalpaite', 'Jamborite', 'Jamesite', 'Jamesonite', 'Janggunite', 'Janhaugite', 'Jankovicite', 'Jarlite', 'Jarosewichite', 'Jarosite', 'Jaskolskiite', 'Jasmundite', 'Jeanbandyite', 'Jedwabite', 'Jeffreyite', 'Jennite', 'Jensenite', 'Jentschite', 'Jeppeite', 'Jeremejevite', 'Jeromite', 'Jerrygibbsite', 'Jervisite', 'Jianshiite', 'Jianshuiite', 'Jimboite', 'Jimthompsonite', 'Jinshajiangite', 'Jixianite', 'Joaquinite-(Ce)', 'Joesmithite', 'Johachidolite', 'Johannite', 'Johannsenite', 'Johillerite', 'Johnbaumite', 'Johninnesite', 'Johnsomervilleite', 'Johntomaite', 'Johnwalkite', 'Jokokuite', 'Joliotite', 'Jolliffeite', 'Jonesite', 'Jordanite', 'Jordisite', 'Jorgensenite', 'Joseite', 'Joseite-A', 'Joseite-B', 'Joseite-a', 'Joseite-b', 'Jouravskite', 'Juabite', 'Juanitaite', 'Juanite', 'Julgoldite-(Fe2+)', 'Julienite', 'Jungite', 'Junitoite', 'Junoite', 'Juonniite', 'Jurbanite', 'K-feldspar', 'Kaatialaite', 'Kadyrelite', 'Kaersutite', 'Kafehydrocyanite', 'Kahlerite', 'Kainite', 'Kainosite-(Y)', 'Kalborsite', 'Kaliborite', 'Kalicinite', 'Kalifersite', 'Kalininite', 'Kalinite', 'Kaliophilite', 'Kalipyrochlore', 'Kalistrontite', 'Kalsilite', 'Kaluginite', 'Kamacite', 'Kamaishilite', 'Kambaldaite', 'Kamchatkite', 'Kamiokite', 'Kamitugaite', 'Kamotoite-(Y)', 'Kamphaugite-(Y)', 'Kanemite', 'Kankite', 'Kanoite', 'Kanonaite', 'Kaolinite', 'KaoliniteGroup', 'Kapitsaite-(y)', 'Karasugite', 'Karelianite', 'Karibibite', 'Karlite', 'Karnasurtite-(Ce)', 'Karpatite', 'Karpinskite', 'Kashinite', 'Kasolite', 'Kassite', 'Kastningite', 'KastorClaim', 'Katayamalite', 'Katoite', 'Katophorite', 'Katoptrite', 'Kawazulite', 'Kazakhstanite', 'Kazakovite', 'Keckite', 'Kegelite', 'Kehoeite', 'Keithconnite', 'Keiviite', 'Keiviite-(Y)', 'Keiviite-(Yb)', 'Keldyshite', 'Kellyite', 'Kelyanite', 'Kemmlitzite', 'Kempite', 'Kenhsuite', 'Kennedyite', 'Kentbrooksite', 'Kentrolite', 'Kenyaite', 'Kermesite', 'Kernite', 'Kerstenite', 'Kesterite', 'Kettnerite', 'Keyite', 'Keystoneite', 'Khademite', 'Khaidarkanite', 'Khamrabaevite', 'Khanneshite', 'Kharaelakhite', 'Khatyrkite', 'Khibinskite', 'Khinite', 'Khmaralite', 'Khomyakovite', 'Khristovite-(Ce)', 'Kiddcreekite', 'Kidwellite', 'Kieftite', 'Kieserite', 'Kilchoanite', 'Killalaite', 'Kimrobinsonite', 'Kimuraite-(Y)', 'Kimzeyite', 'Kingite', 'Kingsmountite', 'Kinichilite', 'Kinoite', 'Kinoshitalite', 'Kintoreite', 'Kipushite', 'Kirkiite', 'Kirschsteinite', 'Kitaibelite', 'Kitkaite', 'Kittatinnyite', 'Kivuite', 'Kladnoite', 'Kladonite', 'Klebelsbergite', 'Kleemanite', 'Kleinite', 'Klockmannite', 'Klyuchevskite', 'Knorringite', 'Koashvite', 'Kobeite-(Y)', 'Kobellite', 'Kochkarite', 'Koechlinite', 'Koenenite', 'Kogarkoite', 'Koktaite', 'Kolarite', 'Kolbeckite', 'Kolfanite', 'Kolicite', 'Kolovratite', 'Kolwezite', 'Kolymite', 'Komarovite', 'Kombatite', 'Komkovite', 'Konderite', 'Koninckite', 'Konyaite', 'Koragoite', 'Koritnigite', 'Kornelite', 'Kornerupine', 'Kornite', 'Korobitsynite', 'Korshunovskite', 'Korzhinskite', 'Kosmochlor', 'Kosnarite', 'Kostovite', 'Kostylevite', 'Kotoite', 'Kottigite', 'Kotulskite', 'Koutekite', 'Kovdorskite', 'Kozoite-(Nd)', 'Kozulite', 'Kraisslite', 'Krasnovite', 'Kratochvilite', 'Krausite', 'Krauskopfite', 'Krautite', 'Kremersite', 'Krennerite', 'Krettnichite', 'Kribergite', 'Krinovite', 'Kristiansenite', 'Krohnkite', 'Krupkaite', 'Krutaite', 'Krutovite', 'Kryzhanovskite', 'Ktenasite', 'Kukharenkoite-(Ce)', 'Kukisvumite', 'Kuksite', 'Kulanite', 'Kuliokite-(Y)', 'Kulkeite', 'Kullerudite', 'Kupletskite', 'Kuramite', 'Kuranakhite', 'Kurchatovite', 'Kurnakovite', 'Kurumsakite', 'Kusachiite', 'Kutinaite', 'Kutnahorite', 'Kutnohorite', 'Kuzelite', 'Kuzmenkoite', 'Kuzminite', 'Kuznetsovite', 'Kvanefjeldite', 'Kyanite', 'Kyzylkumite', 'Labradorite', 'Labuntsovite', 'Lacroixite', 'Laffittite', 'Laforetite', 'Laihunite', 'Laitakarite', 'Lammerite', 'Lamprophyllite', 'Lanarkite', 'Landauite', 'Landesite', 'Langbanite', 'Langbeinite', 'Langisite', 'Langite', 'Lannonite', 'Lansfordite', 'Lanthanite', 'Lanthanite-(Ce)', 'Lanthanite-(La)', 'Lanthanite-(Nd)', 'Laphamite', 'Lapieite', 'Laplandite-(Ce)', 'Larderellite', 'Larnite', 'Larosite', 'Larsenite', 'Latiumite', 'Latrappite', 'Laueite', 'Laumontite', 'Launayite', 'Laurelite', 'Laurionite', 'Laurite', 'Lausenite', 'Lautarite', 'Lautenthalite', 'Lautite', 'Lavendulan', 'Lavenite', 'Lavrentievite', 'Lawrencite', 'Lawsonbauerite', 'Lawsonite', 'Lazarenkoite', 'Lazulite', 'Lazurite', 'Lead', 'Leadamalgam', 'Leadhillite', 'Leakeite', 'Leconite', 'Lecontite', 'Legrandite', 'Lehnerite', 'Leifite', 'Leightonite', 'Leisingite', 'Leiteite', 'Lemanskiite', 'Lemmleinite', 'Lemoynite', 'Lenaite', 'Lengenbachite', 'Leningradite', 'Lennilenapeite', 'Lenoblite', 'Leonite', 'Lepersonnite-(Gd)', 'Lepidocrocite', 'Lepidolite', 'Lepidolite-2m', 'Lermontovite', 'Lesukite', 'Letovicite', 'Leucite', 'Leucophanite', 'Leucophoenicite', 'Leucophosphite', 'Leucosphenite', 'Levinsonite-(Y)', 'Levyclaudite', 'Levyne', 'Levyne-Ca', 'Levyne-Na', 'Lewisite', 'Liandratite', 'Liberite', 'Libethenite', 'Liddicoatite', 'Liebauite', 'Liebenbergite', 'Liebigite', 'Likasite', 'Lillianite', 'Lime', 'Limonite', 'Limonite(GeneralTerm)', 'Linarite', 'Lindackerite', 'Lindgrenite', 'Lindqvistite', 'Lindsleyite', 'Lindstromite', 'Linnaeite', 'Lintisite', 'Liottite', 'Lipscombite', 'Liroconite', 'Lisetite', 'Lishizhenite', 'Lisitsynite', 'Liskeardite', 'Litharge', 'Lithiomarsturite', 'Lithiophilite', 'Lithiophorite', 'Lithiophosphate', 'Lithiotantite', 'Lithiowodginite', 'Lithosite', 'Litidionite', 'Litvinskite', 'Liveingite', 'Livingstonite', 'Lizardite', 'Lizardite-1t', 'Lokkaite-(Y)', 'Lollingite', 'Lomonosovite', 'Londonite', 'Lonecreekite', 'Lonsdaleite', 'Loparite-(Ce)', 'Lopezite', 'Lorandite', 'Loranskite-(Y)', 'Lorenzenite', 'Loseyite', 'Lotharmeyerite', 'Loudounite', 'Loughlinite', 'Lourenswalsite', 'Lovdarite', 'Loveringite', 'Lovozerite', 'Loweite', 'Luanheite', 'Luberoite', 'Lucasite-(Ce)', 'Luddenite', 'Ludjibaite', 'Ludlamite', 'Ludlockite', 'Ludwigite', 'Lueshite', 'Luetheite', 'Lukechangite-(Ce)', 'Lulzacite', "Lun'okite", 'Luneburgite', 'Lunijianlaite', 'Lunsokite', 'Luzonite', 'Lyonsite', 'Macaulayite', 'Macdonaldite', 'Macedonite', 'Macfallite', 'Machatschkiite', 'Mackayite', 'Mackinawite', 'Macphersonite', 'Macquartite', 'Madocite', 'Magadiite', 'Magbasite', 'Maghagendorfite', 'Maghemite', 'Magnesio-anthophyllite', 'Magnesio-arfvedsonite', 'Magnesio-axinite', 'Magnesioaubertite', 'Magnesiocarpholite', 'Magnesiochloritoid', 'Magnesiochromite', 'Magnesioclinoholmquistite', 'Magnesiocopiapite', 'Magnesiocoulsonite', 'Magnesiocummingtonite', 'Magnesiodumortierite', 'Magnesioferrite', 'Magnesiofoitite', 'Magnesiohastingsite', 'Magnesiohornblende', 'Magnesiohulsite', 'Magnesiokatophorite', 'Magnesioriebeckite', 'Magnesiosadanagaite', 'Magnesiotaramite', 'Magnesite', 'MagnesiumAstrophyllite', 'Magnesium-chlorophoenicite', 'Magnesium-zippeite', 'Magnetite', 'Magnetoplumbite', 'Magniotriplite', 'Magnocolumbite', 'Magnolite', 'Magnussonite', 'Mahlmoodite', 'Mahnertite', 'Majakite', 'Majorite', 'Makarochkinite', 'Makatite', 'Makinenite', 'Makovickyite', 'Malachite', 'Malanite', 'Malayaite', 'Maldonite', 'Malinkoite', 'Malladrite', 'Mallardite', 'Mammothite', 'Manaksite', 'Manandonite', 'Manasseite', 'Mandarinoite', 'Mangan-neptunite', 'Manganarsite', 'Manganaxinite', 'Manganbabingtonite', 'Manganbelyankinite', 'Manganberzeliite', 'Manganese-hoernesite', 'Manganese-hornesite', 'Manganese-shadlunite', 'Mangangordonite', 'Manganhumite', 'Manganite', 'Manganochromite', 'Manganocolumbite', 'Manganocummingtonite', 'Manganogrunerite', 'Manganokhomyakovite', 'Manganolangbeinite', 'Manganonaujakasite', 'Manganonordite-(Ce)', 'Manganosegelerite', 'Manganosite', 'Manganostibite', 'Manganotantalite', 'Manganotapiolite', 'Manganotychite', 'Manganpyrosmalite', 'Manganvesuvianite', 'Manjiroite', 'Mannardite', 'Mansfieldite', 'Mantienneite', 'Mapimite', 'Marcasite', 'Margaritasite', 'Margarite', 'Margarosanite', 'Marialite', 'Maricite', 'Maricopaite', 'Marokite', 'Marrite', 'Marshite', 'Marsturite', 'Marthozite', 'Mascagnite', 'Maslovite', 'Massicot', 'Masutomilite', 'Masuyite', 'Mathewrogersite', 'Mathiasite', 'Matildite', 'Matlockite', 'Matraite', 'Mattagamite', 'Matteuccite', 'Mattheddleite', 'Matulaite', 'Maucherite', 'Maufite', 'Mawbyite', 'Mawsonite', 'Maxwellite', 'Mayenite', 'Mayingite', 'Mazzite', 'Mbobomkulite', 'Mcallisterite', 'Mcalpineite', 'Mcauslanite', 'Mcbirneyite', 'Mcconnellite', 'Mccrillisite', 'Mcgillite', 'Mcgovernite', 'Mcguinnessite', 'Mckelveyite-(Y)', 'Mckinstryite', 'Mcnearite', 'Medaite', 'Medenbachite', 'Megacyclite', 'Meionite', 'Meixnerite', 'Melanocerite-(Ce)', 'Melanophlogite', 'Melanostibite', 'Melanotekite', 'Melanothallite', 'Melanovanadite', 'Melanterite', 'MeliliteSeries', 'Meliphanite', 'Melkovite', 'Mellite', 'Melonite', 'Melonjosephite', 'Mendipite', 'Mendozavilite', 'Mendozite', 'Meneghinite', 'Menshikovite', 'Mercallite', 'Mercury', 'Mereheadite', 'Mereiterite', 'Merenskyite', 'Merlinoite', 'Merrihueite', 'Mertieite', 'Mertieite-I', 'Mertieite-II', 'Merwinite', 'Mesolite', 'Messelite', 'Meta-aluminite', 'Meta-alunogen', 'Meta-ankoleite', 'Meta-autunite', 'Meta-uranocircite', 'Meta-uranopilite', 'Meta-uranospinite', 'Metaborite', 'Metacalciouranoite', 'Metacinnabar', 'Metadelrioite', 'Metahaiweeite', 'Metaheinrichite', 'Metahewettite', 'Metahohmannite', 'Metakahlerite', 'Metakirchheimerite', 'Metakottigite', 'Metalodevite', 'Metamunirite', 'Metanovacekite', 'Metarossite', 'Metaschoderite', 'Metaschoepite', 'Metasideronatrite', 'Metastibnite', 'Metastudtite', 'Metaswitzerite', 'Metatorbernite', 'Metatyuyamunite', 'Metavandendriesscheite', 'Metavanmeersscheite', 'Metavanuralite', 'Metavariscite', 'Metavauxite', 'Metavivianite', 'Metavoltine', 'Metazellerite', 'Metazeunerite', 'Meurigite', 'Meyerhofferite', 'Meymacite', 'Mgriite', 'Miargyrite', 'MicaGroup', 'Micheelsenite', 'Michenerite', 'Microcline', 'Microlite', 'Microsommite', 'Miersite', 'Miharaite', 'Mikasaite', 'Milarite', 'Millerite', 'Millisite', 'Millosevichite', 'Mimetite', 'Minamiite', 'Minasgeraisite-(Y)', 'Minasragrite', 'Mineevite-(Y)', 'Minehillite', 'Mineral-A', 'Minguzzite', 'Minium', 'Minnesotaite', 'Minrecordite', 'Minyulite', 'Mirabilite', 'Misenite', 'Miserite', 'Mitridatite', 'Mitryaevaite', 'Mitscherlichite', 'Mixite', 'Moctezumite', 'Modderite', 'Mohite', 'Mohrite', 'Moissanite', 'Moissanite-6h', 'Moldavite', 'Moluranite', 'Molybdenite', 'Molybdenite-2h', 'Molybdenite-3R', 'Molybdite', 'Molybdofornacite', 'Molybdomenite', 'Molybdophyllite', 'Molysite', 'Monazite-(Ce)', 'Monazite-(La)', 'Monazite-(Nd)', 'Moncheite', 'Monetite', 'Mongolite', 'Monimolite', 'Monohydrocalcite', 'Monsmedite', 'Montanite', 'Montbrayite', 'Montdorite', 'Montebrasite', 'Monteponite', 'Monteregianite-(Y)', 'Montesommaite', 'Montgomeryite', 'Monticellite', 'Montmorillonite', 'Montroseite', 'Montroyalite', 'Montroydite', 'Mooihoekite', 'Moolooite', 'Mooreite', 'Moorhouseite', 'Mopungite', 'Moraesite', 'Mordenite', 'Moreauite', 'Morelandite', 'Morenosite', 'Morimotoite', 'Morinite', 'Morozeviczite', 'Mosandrite', 'Moschelite', 'Moschellandsbergite', 'Mosesite', 'Mottramite', 'Motukoreaite', 'Mounanaite', 'Mountainite', 'Mountkeithite', 'Mourite', 'Moydite-(Y)', 'Mozartite', 'Mozgovaite', 'Mpororoite', 'Mrazekite', 'Mroseite', 'Muckeite', 'Muirite', 'Mukhinite', 'Mullite', 'Mummeite', 'Mundite', 'Mundrabillaite', 'Munirite', 'Murataite', 'Murdochite', 'Murmanite', 'Murunskite', 'Muscovite', 'Musgravite', 'Mushistonite', 'Muskoxite', 'Muthmannite', 'Mutinaite', 'Na-komarovite', 'Nabaphite', 'Nabesite', 'Nabiasite', 'Nabokoite', 'Nacaphite', 'Nacareniobsite-(Ce)', 'Nacrite', 'Nadorite', 'Nafertisite', 'Nagashimalite', 'Nagelschmidtite', 'Nagyagite', 'Nahcolite', 'Nahpoite', 'Nakauriite', 'Nalipoite', 'Namansilite', 'Nambulite', 'Namibite', 'Namuwite', 'Nanlingite', 'Nanpingite', 'Nantokite', 'Narsarsukite', 'Nasinite', 'Nasledovite', 'Nasonite', 'Nastrophite', 'Natalyite', 'Natanite', 'Natisite', 'Natrite', 'Natroalunite', 'Natroapophyllite', 'Natrobistantite', 'Natrochalcite', 'Natrodufrenite', 'Natrofairchildite', 'Natrojarosite', 'Natrolite', 'Natromontebrasite', 'Natron', 'Natronambulite', 'Natroniobite', 'Natrophilite', 'Natrophosphate', 'Natrosilite', 'Natrotantite', 'Natroxalate', 'Naujakasite', 'Naumannite', 'Navajoite', 'Nchwaningite', 'Nealite', 'Nefedovite', 'Neighborite', 'Nekoite', 'Nekrasovite', 'Nelenite', 'Neltnerite', 'Nenadkevichite', 'Neotocite', 'Nepheline', 'Nepouite', 'Nepskoeite', 'Neptunite', 'Nesquehonite', 'Nevadaite', 'Nevskite', 'Newberyite', 'Neyite', 'Nezilovite', 'Niahite', 'Nichromite', 'Nickel', 'Nickel-boussingaultite', 'Nickel-boussingualtite', 'Nickel-hexahydrite', 'Nickel-iron(GeneralTerm)', 'Nickel-skutterudite', 'Nickel-zippeite', 'Nickelalumite', 'Nickelaustinite', 'Nickelbischofite', 'Nickelblodite', 'Nickelhexahydrite', 'Nickeline', 'Nickelphosphide', 'Nickenichite', 'Niedermayrite', 'Nierite', 'Nifontovite', 'Nigerite', 'Niggliite', 'Nikischerite', 'Nimite', 'Ningyoite', 'Niningerite', 'Niobo-aeschynite', 'Niobo-aeschynite-(Ce)', 'Niobo-aeschynite-(Nd)', 'Niobocarbide', 'Niobokupletskite', 'Niobophyllite', 'Niocalite', 'Nisbite', 'Nissonite', 'Niter', 'Nitratine', 'Nitrobarite', 'Nitrocalcite', 'Nitromagnesite', 'Noalbensonite', 'Nobleite', 'Noelbensonite', 'Nolanite', 'Nontronite', 'Norbergite', 'Nordenskioeldine', 'Nordenskioldine', 'Nordite', 'Nordite-(Ce)', 'Nordite-(La)', 'Nordstrandite', 'Nordstromite', 'Normandite', 'Norrishite', 'Norsethite', 'Northupite', 'Nosean', 'Novacekite', 'Novakite', 'Nowackiite', 'Nsutite', 'Nuffieldite', 'Nukundamite', 'Nullaginite', 'Nyboite', 'Nyerereite', "O'danielite", 'Obertiite', 'Oboyerite', 'Obradovicite', 'Odinite', 'Odinite-1m', 'Odintsovite', 'Oenite', 'Offretite', 'Ogdensburgite', 'Ohmilite', 'Ojuelaite', 'Okanoganite-(Y)', 'Okayamalite', 'Okenite', 'Okhotskite', 'Oldhamite', 'Olekminskite', 'Olenite', 'Olgite', 'Oligoclase', 'Olivenite', 'OlivineSeries', 'Olkhonskite', 'Olmsteadite', 'Olsacherite', 'Olshanskyite', 'Olympite', 'Omeiite', 'Omphacite', 'Oneillite', 'Onoratoite', 'Oosterboschite', 'Opal', 'Orcelite', 'Ordonezite', 'Orebroite', 'Oregonite', 'Orickite', 'Orientite', 'Orlandiite', 'Orlymanite', 'Orpheite', 'Orpiment', 'Orschallite', 'Orthobrannerite', 'Orthochamosite', 'Orthochrysotile', 'Orthoclase', 'Orthoericssonite', 'Orthojoaquinite-(Ce)', 'Orthojoaquinite-(La)', 'Orthopinakiolite', 'Orthoserpierite', 'Orthowalpurgite', 'Osarizawaite', 'Osarsite', 'Osbornite', 'Osmiridium', 'Osmium', 'Osumilite', 'Osumilite-(Mg)', 'Oswaldpeetersite', 'Otavite', 'Other', 'Otjisumeite', 'Ottemannite', 'Ottrelite', 'Otwayite', 'Oulankaite', 'Ourayite', 'Oursinite', 'Overite', 'Owensite', 'Owyheeite', 'Oxammite', 'Oyelite', 'P-Veatchite', 'Paakkonenite', 'Pabstite', 'Pachnolite', 'Paderaite', 'Padmaite', 'Paganoite', 'Pahasapaite', 'Painite', 'Palarstanide', 'Palenzonaite', 'Palermoite', 'Palladium', 'Palladoarsenide', 'Palladobismutharsenide', 'Palladodymite', 'Palladseite', 'Palmierite', 'Palygorskite', 'Panasqueiraite', 'Panethite', 'Panunzite', 'Paolovite', 'Papagoite', 'Para-alumohydrocalcite', 'Parabariomicrolite', 'Parabrandtite', 'Parabutlerite', 'Paracelsian', 'Parachrysotile', 'Paracoquimbite', 'Paracostibite', 'Paradamite', 'Paradocrasite', 'Parafransoletite', 'Paragonite', 'Paraguanajuatite', 'Parahopeite', 'Parajamesonite', 'Parakeldyshite', 'Parakhinite', 'Paralaurionite', 'Paralstonite', 'Paramelaconite', 'Paramendozavilite', 'Paramontroseite', 'Paranatisite', 'Paranatrolite', 'Paraniite-(Y)', 'Paraotwayite', 'Parapierrotite', 'Pararammelsbergite', 'Pararealgar', 'Pararobertsite', 'Paraschachnerite', 'Paraschoepite', 'Parascholzite', 'Parascorodite', 'Parasibirskite', 'Paraspurrite', 'Parasymplesite', 'Paratacamite', 'Paratellurite', 'Paraumbite', 'Paravauxite', 'Pargasite', 'Parisite', 'Parisite-(Ce)', 'Parisite-(Nd)', 'Parkerite', 'Parkinsonite', 'Parnauite', 'Parsettensite', 'Parsonsite', 'Partheite', 'Partzite', 'Parwanite', 'Parwelite', 'Pascoite', 'Patronite', 'Paulingite', 'Paulingite-Ca', 'Paulingite-K', 'Paulkellerite', 'Paulkerrite', 'Paulmooreite', 'Pavonite', 'Paxite', 'Pearceite', 'Pecoraite', 'Pectolite', 'Pectolite-m2abc', 'Pehrmanite', 'Peisleyite', 'Pekoite', 'Pellyite', 'Penfieldite', 'Penginite', 'Pengzhizhongite', 'Pengzhizhongite-6h', 'Penikisite', 'Penkvilksite', 'Penkvilksite-1m', 'Penkvilksite-2o', 'Pennantite', 'Penobsquisite', 'Penroseite', 'Pentagonite', 'Pentahydrite', 'Pentahydroborite', 'Pentlandite', 'Penzhinite', 'Peprossite-(Ce)', 'Peretaite', 'Perhamite', 'Periclase', 'Perite', 'Perlialite', 'Perloffite', 'Permingeatite', 'Perovskite', 'Perraultite', 'Perrierite', 'Perroudite', 'Perryite', 'Pertlikite', 'Petalite', 'Petarasite', 'Petedunnite', 'Peterbaylissite', 'Petersenite-(Ce)', 'Petersite-(Y)', 'Petewilliamsite', 'Petitjeanite', 'Petrovicite', 'Petrovskaite', 'Petrukite', 'Petscheckite', 'Petterdite', 'Petzite', 'Pezzottaite', 'Pharmacolite', 'Pharmacosiderite', 'Phaunouxite', 'Phenakite', 'Philipsbornite', 'Philipsburgite', 'Phillipsite', 'Phillipsite-Ca', 'Phillipsite-K', 'Phillipsite-Na', 'Philolithite', 'Phlogopite', 'Phoenicochroite', 'Phosgenite', 'Phosinaite', 'Phosinaite-(Ce)', 'Phosphammite', 'Phosphoferrite', 'Phosphofibrite', 'Phosphogartrellite', 'Phosphophyllite', 'Phosphorrosslerite', 'Phosphosiderite', 'Phosphovanadylite', 'Phosphuranylite', 'Phuralumite', 'Phurcalite', 'Phyllotungstite', 'Pickeringite', 'Picotpaulite', 'Picromerite', 'Picropharmacolite', 'Piemontite', 'Pierrotite', 'Pigeonite', 'Pillaite', 'Pilsenite', 'Pinakiolite', 'Pinalite', 'Pinchite', 'Pingguite', 'Pinnoite', 'Pintadoite', 'Piretite', 'Pirquitasite', 'Pirssonite', 'Pitiglianoite', 'Pitticite', 'Piypite', 'Plagioclase', 'Plagionite', 'Plancheite', 'Planerite', 'Platarsite', 'Platiniridium', 'Platinum', 'Plattnerite', 'Platynite', 'Playfairite', 'Plombierite', 'Plumalsite', 'Plumbobetafite', 'Plumboferrite', 'Plumbogummite', 'Plumbojarosite', 'Plumbomangite', 'Plumbomicrolite', 'Plumbonacrite', 'Plumbopalladinite', 'Plumbopyrochlore', 'Plumbotellurite', 'Plumbotsumite', 'Poitevinite', 'Pokrovskite', 'Polarite', 'Poldervaartite', 'Polhemusite', 'Polkanovite', 'Polkovicite', 'Pollucite', 'Polybasite', 'Polycrase-(Y)', 'Polydymite', 'Polyhalite', 'Polylithionite', 'Polymignite', 'Polyphite', 'Ponomarevite', 'Portlandite', 'Posnjakite', 'Potarite', 'Potassic-fluororichterite', 'Potassic-magnesiosadanagaite', 'Potassicferrisadanagaite', 'Potassicpargasite', 'Potassicsadanagaite', 'PotassiumAlum', 'Potassium-fluor-richterite', 'Potosiite', 'Pottsite', 'Poubaite', 'Poudretteite', 'Poughite', 'Povondraite', 'Powellite', 'Poyarkovite', 'Prehnite', 'Preisingerite', 'Preiswerkite', 'Preobrazhenskite', 'Pretulite', 'Priceite', 'Priderite', 'Pringleite', 'Prismatine', 'Probertite', 'Prosopite', 'Prosperite', 'Protasite', 'Protoferro-anthophyllite', 'Protojoseite', 'Protomangano-ferro-anthophyllite', 'Proudite', 'Proustite', 'Przhevalskite', 'Pseudo-autunite', 'Pseudoboleite', 'Pseudobrookite', 'Pseudocotunnite', 'Pseudograndreefite', 'Pseudolaueite', 'Pseudomalachite', 'Pseudorutile', 'Pseudowollastonite', 'Psilomelane(GeneralTerm)', 'Pucherite', 'Pumpellyite', 'Pumpellyite-(Fe+2)', 'Pumpellyite-(Fe+3)', 'Pumpellyite-(Mg)', 'Pumpellyite-(Mn+2)', 'Purpurite', 'Pushcharovskite', 'Putoranite', 'Pyatenkoite-(Y)', 'Pyrargyrite', 'Pyrite', 'Pyroaurite', 'Pyrobelonite', 'Pyrochlore', 'Pyrochroite', 'Pyrolusite', 'Pyromorphite', 'Pyrope', 'Pyrophanite', 'Pyrophyllite', 'Pyrophyllite-2m', 'PyrosmaliteSeries', 'Pyrostilpnite', 'PyroxeneGroup', 'Pyroxferroite', 'Pyroxmangite', 'Pyrrhotite', 'Pyrrhotite-4c', 'Qandilite', 'Qilianshanite', 'Qingheiite', 'Qitianlingite', 'Quadratite', 'Quadridavyne', 'Quadruphite', 'Quartz', 'Queitite', 'Quenselite', 'Quenstedtite', 'Quetzalcoatlite', 'Quintinite-2h', 'Quintinite-3t', 'Raadeite', 'Rabbittite', 'Rabejacite', 'Radhakrishnaite', 'Radtkeite', 'Raguinite', 'Raite', 'Rajite', 'Ralstonite', 'Rambergite', 'Ramdohrite', 'Rameauite', 'Rammelsbergite', 'Rammeslbergite', 'Ramsbeckite', 'Ramsdellite', 'Rancieite', 'Rankachite', 'Rankamaite', 'Rankinite', 'Ransomite', 'Ranunculite', 'Rapidcreekite', 'Rappoldite', 'Rashleighite', 'Raspite', 'Rasvumite', 'Rathite', 'Rauenthalite', 'Rauvite', 'Ravatite', 'Rayite', 'Realgar', 'Rebulite', 'Recatalogued', 'Rectorite', 'Reddingite', 'Redingtonite', 'Redledgeite', 'Reederite-(Y)', 'Reedmergnerite', 'Reevesite', 'Refikite', 'Reichenbachite', 'Reidite', 'Reinerite', 'Reinhardbraunsite', 'Remondite-(Ce)', 'Remondite-(La)', 'Renardite', 'Rengeite', 'Renierite', 'Reppiaite', 'Retgersite', 'Retzian', 'Retzian-(Ce)', 'Retzian-(La)', 'Retzian-(Nd)', 'Revdite', 'Reyerite', 'Rhabdophane', 'Rhabdophane-(Ce)', 'Rhabdophane-(La)', 'Rhabdophane-(Nd)', 'Rheniite', 'Rhenium', 'Rhodarsenide', 'Rhodesite', 'Rhodium', 'Rhodizite', 'Rhodochrosite', 'Rhodonite', 'Rhodostannite', 'Rhodplumsite', 'Rhomboclase', 'Rhonite', 'Ribbeite', 'Richellite', 'Richelsdorfite', 'Richetite', 'Richterite', 'Rickardite', 'Riebeckite', 'Rilandite', 'Rimkorolgite', 'Ringwoodite', 'Rinkite', 'Rinmanite', 'Rinneite', 'Rittmannite', 'Rivadavite', 'Riversideite', 'Roaldite', 'Robertsite', 'Robinsonite', 'Rockbridgeite', 'Rodalquilarite', 'Rodolicoite', 'Roeblingite', 'Roedderite', 'Roggianite', 'Rohaite', 'Rokuhnite', 'Rollandite', 'Romanechite', 'Romarchite', 'Romeite', 'Romerite', 'Ronneburgite', 'Rontgenite-(Ce)', 'Rooseveltite', 'Roquesite', 'Rorisite', 'Rosasite', 'Roscherite', 'Roscoelite', 'Roselite', 'Roselite-beta', 'Rosemaryite', 'Rosenbergite', 'Rosenbuschite', 'Rosenhahnite', 'Roshchinite', 'Rosiaite', 'Rosickyite', 'Rosieresite', 'Rossite', 'Rosslerite', 'Rossmanite', 'Rostite', 'Roubaultite', 'Rouseite', 'Routhierite', 'Rouvilleite', 'Roweite', 'Rowlandite-(Y)', 'Roxbyite', 'Rozenite', 'Ruarsite', 'Rubicline', 'Rucklidgeite', 'Ruitenbergite', 'Ruizite', 'Rusakovite', 'Russellite', 'Rustenburgite', 'Rustumite', 'Ruthenarsenite', 'Rutheniridosmine', 'Ruthenium', 'Ruthenosmiridium', 'Rutherfordine', 'Rutile', 'Rynersonite', 'Sabatierite', 'Sabelliite', 'Sabieite', 'Sabinaite', 'Sabugalite', 'Sacrofanite', 'Sadanagaite', 'Saddlebackite', 'Safflorite', 'Sahamalite-(Ce)', 'Sahlinite', 'Sainfeldite', 'Sakhaite', 'Sakharovaite', 'Sakuraiite', 'SalAmmoniac', 'Saleeite', 'Salesite', 'Saliotite', 'Samarskite-(Y)', 'Samfowlerite', 'Sampleite', 'Samsonite', 'Samuelsonite', 'Sanbornite', 'Sanderite', 'Saneroite', 'Sanidine', 'Sanjuanite', 'Sanmartinite', 'Santaclaraite', 'Santafeite', 'Santanaite', 'Santite', 'Saponite', 'Sapphirine', 'Sapphirine-1tc', 'Sarabauite', 'Sarcolite', 'Sarcopside', 'Sarkinite', 'Sarmientite', 'Sartorite', 'Saryarkite-(Y)', 'Sasaite', 'Sassolite', 'Satimolite', 'Satpaevite', 'Satterlyite', 'Sauconite', 'Sayrite', 'Sazhinite-(Ce)', 'Sazykinaite-(Y)', 'Sborgite', 'Scacchite', 'Scainiite', 'Scandiobabingtonite', 'ScapoliteSeries', 'Scarbroite', 'Scawtite', 'Schachnerite', 'Schafarzikite', 'Schairerite', 'Schallerite', 'Schaurteite', 'Scheelite', 'Schertelite', 'Scheteligite', 'Schiavinatoite', 'Schieffelinite', 'Schirmerite', 'Schlossmacherite', 'Schmiederite', 'Schmitterite', 'Schneiderhohnite', 'Schoderite', 'Schoenfliesite', 'Schoepite', 'Schollhornite', 'Scholzite', 'Schoonerite', 'Schorl', 'Schorlomite', 'Schreibersite', 'Schreyerite', 'Schrockingerite', 'Schubnelite', 'Schuetteite', 'Schuilingite-(Nd)', 'Schulenbergite', 'Schultenite', 'Schumacherite', 'Schwartzembergite', 'Schwertmannite', 'Sclarite', 'Scolecite', 'Scorodite', 'Scorzalite', 'Scotlandite', 'Scrutinyite', 'Seamanite', 'Searlesite', 'Sederholmite', 'Sedovite', 'Seeligerite', 'Seelite', 'Segelerite', 'Segnitite', 'Seidite-(Ce)', 'Seidozerite', 'Seinajokite', 'Sekaninaite', 'Selen-tellurium', 'Selenium', 'Selenostephanite', 'Seligmannite', 'Sellaite', 'Selwynite', 'Semenovite', 'Semseyite', 'Senaite', 'Senarmontite', 'Senegalite', 'Sengierite', 'Sepiolite', 'Serandite', 'Serendibite', 'Sergeevite', 'Serpentine', 'Serpierite', 'Shabaite-(Nd)', 'Shabynite', 'Shadlunite', 'Shafranovskite', 'Shakhovite', 'Shandite', 'Shannonite', 'Sharpite', 'Shattuckite', 'Shcherbakovite', 'Shcherbinaite', 'Sheldrickite', 'Sherwoodite', 'Shibkovite', 'Shigaite', 'Shkatulkalite', 'Shomyokite-(Y)', 'Shortite', 'Shuangfengite', 'Shubnikovite', 'Shuiskite', 'Sibirskite', 'Sicherite', 'Sicklerite', 'Siderazot', 'Siderite', 'Sideronatrite', 'Siderophyllite', 'Siderotil', 'Sidorenkite', 'Sidpietersite', 'Sidwillite', 'Siegenite', 'Sieleckiite', 'Sigismundite', 'Sigloite', 'Silhydrite', 'Silicon', 'Silinaite', 'Sillenite', 'Sillimanite', 'Silver', 'Silver-3c', 'Silvialite', 'Simferite', 'Simmonsite', 'Simonellite', 'Simonite', 'Simonkolleite', 'Simplotite', 'Simpsonite', 'Sincosite', 'Sinhalite', 'Sinjarite', 'Sinkankasite', 'Sinnerite', 'Sinoite', 'Sitinakite', 'Sjogrenite', 'Skinnerite', 'Skippenite', 'Sklodowskite', 'Skutterudite', 'Slavikite', 'Slawsonite', 'SmectiteGroup', 'Smirnite', 'Smithite', 'Smithsonite', 'Smolianinovite', 'Smrkovecite', 'Smythite', 'Sobolevite', 'Sobolevskite', 'Sobotkite', 'Sodalite', 'Soddyite', 'Sodic-ferripedrizite', 'Sodic-ferro-anthophyllite', 'Sodicanthophyllite', 'Sodicgedrite', 'SodiumAlum', 'SodiumAutunite', 'SodiumBetpakdalite', 'SodiumBoltwoodite', 'SodiumDachiardite', 'SodiumMeta-autunite', 'SodiumPharmacosiderite', 'SodiumPhlogopite', 'SodiumUranospinite', 'Sodium-gedrite', 'Sodium-zippeite', 'Sofiite', 'Sogdianite', 'Sohngeite', 'Solongoite', 'Sonolite', 'Sonoraite', 'Sopcheite', 'Sophiite', 'Sorbyite', 'Sorensenite', 'Sorosite', 'Sosedkoite', 'Soucekite', 'Souzalite', 'Spadaite', 'Spangolite', 'Spencerite', 'Sperrylite', 'Spertiniite', 'Spessartine', 'Sphaerobismoite', 'Sphaerocobaltite', 'Sphalerite', 'Spheniscidite', 'Spinel', 'SpinelGroup', 'Spionkopite', 'Spiroffite', 'Spodiosite', 'Spodumene', 'Springcreekite', 'Spurrite', 'Squawcreekite', 'Srebrodolskite', 'Srilankite', 'Stalderite', 'Stanekite', 'Stanfieldite', 'Stanleyite', 'Stannite', 'Stannoidite', 'Stannomicrolite', 'Stannopalladinite', 'Starkeyite', 'Staurolite', 'Steacyite', 'Steenstrupine-(Ce)', 'Steigerite', 'Stellerite', 'Stenhuggarite', 'Stenonite', 'Stepanovite', 'Stephanite', 'Stercorite', 'Sterlinghillite', 'Sternbergite', 'Sterryite', 'Stetefeldtite', 'Stevensite', 'Stewartite', 'Stibarsen', 'Stibiconite', 'Stibiobetafite', 'Stibiocolumbite', 'Stibiocolusite', 'Stibiomicrolite', 'Stibiopalladinite', 'Stibiotantalite', 'Stibivanite', 'Stibivanite-2m', 'Stibnite', 'Stichtite', 'Stilbite', 'Stilbite-Ca', 'Stilbite-Na', 'Stilleite', 'Stillwaterite', 'Stillwellite-(Ce)', 'Stilpnomelane', 'Stishovite', 'Stistaite', 'Stoiberite', 'Stokesite', 'Stolen', 'Stolzite', 'Stoppaniite', 'Stottite', 'Straczekite', 'Strakhovite', 'Stranskiite', 'Strashimirite', 'Stratlingite', 'Strelkinite', 'Strengite', 'Stringhamite', 'Stromeyerite', 'Stronalsite', 'Strontianite', 'Strontio-orthojoaquinite', 'Strontioborite', 'Strontiochevkinite', 'Strontiodresserite', 'Strontioginorite', 'Strontiojoaquinite', 'Strontiomelane', 'Strontiopiemontite', 'Strontiopyrochlore', 'Strontiowhitlockite', 'Strontium-apatite', 'Strunzite', 'Struverite', 'Struvite', 'Studenitsite', 'Studtite', 'Stumpflite', 'Sturmanite', 'Stutzite', 'Suanite', 'Sudburyite', 'Sudoite', 'Sudovikovite', 'Suessite', 'Sugilite', 'Sulfoborite', 'Sulfur', 'Sulphohalite', 'Sulphotsumoite', 'Sulvanite', 'Sundiusite', 'Suolunite', 'Suredaite', 'Surinamite', 'Surite', 'Sursassite', 'Susannite', 'Sussexite', 'Suzukiite', 'Svabite', 'Svanbergite', 'Sveite', 'Svenekite', 'Sverigeite', 'Svetlozarite', 'Svyatoslavite', 'Svyazhinite', 'Swaknoite', 'Swamboite', 'Swartzite', 'Swedenborgite', 'Sweetite', 'Swinefordite', 'Switzerite', 'Sylvanite', 'Sylvite', 'Symesite', 'Symplesite', 'Synadelphite', 'Synchysite', 'Synchysite-(Ce)', 'Synchysite-(Nd)', 'Synchysite-(Y)', 'Syngenite', 'Szaibelyite', 'Szenicsite', 'Szmikite', 'Szomolnokite', 'Szymanskiite', 'Taaffeite', 'Tacharanite', 'Tachyhydrite', 'Tadzhikite-(Ce)', 'Tadzhikite-(Y)', 'Taeniolite', 'Taenite', 'Taikanite', 'Taimyrite', 'Tainiolite', 'Takanelite', 'Takedaite', 'Takeuchiite', 'Takovite', 'Talc', 'Talmessite', 'Talnakhite', 'Tamaite', 'Tamarugite', 'Tancoite', 'Taneyamalite', 'Tangeite', 'Tantalaeschynite-(Y)', 'TantaliteSeries', 'Tanteuxenite-(Y)', 'Tantite', 'Tapiolite', 'TapioliteSeries', 'Taramellite', 'Taramite', 'Taranakite', 'Tarapacaite', 'Tarasovite', 'Tarbuttite', 'Tatarskite', 'Tatyanaite', 'Tauriscite', 'Tausonite', 'Tavorite', 'Tazheranite', 'Teallite', 'Teepleite', 'Tegengrenite', 'Teineite', 'Telargpalite', 'Telluornevskite', 'Tellurantimony', 'Tellurite', 'Tellurium', 'Tellurobismuthite', 'Tellurohauchecornite', 'Telluropalladinite', 'Temagamite', 'Tengchongite', 'Tengerite-(Y)', 'Tennantite', 'Tenorite', 'Tephroite', 'Terlinguaite', 'Ternesite', 'Ternovite', 'Terranovaite', 'Terskite', 'Tertschite', 'Teruggite', 'Teschemacherite', 'Testibiopalladite', 'Tetra-auricupride', 'Tetra-ferri-annite', 'Tetra-ferriphlogophite', 'Tetradymite', 'Tetraferroplatinum', 'Tetrahedrite', 'TetrahedriteGroup', 'Tetranatrolite', 'Tetrarooseveltite', 'Tetrataenite', 'Tetrawickmanite', 'Thadeuite', 'Thalcusite', 'Thalenite-(Y)', 'Thalfenisite', 'Thaumasite', 'Theisite', 'Thenardite', 'Theoparacelsite', 'Theophrastite', 'Theresemagnanite', 'Theresmagnanite', 'Thermonatrite', 'Thomasclarkite-(Y)', 'Thometzekite', 'Thomsenolite', 'Thomsonite', 'Thorbastnasite', 'Thoreaulite', 'Thorianite', 'Thorikosite', 'Thorite', 'Thornasite', 'Thorogummite', 'Thorosteenstrupine', 'Thortveitite', 'Thorutite', 'Threadgoldite', 'Tiemannite', 'Tienshanite', 'Tiettaite', 'Tikhonenkovite', 'Tilasite', 'Tilleyite', 'Tin', 'Tinaksite', 'Tincalconite', 'Tinsleyite', 'Tinticite', 'Tintinaite', 'Tinzenite', 'Tiptopite', 'Tiragalloite', 'Tirodite', 'Tisinalite', 'Titanite', 'Titanowodginite', 'Titantaramellite', 'Tivanite', 'Tlalocite', 'Tlapallite', 'Tobelite', 'Tobermorite', 'Tochilinite', 'Tocornalite', 'Todorokite', 'Tokkoite', 'Tolbachite', 'Tolovkite', 'Tombarthite-(Y)', 'Tomichite', 'Tongbaite', 'Tooeleite', 'Topaz', 'Torbernite', 'Tornebohmite', 'Tornebohmite-(Ce)', 'Tornebohmite-(La)', 'Torreyite', 'Tosudite', 'Tounkite', 'Tourmaline', 'Toyohaite', 'Trabzonite', 'Tranquillityite', 'Transferred', 'Traskite', 'Treasurite', 'Trechmannite', 'Trembathite', 'Tremolite', 'Trevorite', 'Triangulite', 'Tridymite', 'Trigonite', 'Trikalsilite', 'Trilithionite', 'Trimerite', 'Trimounsite-(Y)', 'Triphylite', 'Triplite', 'Triploidite', 'Trippkeite', 'Tripuhyite', 'Tristramite', 'Tritomite', 'Tritomite-(Ce)', 'Tritomite-(Y)', 'Trogerite', 'Trogtalite', 'Troilite', 'Trolleite', 'Trona', 'Truscottite', 'Trustedtite', 'Tsaregorodtsevite', 'Tschermakite', 'Tschermigite', 'Tschernichite', 'Tschortnerite', 'Tsnigriite', 'Tsugaruite', 'Tsumcorite', 'Tsumebite', 'Tsumoite', 'Tucekite', 'Tugarinovite', 'Tugtupite', 'Tuhualite', 'Tulameenite', 'Tuliokite', 'Tumchaite', 'Tundrite', 'Tundrite-(Ce)', 'Tundrite-(Nd)', 'Tunellite', 'Tungstenite', 'Tungstenite-3r', 'Tungstibite', 'Tungstite', 'Tungusite', 'Tunisite', 'Tuperssuatsiaite', 'Turanite', 'Turkestanite', 'Turneaureite', 'Turquoise', 'Turtmannite', 'Tuscanite', 'Tusionite', 'Tuzlaite', 'Tvalchrelidzeite', 'Tvedalite', 'Tveitite-(Y)', 'Tweddillite', 'Twinnite', 'Tychite', 'Tyretskite', 'Tyretskite-1tc', 'Tyrolite', 'Tyrrellite', 'Tyuyamunite', 'Uchucchacuaite', 'Uhligite', 'Uklonskovite', 'Ulexite', 'Ullmannite', 'Ulrichite', 'Ulvospinel', 'Umangite', 'Umbite', 'Umbozerite', 'Umohoite', 'Ungarettiite', 'Ungemachite', 'Ungursaite', 'Unknown', 'Upalite', 'Uralborite', 'Uralolite', 'Uramphite', 'Urancalcarite', 'Uraninite', 'Uranmicrolite', 'Uranocircite', 'Uranophane', 'Uranophane-beta', 'Uranopilite', 'Uranopolycrase', 'Uranosilite', 'Uranospathite', 'Uranosphaerite', 'Uranospinite', 'Uranotungstite', 'Uranpyrochlore', 'Urea', 'Uricite', 'Urusovite', 'Urvantsevite', 'Ushkovite', 'Usonite', 'Usovite', 'Ussingite', 'Ustarasite', 'Utahite', 'Uvanite', 'Uvarovite', 'Uvite', 'Uytenbogaardtite', 'Uzonite', 'Vaesite', 'Vajdakite', 'Valentinite', 'Valleriite', 'Vanadinite', 'Vanadomalayaite', 'Vanadomalayite', 'Vanalite', 'Vandenbrandeite', 'Vandendriesscheite', 'Vanmeersscheite', 'Vanoxite', 'Vantasselite', 'Vanthoffite', 'Vanuralite', 'Vanuranylite', 'Varennesite', 'Variscite', 'Varlamoffite', 'Varulite', 'Vashegyite', 'Vasilite', 'Vaterite', 'Vaughanite', 'Vauquelinite', 'Vauxite', 'Vayrynenite', 'Veatchite', 'Veatchite-A', 'Veenite', 'Velikite', 'Vergasovaite', 'Vermiculite', 'Vernadite', 'Verplanckite', 'Versiliaite', 'Vertumnite', 'Vesignieite', 'Vesuvianite', 'Veszelyite', 'Viaeneite', 'Vicanite-(Ce)', 'Vigezzite', 'Viitaniemiite', 'Vikingite', 'Villamaninite', 'Villiaumite', 'Villyaellenite', 'Vimsite', 'Vincentite', 'Vinciennite', 'Vinogradovite', 'Violarite', 'Virgilite', 'Viseite', 'Vishnevite', 'Vismirnovite', 'Vistepite', 'Vitusite-(Ce)', 'Vivianite', 'Vladimirite', 'Vlasovite', 'Vlodavetsite', 'Vochtenite', 'Voggite', 'Voglite', 'Volborthite', 'Volfsonite', 'Volkonskoite', 'Volkovskite', 'Voltaite', 'Volynskite', 'Vonbezingite', 'Vonsenite', 'Vozhminite', 'Vrbaite', 'Vuagnatite', 'Vulcanite', 'Vuonnemite', 'Vuorelainenite', 'Vuoriyarvite', 'Vyacheslavite', 'Vyalsovite', 'Vysotskite', 'Vyuntspakhkite-(Y)', 'Wad', 'Wadalite', 'Wadeite', 'Wadsleyite', 'Wagnerite', 'Wairakite', 'Wairauite', 'Wakabayashilite', 'Wakefieldite', 'Wakefieldite-(Ce)', 'Wakefieldite-(Y)', 'Walentaite', 'Walfordite', 'Wallisite', 'Wallkilldellite', 'Walpurgite', 'Walstromite', 'Walthierite', 'Wardite', 'Wardsmithite', 'Warikahnite', 'Warwickite', 'Watanabeite', 'Watkinsonite', 'Wattersite', 'Wattevilleite', 'Wattevillite', 'Wavellite', 'Wawayandaite', 'Waylandite', 'Weberite', 'Weddellite', 'Weeksite', 'Wegscheiderite', 'Weibullite', 'Weilerite', 'Weilite', 'Weinebeneite', 'Weishanite', 'Weissbergite', 'Weissite', 'Welinite', 'Wellsite', 'Weloganite', 'Welshite', 'Wendwilsonite', 'Wenkite', 'Werdingite', 'Wermlandite', 'Wesselsite', 'Westerveldite', 'Wheatleyite', 'Wherryite', 'Whewellite', 'Whiteite', 'Whiteite-(CaFeMg)', 'Whiteite-(CaMnMg)', 'Whiteite-(MnFeMg)', 'Whitlockite', 'Whitmoreite', 'Wickenburgite', 'Wickmanite', 'Wicksite', 'Widenmannite', 'Widgiemoolthalite', 'Wightmanite', 'Wilcoxite', 'Wilhelmvierlingite', 'Wilkinsonite', 'Wilkmanite', 'Willemite', 'Willemseite', 'Willhendersonite', 'Willyamite', 'Wiluite', 'Winchite', 'Winstanleyite', 'Wiserite', 'Witherite', 'Wittichenite', 'Wittite', 'Wodginite', 'Woehlerite', 'Wohlerite', 'Wolfeite', 'Wolframite', 'WolframiteSeries', 'Wolframoixiolite', 'Wollastonite', 'Wollastonite-1t', 'Wollastonite-2m', 'Wollastonite-7t', 'Wolsendorfite', 'Wonesite', 'Woodallite', 'Woodhouseite', 'Woodruffite', 'Woodwardite', 'Wooldridgeite', 'Wroewolfeite', 'Wulfenite', 'Wulfingite', 'Wupatkiite', 'Wurtzite', 'Wurtzite-2h', 'Wustite', 'Wyartite', 'Wycheproofite', 'Wyllieite', 'Xanthiosite', 'Xanthoconite', 'Xanthoxenite', 'Xenotime-(Y)', 'Xenotime-(Yb)', 'Xiangjiangite', 'Xifengite', 'Xilingoite', 'Xilingolite', 'Ximengite', 'Xingzhongite', 'Xitieshanite', 'Xocomecatlite', 'Xonotlite', 'Yafsoanite', 'Yagiite', 'Yakhontovite', 'Yanomamite', 'Yaroslavite', 'Yarrowite', 'Yavapaiite', "Ye'elimite", 'Yeatmanite', 'Yecoraite', 'Yedlinite', 'Yftisite-(Y)', 'Yimengite', 'Yingjiangite', 'Yixunite', 'Yoderite', 'Yofortierite', 'Yoshimuraite', 'Yoshiokaite', 'Yttrialite-(Y)', 'Yttrobetafite-(Y)', 'Yttrocolumbite-(Y)', 'Yttrocrasite-(Y)', 'Yttropyrochlore-(Y)', 'Yttrotantalite-(Y)', 'Yttrotungstite-(Y)', 'Yuanfuliite', 'Yuanjiangite', 'Yugawaralite', 'Yukonite', 'Yuksporite', 'Yushkinite', 'Yvonite', 'Zabuyelite', 'Zaccagnaite', 'Zaherite', 'Zairite', 'Zajacite', 'Zajacite-(Ce)', 'Zakharovite', 'Zalesiite', 'Zanazziite', 'Zapatalite', 'Zaratite', 'Zavaritskite', 'Zdenekite', 'Zektzerite', 'Zellerite', 'Zemannite', 'Zemkorite', 'Zenzenite', 'Zeophyllite', 'Zeunerite', 'Zhanghengite', 'Zharchikhite', 'Zhemchuzhnikovite', 'Zhonghuacerite-(Ce)', 'Ziesite', 'Zimbabweite', 'Zinalsite', 'Zinc', 'Zinc-melanterite', 'Zinc-zippeite', 'Zincaluminite', 'Zincgartrellite', 'Zincite', 'Zincobotryogen', 'Zincochromite', 'Zincocopiapite', 'Zincovoltaite', 'Zincowoodwardite', 'Zincrosasite', 'Zincroselite', 'Zincsilite', 'Zinkenite', 'Zinnwaldite', 'Zippeite', 'Zircon', 'Zirconolite', 'Zirconolite-2m', 'Zirconolite-3o', 'Zirconolite-3t', 'Zircophyllite', 'Zircosulfate', 'Zirkelite', 'Zirklerite', 'Zirsinalite', 'Zlatogorite', 'Znucalite', 'Zodacite', 'Zoisite', 'Zorite', 'Zoubekite', 'Zugshunstite-(Ce)', 'Zunyite', 'Zussmanite', 'Zvyagintsevite', 'Zwieselite', 'Zykaite', 'Zzap', 'Ferruvite', 'Ikunolite', 'Vanadiumdravite']
-            enumeration_respectee = False
-            for enum in enumerations:
-                if value == enum:
-                    enumeration_respectee = True
-                    break
-            if not enumeration_respectee:
-                warnings_.warn('Value "%(value)s" does not match xsd enumeration restriction on MineralDetails' % {"value" : value.encode("utf-8")} )
-    def hasContent_(self):
-        if (
-            self.MineralType is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='MineralType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='MineralType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='MineralType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='MineralType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='MineralType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.MineralType is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sMineralType>%s</%sMineralType>%s' % (namespace_, self.gds_format_string(quote_xml(self.MineralType).encode(ExternalEncoding), input_name='MineralType'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'MineralType':
-            MineralType_ = child_.text
-            MineralType_ = self.gds_validate_string(MineralType_, node, 'MineralType')
-            self.MineralType = MineralType_
-            # validate type MineralDetails
-            self.validate_MineralDetails(self.MineralType)
-# end class MineralType
-
-
-class PlutonicType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, PlutonicType_member=None):
-        self.original_tagname_ = None
-        self.PlutonicType = PlutonicType_member
-        self.validate_IgneousDetails(self.PlutonicType)
-    def factory(*args_, **kwargs_):
-        if PlutonicType.subclass:
-            return PlutonicType.subclass(*args_, **kwargs_)
-        else:
-            return PlutonicType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_PlutonicType(self): return self.PlutonicType
-    def set_PlutonicType(self, PlutonicType): self.PlutonicType = PlutonicType
-    def validate_IgneousDetails(self, value):
-        # Validate type IgneousDetails, a restriction on xs:string.
-        if value is not None and Validate_simpletypes_:
-            value = str(value)
-            enumerations = ['Exotic', 'Felsic', 'Intermediate', 'Mafic', 'UltraMafic']
-            enumeration_respectee = False
-            for enum in enumerations:
-                if value == enum:
-                    enumeration_respectee = True
-                    break
-            if not enumeration_respectee:
-                warnings_.warn('Value "%(value)s" does not match xsd enumeration restriction on IgneousDetails' % {"value" : value.encode("utf-8")} )
-    def hasContent_(self):
-        if (
-            self.PlutonicType is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='PlutonicType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='PlutonicType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='PlutonicType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='PlutonicType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='PlutonicType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.PlutonicType is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sPlutonicType>%s</%sPlutonicType>%s' % (namespace_, self.gds_format_string(quote_xml(self.PlutonicType).encode(ExternalEncoding), input_name='PlutonicType'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'PlutonicType':
-            PlutonicType_ = child_.text
-            PlutonicType_ = self.gds_validate_string(PlutonicType_, node, 'PlutonicType')
-            self.PlutonicType = PlutonicType_
-            # validate type IgneousDetails
-            self.validate_IgneousDetails(self.PlutonicType)
-# end class PlutonicType
-
-
-class VolcanicType(GeneratedsSuper):
-    subclass = None
-    superclass = None
-    def __init__(self, VolcanicType_member=None):
-        self.original_tagname_ = None
-        self.VolcanicType = VolcanicType_member
-        self.validate_IgneousDetails(self.VolcanicType)
-    def factory(*args_, **kwargs_):
-        if VolcanicType.subclass:
-            return VolcanicType.subclass(*args_, **kwargs_)
-        else:
-            return VolcanicType(*args_, **kwargs_)
-    factory = staticmethod(factory)
-    def get_VolcanicType(self): return self.VolcanicType
-    def set_VolcanicType(self, VolcanicType): self.VolcanicType = VolcanicType
-    def validate_IgneousDetails(self, value):
-        # Validate type IgneousDetails, a restriction on xs:string.
-        if value is not None and Validate_simpletypes_:
-            value = str(value)
-            enumerations = ['Exotic', 'Felsic', 'Intermediate', 'Mafic', 'UltraMafic']
-            enumeration_respectee = False
-            for enum in enumerations:
-                if value == enum:
-                    enumeration_respectee = True
-                    break
-            if not enumeration_respectee:
-                warnings_.warn('Value "%(value)s" does not match xsd enumeration restriction on IgneousDetails' % {"value" : value.encode("utf-8")} )
-    def hasContent_(self):
-        if (
-            self.VolcanicType is not None
-        ):
-            return True
-        else:
-            return False
-    def export(self, outfile, level, namespace_='', name_='VolcanicType', namespacedef_='', pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.original_tagname_ is not None:
-            name_ = self.original_tagname_
-        showIndent(outfile, level, pretty_print)
-        outfile.write('<%s%s%s' % (namespace_, name_, namespacedef_ and ' ' + namespacedef_ or '', ))
-        already_processed = set()
-        self.exportAttributes(outfile, level, already_processed, namespace_, name_='VolcanicType')
-        if self.hasContent_():
-            outfile.write('>%s' % (eol_, ))
-            self.exportChildren(outfile, level + 1, namespace_='', name_='VolcanicType', pretty_print=pretty_print)
-            showIndent(outfile, level, pretty_print)
-            outfile.write('</%s%s>%s' % (namespace_, name_, eol_))
-        else:
-            outfile.write('/>%s' % (eol_, ))
-    def exportAttributes(self, outfile, level, already_processed, namespace_='', name_='VolcanicType'):
-        pass
-    def exportChildren(self, outfile, level, namespace_='', name_='VolcanicType', fromsubclass_=False, pretty_print=True):
-        if pretty_print:
-            eol_ = '\n'
-        else:
-            eol_ = ''
-        if self.VolcanicType is not None:
-            showIndent(outfile, level, pretty_print)
-            outfile.write('<%sVolcanicType>%s</%sVolcanicType>%s' % (namespace_, self.gds_format_string(quote_xml(self.VolcanicType).encode(ExternalEncoding), input_name='VolcanicType'), namespace_, eol_))
-    def build(self, node):
-        already_processed = set()
-        self.buildAttributes(node, node.attrib, already_processed)
-        for child in node:
-            nodeName_ = Tag_pattern_.match(child.tag).groups()[-1]
-            self.buildChildren(child, node, nodeName_)
-        return self
-    def buildAttributes(self, node, attrs, already_processed):
-        pass
-    def buildChildren(self, child_, node, nodeName_, fromsubclass_=False):
-        if nodeName_ == 'VolcanicType':
-            VolcanicType_ = child_.text
-            VolcanicType_ = self.gds_validate_string(VolcanicType_, node, 'VolcanicType')
-            self.VolcanicType = VolcanicType_
-            # validate type IgneousDetails
-            self.validate_IgneousDetails(self.VolcanicType)
-# end class VolcanicType
-
-
 GDSClassesMapping = {
-    'Plutonic': PlutonicType,
-    'Biology': BiologyType,
-    'Volcanic': VolcanicType,
-    'Mineral': MineralType,
-    'external_urls': external_urlsType,
-    'Igneous': IgneousType,
-    'Sedimentary': SedimentaryType,
-    'Xenolithic': XenolithicType,
-    'Metamorphic': MetamorphicType1,
-    'sample_other_names': sample_other_namesType,
     'sample': sampleType,
-    'Macrobiology': MacrobiologyType,
-    'Rock': RockType,
-    'Ore': OreType,
-    'external_url': external_urlType,
 }
 
 
@@ -6611,24 +4591,11 @@ if __name__ == '__main__':
 
 
 __all__ = [
-    "BiologyType",
-    "IgneousType",
-    "MacrobiologyType",
-    "MetamorphicType",
-    "MetamorphicType1",
-    "MineralType",
-    "OreType",
-    "PlutonicType",
-    "RockType",
-    "SedimentaryType",
-    "VolcanicType",
-    "XenolithicType",
     "age_max",
     "age_min",
     "age_unit",
     "city",
     "classification",
-    "classification_comment",
     "collection_date_precision",
     "collection_method",
     "collection_method_descr",
@@ -6641,21 +4608,16 @@ __all__ = [
     "current_archive_contact",
     "depth_scale",
     "description",
-    "easting",
     "elevation",
     "elevation_end",
-    "external_urlType",
-    "external_urlsType",
+    "elevation_unit",
     "field_name",
     "geological_age",
     "geological_unit",
     "igsn",
-    "is_private",
     "latitude",
     "latitude_end",
-    "launch_id",
     "launch_platform_name",
-    "launch_type_name",
     "locality",
     "locality_description",
     "location_description",
@@ -6664,9 +4626,9 @@ __all__ = [
     "material",
     "name",
     "navigation_type",
-    "northing",
     "original_archive",
     "original_archive_contact",
+    "other_names",
     "parent_igsn",
     "platform_descr",
     "platform_name",
@@ -6675,19 +4637,11 @@ __all__ = [
     "primary_location_type",
     "province",
     "publish_date",
-    "purpose",
     "sampleType",
     "sample_comment",
-    "sample_other_name",
-    "sample_other_namesType",
     "sample_type",
     "samples",
     "size",
     "size_unit",
-    "url",
-    "url_description",
-    "url_type",
-    "user_code",
-    "vertical_datum",
-    "zone"
+    "user_code"
 ]
