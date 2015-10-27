@@ -1,10 +1,11 @@
+#!/usr/bin/python
 # This is just to provide an example of how the library can be used.
 # Make sure you set password and username.
 from sesarwslib import categories as cat
 from sesarwslib.sample import Sample
+from datetime import datetime
 import sesarwslib.sesarwsclient as ws
 import os
-
 
 # Add these environment variables to your run configuration.
 # In PyCharm that's Run > Edit Configurations > Environment Variables.
@@ -44,41 +45,46 @@ sample.set_latitude_end(33.2)
 sample.set_longitude_end(-55.2)
 sample.set_elevation(400)
 sample.set_elevation_end(404)
+
+#sample.set_elevation_unit('meters') # V1 ONLY
 #sample.set_vertical_datum('MSL') # NAVD88 or MSL V2 ONLY
-#sample.set_northing(northing)
-#sample.set_easting(easting)
-#sample.set_zone(zone)
-#sample.set_navigation_type(navigation_type)
-#sample.set_primary_location_type(primary_location_type)
-#sample.set_primary_location_name(primary_location_name)
-#sample.set_location_description(location_description)
-#sample.set_locality(locality)
-#sample.set_locality_description(locality_description)
-#sample.set_country(country)
-#sample.set_province(province)
-#sample.set_county(county)
-#sample.set_city(city)
-#sample.set_cruise_field_prgrm(cruise_field_prgrm)
-#sample.set_platform_type(platform_type)
-#sample.set_platform_name(platform_name)
-#sample.set_platform_descr(platform_descr)
-#sample.set_launch_platform_name(launch_platform_name)
-#sample.set_launch_id(launch_id)
-#sample.set_launch_type_name(launch_type_name)
-#sample.set_collector(collector)
-#sample.set_collector_detail(collector_detail)
-#sample.set_collection_start_date(collection_start_date)
-#sample.set_collection_end_date(collection_end_date)
-#sample.set_collection_date_precision(collection_date_precision)
-#sample.set_current_archive(current_archive)
-#sample.set_current_archive_contact(current_archive_contact)
-#sample.set_original_archive(original_archive)
-#sample.set_original_archive_contact(original_archive_contact)
-#sample.set_depth_min(depth_min)
-#sample.set_depth_max(depth_max)
-#sample.set_depth_scale(depth_scale)
-#sample.set_sample_other_names(sample_other_names)
-#sample.set_external_urls(external_urls)
+
+#sample.set_northing(northing) # V2 ONLY
+#sample.set_easting(easting) # V2 ONLY
+#sample.set_zone(zone) # V2 ONLY
+
+
+sample.set_primary_location_type('Type of phyiscal feature that your sample was collected from.') # Text 255
+sample.set_primary_location_name('Name of the primary_location_type that you entered') # Text 255
+sample.set_location_description('Additional information about the specific place where your sample was collected') # Text 2000
+sample.set_locality('Name of the specific place where your sample was collected. This could be the  name of a mine, a volcanic field, a vent field, or similar') # Text 255
+sample.set_locality_description('Additional information about the specific place where your sample was collected') # Text 255
+sample.set_country('Australia') # Text 255 see http://app.geosamples.org/reference/countries.php
+sample.set_province('Western Australia') # Text 255
+sample.set_county('Western Australia') # Text 255
+sample.set_city('Caraboooda') # Text 255
+sample.set_cruise_field_prgrm('VNTR02WT') # Text 255 See http://app.geosamples.org/reference/advanced_list.php?srv=cruise_field_prgrm for what other users have entered. http://www.rvdata.us/catalog is mentioned in V1
+sample.set_platform_type('Type of platform for the cruise.') # Text 255
+sample.set_platform_name('Name of platform for the cruise.') # Text 2000
+sample.set_platform_descr('Description of the platform for the cruise.') # Text 200
+sample.set_navigation_type('GPS') # See http://app.geosamples.org/reference/navtypes.php
+sample.set_launch_platform_name('Not Applicable') # Text 100, see http://app.geosamples.org/reference/launchtypes.php
+#sample.set_launch_id(launch_id) # V2 ONLY
+#sample.set_launch_type_name(launch_type_name) # V2 ONLY
+sample.set_collector('Name of the person who collected the sample.') # Text 255
+sample.set_collector_detail('Institution, address, & email of the collector or chief scientist.') # Text 2000
+sample.set_collection_start_date(datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p'))
+sample.set_collection_end_date(datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p'))
+sample.set_collection_date_precision('time') # year, month, day, time
+sample.set_current_archive('Name of institution, museum, or repository where the sample is currently stored.') # Text 300
+sample.set_current_archive_contact('Address and/or email of the person who should be contacted for information about or access to the sample.') # Text 1000
+sample.set_original_archive('Name of institution, museum, or repository where the sample was originally stored.') # 300
+sample.set_original_archive_contact('Address and/or email of the person who should be contacted for information about the sample\'s original archive.') # Text 1000
+sample.set_depth_min(1.9) # decimal
+sample.set_depth_max(2.0) # decimal
+sample.set_depth_scale('Unit in which the depth is provided, e.g., MBSF') # Text 255
+#sample.set_sample_other_names(sample_other_names) # V2 ONLY
+#sample.set_external_urls(external_urls) # V2 ONLY
 
 client = ws.IgsnClient(username, password)
 
