@@ -7,12 +7,11 @@ SAMPLE_REGISTRATION_SERVICE_URL = 'http://app.geosamples.org/webservices/uploads
 CREDENTIAL_SERVICE_URL = 'http://app.geosamples.org/webservices/credentials_service.php'
 IGSN_LIST_SERVICE_URL = 'http://app.geosamples.org/samples/user_code/'
 
-VERSION = 1
-
 class IgsnClient:
-    def __init__(self, username, password):
+    def __init__(self, username, password, version):
         self.username = username
         self.password = password
+        self.version = version
 
     def register_sample(self, sample):
         return self.register_samples([sample])[0]
@@ -21,7 +20,7 @@ class IgsnClient:
     def register_samples(self, samples):
         output = StringIO.StringIO()
         
-        if VERSION == 2:
+        if self.version == 2:
             output.write('<?xml version="1.0" encoding="UTF-8"?>\n')
             output.write('<samples xmlns="http://app.geosamples.org"\n')
             output.write('xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\n')

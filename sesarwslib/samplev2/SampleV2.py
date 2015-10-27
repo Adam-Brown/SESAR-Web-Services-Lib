@@ -1,22 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-#
-
-#
-# Command line options:
-#   ('-o', 'sesarwslib/samplev2/SampleV2.py')
-#
-# Command line arguments:
-#   sesarwslib/samplev2/samplev2.xsd
-#
-# Command line:
-#   /usr/local/bin/generateDS.py -o "sesarwslib/samplev2/SampleV2.py" sesarwslib/samplev2/samplev2.xsd
-#
-# Current working directory (os.getcwd()):
-#   SESAR-Web-Services-Lib
-#
-
 import sys
 import re as re_
 import base64

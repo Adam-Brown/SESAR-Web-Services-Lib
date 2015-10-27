@@ -55,3 +55,5 @@ target/
 
 # IDE Junk
 .idea
+
+env.bash

@@ -8,10 +8,14 @@ import sesarwslib.sesarwsclient as ws
 import os
 
 # Add these environment variables to your run configuration.
-# In PyCharm that's Run > Edit Configurations > Environment Variables.
-#username = os.environ['SESAR_USERNAME']
-#password = os.environ['SESAR_PASSWORD']
-#user_code = os.environ['SESAR_USER_CODE']
+# You can add this to a git-ignored file called env.bash and then source it when you run your session:
+#   export SESAR_USERNAME="xxxx"
+#   export SESAR_PASSWORD="xxxx"
+#   export SESAR_USER_CODE="xxxx"
+
+username = os.environ['SESAR_USERNAME']
+password = os.environ['SESAR_PASSWORD']
+user_code = os.environ['SESAR_USER_CODE']
 
 # These are the minimum requirements, though the constructor does accept more:
 sample = Sample.sampleType(
@@ -86,7 +90,7 @@ sample.set_depth_scale('Unit in which the depth is provided, e.g., MBSF') # Text
 #sample.set_sample_other_names(sample_other_names) # V2 ONLY
 #sample.set_external_urls(external_urls) # V2 ONLY
 
-client = ws.IgsnClient(username, password)
+client = ws.IgsnClient(username, password, 2)
 
 # 1. Sample registration web service
 print client.register_sample(sample)
