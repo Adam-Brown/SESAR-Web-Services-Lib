@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Tue Oct 27 11:42:03 2015 by generateDS.py version 2.17a.
+
 #
 # Command line options:
 #   ('-o', 'sesarwslib/sample/Sample.py')
@@ -4589,6 +4589,62 @@ if __name__ == '__main__':
     #import pdb; pdb.set_trace()
     main()
 
+
+__all__ = [
+    "age_max",
+    "age_min",
+    "age_unit",
+    "city",
+    "classification",
+    "collection_date_precision",
+    "collection_method",
+    "collection_method_descr",
+    "collector",
+    "collector_detail",
+    "country",
+    "county",
+    "cruise_field_prgrm",
+    "current_archive",
+    "current_archive_contact",
+    "depth_scale",
+    "description",
+    "elevation",
+    "elevation_end",
+    "elevation_unit",
+    "field_name",
+    "geological_age",
+    "geological_unit",
+    "igsn",
+    "latitude",
+    "latitude_end",
+    "launch_platform_name",
+    "locality",
+    "locality_description",
+    "location_description",
+    "longitude",
+    "longitude_end",
+    "material",
+    "name",
+    "navigation_type",
+    "original_archive",
+    "original_archive_contact",
+    "other_names",
+    "parent_igsn",
+    "platform_descr",
+    "platform_name",
+    "platform_type",
+    "primary_location_name",
+    "primary_location_type",
+    "province",
+    "publish_date",
+    "sampleType",
+    "sample_comment",
+    "sample_type",
+    "samples",
+    "size",
+    "size_unit",
+    "user_code"
+]
 
 __all__ = [
     "age_max",

@@ -14,7 +14,7 @@ import os
 #user_code = os.environ['SESAR_USER_CODE']
 
 # These are the minimum requirements, though the constructor does accept more:
-sample = Sample.sampleType(
+sample = Sample.sample(
     user_code=user_code,
     sample_type=cat.SampleType.IndividualSample,
     name='TestSample123',

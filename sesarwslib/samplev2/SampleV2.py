@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Tue Oct 27 11:42:08 2015 by generateDS.py version 2.17a.
+
 #
 # Command line options:
-#   ('-o', 'sesarwslib/sample/SampleV2.py')
+#   ('-o', 'sesarwslib/samplev2/SampleV2.py')
 #
 # Command line arguments:
-#   sesarwslib/sample/samplev2.xsd
+#   sesarwslib/samplev2/samplev2.xsd
 #
 # Command line:
-#   /usr/local/bin/generateDS.py -o "sesarwslib/sample/SampleV2.py" sesarwslib/sample/samplev2.xsd
+#   /usr/local/bin/generateDS.py -o "sesarwslib/samplev2/SampleV2.py" sesarwslib/samplev2/samplev2.xsd
 #
 # Current working directory (os.getcwd()):
 #   SESAR-Web-Services-Lib
