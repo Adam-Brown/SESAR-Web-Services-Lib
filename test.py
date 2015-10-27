@@ -42,7 +42,6 @@ sample.set_geological_unit('Million years') # Text 500
 sample.set_size('25') # Text 255
 sample.set_size_unit('mm diameter round') # Text 255
 sample.set_sample_comment('A test sample comment.') # Text 2000
-#sample.set_purpose('Just a test') # Text 100 V2 ONLY
 sample.set_latitude(33.1) # -90.0 to 90.0
 sample.set_longitude(-55.1) # -180 to 180
 sample.set_latitude_end(33.2)
@@ -50,14 +49,7 @@ sample.set_longitude_end(-55.2)
 sample.set_elevation(400)
 sample.set_elevation_end(404)
 
-#sample.set_elevation_unit('meters') # V1 ONLY
-#sample.set_vertical_datum('MSL') # NAVD88 or MSL V2 ONLY
-
-#sample.set_northing(northing) # V2 ONLY
-#sample.set_easting(easting) # V2 ONLY
-#sample.set_zone(zone) # V2 ONLY
-
-
+sample.set_elevation_unit('Meters') # V1 ONLY
 sample.set_primary_location_type('Type of phyiscal feature that your sample was collected from.') # Text 255
 sample.set_primary_location_name('Name of the primary_location_type that you entered') # Text 255
 sample.set_location_description('Additional information about the specific place where your sample was collected') # Text 2000
@@ -73,8 +65,6 @@ sample.set_platform_name('Name of platform for the cruise.') # Text 2000
 sample.set_platform_descr('Description of the platform for the cruise.') # Text 200
 sample.set_navigation_type('GPS') # See http://app.geosamples.org/reference/navtypes.php
 sample.set_launch_platform_name('Not Applicable') # Text 100, see http://app.geosamples.org/reference/launchtypes.php
-#sample.set_launch_id(launch_id) # V2 ONLY
-#sample.set_launch_type_name(launch_type_name) # V2 ONLY
 sample.set_collector('Name of the person who collected the sample.') # Text 255
 sample.set_collector_detail('Institution, address, & email of the collector or chief scientist.') # Text 2000
 sample.set_collection_start_date(datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p'))
@@ -87,8 +77,6 @@ sample.set_original_archive_contact('Address and/or email of the person who shou
 sample.set_depth_min(1.9) # decimal
 sample.set_depth_max(2.0) # decimal
 sample.set_depth_scale('Unit in which the depth is provided, e.g., MBSF') # Text 255
-#sample.set_sample_other_names(sample_other_names) # V2 ONLY
-#sample.set_external_urls(external_urls) # V2 ONLY
 
 client = ws.IgsnClient(username, password, 1)
 

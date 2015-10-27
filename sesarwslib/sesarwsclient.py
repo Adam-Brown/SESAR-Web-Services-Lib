@@ -30,15 +30,13 @@ class IgsnClient:
         
         for sample in samples:
             sample.export(output, 0)
-        
+
         output.write('</samples>')
         
         # According to the v2 XSD the tag should be sampleType... I can't test it yet because I think SESAR need to update something.
         # I'm temporarily forcing this to use version 1 for the moment by rewriting these tags.
         output_xml = output.getvalue().replace('<sampleType>', '<sample>').replace('</sampleType>', '</sample>')
         
-        print output_xml
-
         http_body = urllib.urlencode({
             'username': self.username,
             'password': self.password,
